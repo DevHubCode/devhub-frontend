@@ -1,6 +1,9 @@
-const iemail = document.querySelector(".email");
-const isenha = document.querySelector(".senha");
+const iemail = document.getElementById("email");
+const isenha = document.getElementById("senha");
+
 function entrar() {
+    console.log(iemail)
+    console.log(isenha)
     fetch("http://localhost:8080/login",
         {
 
@@ -9,7 +12,6 @@ function entrar() {
                 "Content-Type": "application/json"
             },
             method: "POST",
-
             body: JSON.stringify({
 
                 email: iemail.value, 
@@ -18,8 +20,10 @@ function entrar() {
             }
             )
         })
-
+        
         .then(function (res) { console.log(res) })
-        .catch(function (res) { console.log(res) })
+        .catch(function (res) { console.log(res)})
 
 }
+
+export default entrar;

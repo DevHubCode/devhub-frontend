@@ -1,4 +1,4 @@
- @import url("https://fonts.googleapis.com/css?family=Poppins"); 
+@import url("https://fonts.googleapis.com/css?family=Poppins");
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -13,35 +13,35 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: Poppins;
-	vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: Poppins;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
-	display: block;
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
 ol, ul {
-	list-style: none;
+  list-style: none;
 }
 blockquote, q {
-	quotes: none;
+  quotes: none;
 }
 blockquote:before, blockquote:after,
 q:before, q:after {
-	content: '';
-	content: none;
+  content: '';
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 .body-login {
   background-color: #10A3D2;
@@ -92,6 +92,7 @@ align-items: center;
 padding-left: 7%;
 }
 
+
 .slogan{
   /* border: 5px solid rgb(255, 0, 43); */
   display: flex;
@@ -114,9 +115,20 @@ padding-left: 7%;
   justify-content: center;
   margin-right: 0px;
   padding: 0px;
-  
+ 
 }
+.logo-logout{
+  /* border: 5px solid rgb(255, 0, 43); */
+  width: 100%;
+  height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0px;
+  padding: 0px;
+ margin-top: 65%;
 
+}
 .block-2 {
   background-color: #f4f4f4;
   /* border: 3px pink solid; */
@@ -171,6 +183,13 @@ padding-left: 7%;
   border-radius: 2px;
   box-shadow: 0px 5px 5px 2px #dbdbdb;
   border: 0px solid;
+  padding-left: 14px;
+  font-size: larger;
+ 
+}
+.inputs-login input:focus {
+  outline: none;
+  background-color: #f2f1f1;
 }
 
 .button-login {
@@ -191,6 +210,13 @@ padding-left: 7%;
   font-size: x-large;
   border: 0px solid;
 }
+
+
 .button-login button:hover {
   background-color: #1299c6;
+}
+
+
+.button-login button:active {
+  background-color: #14637d;
 }

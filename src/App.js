@@ -2,38 +2,22 @@ import api from "./api";
 import { useState } from "react";
 import "./html-css-template/css/style.css";
 import "./html-css-template/css/reset.css";
-import Musicas from "./Musicas";
+import "./script.js"
+import Login from './Login.jsx';
+import Logout from './Logout.jsx';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
 
 
 function App() {
-  const [getMusicas, setMusicas] = useState([]);
-  // criando state com valor de um vetor vazio;
-  function listar() {
-    api
-      .get()
-      .then((respostaObtida) => {
-        // cairá aqui se a requisição for realizada;
-        console.log(respostaObtida);
-        // objeto que representa a resposta enviada pela API;
-        console.log(respostaObtida.status);
-        // vendo status da resposta (OK - 200);
-        console.log(respostaObtida.data);
-        // vendo os dados da resposta (data: []);
-        setMusicas(respostaObtida.data);
-        // setando "musicas" com os mesmos dados recebidos pela resposta da
-        // requisição;
-      })
-      .catch((erroOcorrido) => {
-        // cairá aqui se houver algum erro durante a
-        // requisição;
-        console.log(erroOcorrido);
-      });
-  }
-
   return (
-    <>
-      <Musicas />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/login" element={<Login />} ></Route>
+        <Route path="/logout" element={<Logout />} ></Route>
+      </Routes>
+    </BrowserRouter>
+
   );
 }
 export default App;
