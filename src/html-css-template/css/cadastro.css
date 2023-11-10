@@ -1,0 +1,117 @@
+.body-cadastro {
+    background-color: #10A3D2;
+    display: flex;
+    width: 100%;
+    height: 585px;
+}
+
+
+.inputs-cadastro {
+    display: flex;
+    justify-content: center;
+    height: 52%;
+    width: 100%;
+    /* background-color: rgb(0, 0, 0); */
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  
+  .inputs-cadastro input {
+    margin: 2%;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 60%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 2px;
+    box-shadow: 0px 5px 5px 2px #dbdbdb;
+    border: 0px solid;
+    padding-left: 14px;
+    font-size: larger;
+  }
+
+  .inputs-cadastro input:focus {
+    outline: none;
+    background-color: #f2f1f1;
+  }
+
+  .text-cadastro-tittle {
+    height: 25%;
+    width: 100%;
+    /* background-color: rgb(255, 0, 43); */
+    color: #3C3C3C;
+    font-weight: 400;
+    font-size: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins';
+  }
+  
+  .button-cadastro {
+    display: flex;
+    height: 35%;
+    width: 100%;
+    /* background-color: rgb(38, 88, 35); */
+    justify-content: center;
+    align-items: center ;
+  }
+
+  .button-cadastro button {
+    border-radius: 2px;
+    width: 35%;
+    height: 35%;
+    background-color: #10A3D2;
+    color: #ffffff;
+    font-family: "Poppins";
+    font-size: x-large;
+    border: 0px solid;
+  }
+
+  .button-cadastro button:hover {
+    background-color: #1299c6;
+  }
+  
+  
+  .button-cadastro button:active {
+    background-color: #14637d;
+  }
+
+  .toggle-switch {
+    width: 60px;
+    height: 30px;
+    background-color: #ccc;
+    border-radius: 15px;
+    display: flex;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: relative;
+  }
+  
+  .toggle-switch.desligado {
+    background-color: #ccc;
+  }
+  
+  .toggle-switch.ligado {
+    background-color: #007bff;
+  }
+  
+  .slider {
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+    position: absolute;
+    transform: translateX(0);
+  }
+  
+  .toggle-switch.desligado .slider {
+    transform: translateX(0);
+  }
+  
+  .toggle-switch.ligado .slider {
+    transform: translateX(30px);
+  }
+  

@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from 'react-dom/client';
-import setaEsquerda from "../src/html-css-template/imagens/arrow-left.svg"
-import logoDevhubBranco from "../src/html-css-template/imagens/Group 85.svg"
-import api from "./api.js"
+import setaEsquerda from "../html-css-template/imagens/arrow-left.svg"
+import logoDevhubBranco from "../html-css-template/imagens/Group 85.svg"
+import api from "../api.js"
 
 function Login() {
     function entrar() {
