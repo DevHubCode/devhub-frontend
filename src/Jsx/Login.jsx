@@ -9,53 +9,58 @@ function Login() {
     function entrar() {
         const iemail = document.getElementById("email");
         const isenha = document.getElementById("senha");
-        
+
 
         console.log(iemail.value)
         console.log(isenha.value)
-    
+
         if (iemail && isenha && iemail.value && isenha.value) {
             api.post('/login', {
                 email: iemail.value,
                 senha: isenha.value
             })
-            .then(response => {
-                // Lida com a resposta do servidor após um login bem-sucedido
-                console.log(response.data);
-                Swal.fire({
-                    position: "top-end",
-                    icon: "success",
-                    title: "Your work has been saved",
-                    showConfirmButton: false,
-                    timer: 1500000
-                  });
-                sessionStorage.setItem("id", response.data.id)
-                sessionStorage.setItem("nome", response.data.nome)
-                sessionStorage.setItem("email", response.data.email)
-                sessionStorage.setItem("token", response.data.token)
-                window.location.href = '/logout';
-            }).catch(error => {
-                // Lida com erros, como login inválido
-                alert("erro na API")
-                throw error;
+                .then(response => {
+                    // Lida com a resposta do servidor após um login bem-sucedido
+                    console.log(response.data);
+                    Swal.fire({
+                        title: "Logando!",
+                        text: "Usuário encontrado, clique em ok para proseguir",
+                        icon: "success"
+                      }).then((result) => {
+                        if (result.isConfirmed) {
+                            sessionStorage.setItem("id", response.data.id)
+                            sessionStorage.setItem("nome", response.data.nome)
+                            sessionStorage.setItem("email", response.data.email)
+                            sessionStorage.setItem("token", response.data.token)
+                            window.location.href = '/logout';
+                          console.log("O usuário clicou em OK!");
+                        }
+                      });
+                   
+                }).catch(error => {
+                    Swal.fire({
+                        title: "Usuário não encontrado",
+                        text: "Verifique se os dados estão corretos!",
+                        icon: "error"
+                      });
 
-            });
+                });
         } else {
             console.log("Campos de email e senha devem ser preenchidos");
         }
     }
 
-    return (  
+    return (
         <>
             <div className="body-login">
                 <div className="block-1">
                     <div className="voltar">
-                       <img src={setaEsquerda} alt="seta" />
+                        <img src={setaEsquerda} alt="seta" />
                         Inicio
                     </div>
                     <div className="frase">Proporcionando encontros entre demanda e competência.</div>
                     <div className="logo">
-                    <img src={logoDevhubBranco} alt="loogo DevHub" />
+                        <img src={logoDevhubBranco} alt="loogo DevHub" />
                     </div>
                     <div className="slogan">
                         &copy; 2023 ; todos os direitos reservados By DevHub Enterprise
@@ -66,8 +71,8 @@ function Login() {
                     <div className="block-inputs">
                         <div className="text-login-tittle">Entrar</div>
                         <div className="inputs-login">
-                            <input type="text" useState="email" id="email" placeholder="Email"/>
-                            <input type="password" useState="senha" id="senha"placeholder="Senha"/>
+                            <input type="text" useState="email" id="email" placeholder="Email" />
+                            <input type="password" useState="senha" id="senha" placeholder="Senha" />
                         </div>
                         <div className="not_cadastro">
                             Não tem cadastro ? <a href="./cadastro">Cadastre-se já</a>!
@@ -80,7 +85,7 @@ function Login() {
             </div>
         </>
     );
-    
+
 }
 
 export default Login;
