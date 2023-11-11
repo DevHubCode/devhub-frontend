@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import setaEsquerda from "../html-css-template/imagens/arrow-left.svg"
 import logoDevhubBranco from "../html-css-template/imagens/Group 85.svg"
 import api from "../api.js"
+import Swal from "sweetalert2";
 
 function Login() {
     function entrar() {
@@ -21,7 +22,13 @@ function Login() {
             .then(response => {
                 // Lida com a resposta do servidor após um login bem-sucedido
                 console.log(response.data);
-                alert("Entrando...")
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Your work has been saved",
+                    showConfirmButton: false,
+                    timer: 1500000
+                  });
                 sessionStorage.setItem("id", response.data.id)
                 sessionStorage.setItem("nome", response.data.nome)
                 sessionStorage.setItem("email", response.data.email)
@@ -61,6 +68,9 @@ function Login() {
                         <div className="inputs-login">
                             <input type="text" useState="email" id="email" placeholder="Email"/>
                             <input type="password" useState="senha" id="senha"placeholder="Senha"/>
+                        </div>
+                        <div className="not_cadastro">
+                            Não tem cadastro ? <a href="./cadastro">Cadastre-se já</a>!
                         </div>
                         <div className="button-login">
                             <button onClick={entrar}>Entrar</button>

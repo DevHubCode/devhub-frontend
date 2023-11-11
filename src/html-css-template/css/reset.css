@@ -200,6 +200,7 @@ padding-left: 7%;
   justify-content: center;
   align-items: center ;
 }
+
 .button-login button {
   border-radius: 2px;
   width: 30%;
@@ -219,4 +220,12 @@ padding-left: 7%;
 
 .button-login button:active {
   background-color: #14637d;
+}
+
+.not_cadastro{
+  display: flex;
+  height: 5%;
+  width: 100%;
+  justify-content: center;
+  align-items: center ;
 }

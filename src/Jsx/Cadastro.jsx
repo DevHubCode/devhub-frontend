@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import setaEsquerda from "../html-css-template/imagens/arrow-left.svg"
 import logoDevhubBranco from "../html-css-template/imagens/Group 85.svg"
 import api from "../api.js"
+import Swal from "sweetalert2";
 
 function Cadastrar() {
 
@@ -10,8 +11,8 @@ function Cadastrar() {
         const inome = document.getElementById("nome");
         const iemail = document.getElementById("email");
         const isenha = document.getElementById('senha');
-        const icpf = document.getElementById('cpf')
-        
+        const cnpj = document.getElementById('cnpj')
+        const telefone = document.getElementById('telefone')
 
         console.log(iemail.value)
         console.log(isenha.value)
@@ -21,13 +22,24 @@ function Cadastrar() {
                 nome: inome.value,
                 email: iemail.value,
                 senha: isenha.value,
-                cpf: icpf.value
+                cnpj: cnpj.value,
+                telefone: telefone.value
             })
             .then(response => {
                 // Lida com a resposta do servidor após um login bem-sucedido
                 console.log(response.data);
-                alert("Cadastrando...")
-                window.location.href = '/login';
+                Swal.fire({
+                    title: "Cadastrado!",
+                    text: "Cadastro efetuado com sucesso, clique no botão",
+                    icon: "success",
+                    showCancelButton: true,
+                    confirmButtonText: "Ir para o login"
+                  }).then((result) => {
+                    if (result.isConfirmed) {
+                      // Redireciona para a página de login somente quando o botão for clicado
+                      window.location.href = '/login';
+                    }
+                  });
             }).catch(error => {
                 // Lida com erros, como login inválido
                 alert("erro na API")
@@ -61,13 +73,15 @@ function Cadastrar() {
                     <div className="block-inputs">
                         <div className="text-cadastro-tittle">Preencha seus dados pessoais</div>
                         <div className="inputs-cadastro">
-                            <input type="name" useState="email" id="email" placeholder="Nome Completo"/>
-                            <input type="email" useState="senha" id="senha"placeholder="Email"/>
-                            <input type="password" useState="senha" id="senha"placeholder="Senha"/>
-                            <input useState="senha" id="senha"placeholder="CPF / CNPJ"/>
+                            <input type="name" useState="email" id="nome" placeholder="Nome Completo"/>
+                            <input type="email" useState="senha" id="email" placeholder="Email"/>
+                            <input useState="senha" id="telefone" placeholder="Telefone"/>
+                            <input type="password" useState="senha" id="senha" placeholder="Senha"/>
+                            <input useState="senha" id="cnpj" placeholder="CPF / CNPJ"/>
                         </div>
                         <div className="button-cadastro">
                             <button onClick={cadastrar}>Cadastrar</button>
+                            <input type="radio" />
                         </div>
                     </div>
                 </div>
