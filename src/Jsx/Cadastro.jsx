@@ -43,7 +43,7 @@ function Cadastrar() {
             const cpf = document.getElementById('identificador')
 
             if (iemail && isenha && inome && cpf && telefone && telefone.value && cpf.value && inome.value && iemail.value && isenha.value) {
-                api.post('/contratantes', {
+                api.post('/freelancers', {
                     nome: inome.value,
                     email: iemail.value,
                     senha: isenha.value,
@@ -57,8 +57,8 @@ function Cadastrar() {
                             title: "Cadastrado!",
                             text: "Cadastro efetuado com sucesso, clique no botão",
                             icon: "success",
-                            showCancelButton: true,
-                            confirmButtonText: "Ir para o login"
+                            showConfirmButton: false,
+                            timer: 3000
                         }).then((result) => {
                             if (result.isConfirmed) {
                                 // Redireciona para a página de login somente quando o botão for clicado
@@ -75,7 +75,7 @@ function Cadastrar() {
             }
 
             alert("Deu certo");
-        }else{
+        } else {
             const cnpj = document.getElementById('identificador')
 
             if (iemail && isenha && inome && cnpj && telefone && telefone.value && cnpj.value && inome.value && iemail.value && isenha.value) {
@@ -91,26 +91,32 @@ function Cadastrar() {
                         console.log(response.data);
                         Swal.fire({
                             title: "Cadastrado!",
-                            text: "Cadastro efetuado com sucesso, clique no botão",
+                            text: "Cadastro efetuado, redirecionando para tela de login",
                             icon: "success",
-                            showCancelButton: true,
-                            confirmButtonText: "Ir para o login"
+                            showConfirmButton: false,
+                            timer: 2000
                         }).then((result) => {
                             if (result.isConfirmed) {
                                 // Redireciona para a página de login somente quando o botão for clicado
+                                window.location.href = '/login';
+                            } else {
                                 window.location.href = '/login';
                             }
                         });
                     }).catch(error => {
                         // Lida com erros, como login inválido
-                        alert("erro na API")
-                        throw error;
+                        Swal.fire({
+                            title: "Erro!",
+                            text: "Verifique os dados digitados!",
+                            icon: "error",
+                            confirmButtonText: "OK!"
+                        });
                     });
             } else {
                 console.log("Preencha corretamente os seus dados");
             }
         }
-       
+
     }
 
 
