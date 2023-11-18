@@ -4,9 +4,12 @@ import logoDevhubBranco from "../html-css-template/imagens/Group 85.svg"
 import api from "../api.js"
 import Swal from "sweetalert2";
 import { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 
 
 function Cadastrar() {
+
+    const navigate = useNavigate();
 
     const [usuario, setUsuario] = useState("Contratante");
     const [botao, setCadastrar] = useState("Cadastrar");
@@ -104,9 +107,15 @@ function Cadastrar() {
                                 timer: 3000
                             }).then((result) => {
                                 if (result.isConfirmed) {
-                                    window.location.href = '/login';
+                                    sessionStorage.setItem("id", response.data.id)
+                                    sessionStorage.setItem("nome", response.data.nome)
+                                    sessionStorage.setItem("email", response.data.email)
+                                    navigate("/especialidades");
                                 }else {
-                                    window.location.href = '/login';
+                                    sessionStorage.setItem("id", response.data.id)
+                                    sessionStorage.setItem("nome", response.data.nome)
+                                    sessionStorage.setItem("email", response.data.email)
+                                    navigate("/especialidades");
                                 }
                             });
                         }).catch(error => {
@@ -118,9 +127,9 @@ function Cadastrar() {
                                 confirmButtonText: "OK!"
                             }).then((result) => {
                                 if (result.isConfirmed) {
-                                    window.location.href = '/cadastro';
+                                    navigate("/cadastro");
                                 }else {
-                                    window.location.href = '/cadastro';
+                                    navigate("/cadastro");
                                 }
                             });
                         });
@@ -249,7 +258,7 @@ function Cadastrar() {
                                     </label>
                                 </div>
                             </div>
-                            <form action="">
+                            <form className="input-form" action="">
                                 <label htmlFor="descricao">Descrição:</label>
                                 <input onChange={onChange} type="text" id="descricao" placeholder="Insira a descrição aqui..." />
                             </form>

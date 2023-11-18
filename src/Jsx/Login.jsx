@@ -4,8 +4,12 @@ import setaEsquerda from "../html-css-template/imagens/arrow-left.svg"
 import logoDevhubBranco from "../html-css-template/imagens/Group 85.svg"
 import api from "../api.js"
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
+
+    const navigate = useNavigate();
+
     function entrar() {
         const iemail = document.getElementById("email");
         const isenha = document.getElementById("senha");
@@ -32,7 +36,7 @@ function Login() {
                             sessionStorage.setItem("nome", response.data.nome)
                             sessionStorage.setItem("email", response.data.email)
                             sessionStorage.setItem("token", response.data.token)
-                            window.location.href = '/logout';
+                            navigate('/logout');
                           console.log("O usuário clicou em OK!");
                         }
                       });

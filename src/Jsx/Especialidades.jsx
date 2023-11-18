@@ -4,19 +4,21 @@ import logoDevhubBranco from "../html-css-template/imagens/Group 85.svg";
 import api from "../api.js";
 import Swal from "sweetalert2";
 import { useState, useEffect } from 'react';
+import { useNavigate } from "react-router-dom";
 import Select from 'react-select';
 
 function Especialidades() {
-    const [termoPesquisa, setTermoPesquisa] = useState('');
-    const [termoPesquisa1, setTermoPesquisa1] = useState('');
-    const [termoPesquisa2, setTermoPesquisa2] = useState('');
+
+    const [termoPesquisa, setTermoPesquisa] = useState([]);
+
+    const navigate = useNavigate();
+
     const [resultados, setResultados] = useState([]);
 
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const response = await api.get(`/especialidades/filtrar?termoPesquisa=${termoPesquisa}`);
-                let resposta = response.data
                 setResultados(response.data);
             } catch (error) {
                 console.error('Erro ao obter dados:', error);
@@ -28,20 +30,13 @@ function Especialidades() {
 
 
     function Cadastrar() {
-        const iemail = document.getElementById("email");
-        const isenha = document.getElementById("senha");
+        const id = sessionStorage.getItem("id");
 
+        console.log(id)
 
-        console.log(iemail.value)
-        console.log(isenha.value)
-
-        if (iemail && isenha && iemail.value && isenha.value) {
-            api.post('/login', {
-                email: iemail.value,
-                senha: isenha.value
-            })
+        if (termoPesquisa) {
+            api.post(`freelancers/${id}/especialidades`, termoPesquisa.map(item => item.value))
                 .then(response => {
-                    // Lida com a resposta do servidor após um login bem-sucedido
                     console.log(response.data);
                     Swal.fire({
                         title: "Logando!",
@@ -49,26 +44,29 @@ function Especialidades() {
                         icon: "success"
                     }).then((result) => {
                         if (result.isConfirmed) {
-                            sessionStorage.setItem("id", response.data.id)
-                            sessionStorage.setItem("nome", response.data.nome)
-                            sessionStorage.setItem("email", response.data.email)
-                            sessionStorage.setItem("token", response.data.token)
-                            window.location.href = '/logout';
-                            console.log("O usuário clicou em OK!");
+                            navigate('/login');
+                        } else {
+                            navigate('/login');
                         }
                     });
-
-                }).catch(error => {
+                })
+                .catch(error => {
+                    console.error(error);
                     Swal.fire({
                         title: "Usuário não encontrado",
                         text: "Verifique se os dados estão corretos!",
                         icon: "error"
                     });
-
-                });
+                })
         } else {
             console.log("Campos de email e senha devem ser preenchidos");
         }
+    }
+
+    function handlePesquisa(index, data) {
+        const pesquisa = [...termoPesquisa]
+        pesquisa[index] = data
+        setTermoPesquisa(pesquisa)
     }
 
     return (
@@ -99,8 +97,8 @@ function Especialidades() {
                                     className="select-especialidades"
                                     type="text"
                                     id="pesquisa"
-                                    value={termoPesquisa}
-                                    onChange={(e) => setTermoPesquisa(e)}
+                                    value={termoPesquisa[0] || ""}
+                                    onChange={(e) => handlePesquisa(0, e)}
                                     options={resultados.map((palavra) => ({
                                         value: palavra,
                                         label: palavra
@@ -110,9 +108,9 @@ function Especialidades() {
                                 <Select
                                     className="select-especialidades"
                                     type="text"
-                                    id="pesquisa"
-                                    value={termoPesquisa1}
-                                    onChange={(e) => setTermoPesquisa1(e)}
+                                    id="pesquisa1"
+                                    value={termoPesquisa[1] || ""}
+                                    onChange={(e) => handlePesquisa(1, e)}
                                     options={resultados.map((palavra) => ({
                                         value: palavra,
                                         label: palavra
@@ -122,9 +120,9 @@ function Especialidades() {
                                 <Select
                                     className="select-especialidades"
                                     type="text"
-                                    id="pesquisa"
-                                    value={termoPesquisa2}
-                                    onChange={(e) => setTermoPesquisa2(e)}
+                                    id="pesquisa2"
+                                    value={termoPesquisa[2] || ""}
+                                    onChange={(e) => handlePesquisa(2, e)}
                                     options={resultados.map((palavra) => ({
                                         value: palavra,
                                         label: palavra

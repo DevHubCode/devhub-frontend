@@ -1,14 +1,16 @@
 import React from "react";
-import setaEsquerda from "../html-css-template/imagens/arrow-left.svg"
 import logoDevhubBranco from "../html-css-template/imagens/Group 85.svg"
-import api from "../api.js"
+import { useNavigate } from "react-router-dom";
 
 
 function Logout() {
+
+    const navigate = useNavigate();
+
 function sair(){
     sessionStorage.clear();
     alert("Saindo")
-    window.location.href = '/login';
+    navigate('/login')
 
 
 }
