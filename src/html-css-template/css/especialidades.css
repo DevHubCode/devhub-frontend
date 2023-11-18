@@ -1,0 +1,80 @@
+.text-especialidades-tittle {
+    height: 25%;
+    width: 100%;
+    /* background-color: rgb(255, 0, 43); */
+    color: #3C3C3C;
+    font-weight: 400;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins';
+  }
+
+  .inputs-especialidades {
+    display: flex;
+    justify-content: center;
+    height: 30%;
+    width: 100%;
+    /* background-color: rgb(0, 0, 0); */
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .inputs-especialidades select {
+    margin: 2%;
+    display: flex;
+    justify-content: center;
+    height: 40%;
+    width: 70%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 2px;
+    box-shadow: 0px 5px 5px 2px #dbdbdb;
+    border: 0px solid;
+    padding-left: 14px;
+    font-size: larger;
+    margin-top: 30px;
+  }
+
+  .select-especialidades{
+    width: 300px;
+    margin-top: 30px;
+  }
+
+  .selects-especialidades{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .button-especialidades {
+    display: flex;
+    margin-top: 20px;
+    height: 35%;
+    width: 100%;
+    /* background-color: rgb(38, 88, 35); */
+    justify-content: center;
+    align-items: center ;
+  }
+
+  .button-especialidades button {
+    border-radius: 2px;
+    width: 30%;
+    height: 35%;
+    background-color: #10A3D2;
+    color: #ffffff;
+    font-family: "Poppins";
+    font-size: x-large;
+    border: 0px solid;
+  }
+  
+  
+  .button-especialidades button:hover {
+    background-color: #1299c6;
+  }
+  
+  
+  .button-especialidades button:active {
+    background-color: #14637d;
+  }

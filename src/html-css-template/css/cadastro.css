@@ -31,6 +31,21 @@
     font-size: larger;
   }
 
+  .inputs-cadastro-block3 select {
+    margin: 2%;
+    display: flex;
+    justify-content: center;
+    height: 30%;
+    width: 63%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 2px;
+    box-shadow: 0px 5px 5px 2px #dbdbdb;
+    border: 0px solid;
+    padding-left: 14px;
+    font-size: larger;
+    margin-top: 10px;
+  }
+
   .inputs-cadastro input:focus {
     outline: none;
     background-color: #f2f1f1;
@@ -105,6 +120,8 @@
   background-color: #ccc;
   -webkit-transition: .4s;
   transition: .4s;
+  border-radius: 30px;
+  width: 98px;
 }
 
 /* Estilize a alavanca do switch quando o input radio estiver marcado */
@@ -118,6 +135,7 @@
   background-color: white;
   -webkit-transition: .4s;
   transition: .4s;
+  border-radius: 30px;
 }
 
 /* Estilize o input radio quando estiver marcado */
@@ -127,9 +145,9 @@ input:checked + .slider {
 
 /* Estilize a alavanca do switch quando o input radio estiver marcado */
 input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
+  -webkit-transform: translateX(62px);
+  -ms-transform: translateX(62px);
+  transform: translateX(62px);
 }
  
 .alter_user {
@@ -138,4 +156,79 @@ input:checked + .slider:before {
   align-items: flex-start; /* Alinha os itens à esquerda */
   margin-top: 48%;
   width: 8%;
+  border-radius: 30%;
+}
+
+.alter_user input{
+  border-radius: 30px;
+}
+
+.block-3{
+  display: none;
+  background-color: #f4f4f4;
+  /* border: 3px pink solid; */
+  width: 74%;
+  height: 98.3%;
+  border-top-left-radius: 28px;
+  margin-top: 0.8%;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.block-inputs {
+  /* border: 3px rgb(255, 0, 43) solid; */
+  height: 80%;
+  width: 60%;
+}
+
+.check{
+  height: 10%;
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+}
+
+.check-input input{
+  margin-right: 60%;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-items: center;
+  background-color: none;
+}
+
+.text-cadastro-tittle-block3{
+  font-size: 30px;
+}
+
+.inputs-cadastro-block3 {
+  display: flex;
+  justify-content: center;
+  height: 52%;
+  width: 100%;
+  /* background-color: rgb(0, 0, 0); */
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.inputs-cadastro-block3 input {
+  margin: 2%;
+  display: flex;
+  justify-content: center;
+  height: 30%;
+  width: 60%;
+  background-color: rgb(255, 255, 255);
+  border-radius: 2px;
+  box-shadow: 0px 5px 5px 2px #dbdbdb;
+  border: 0px solid;
+  padding-left: 14px;
+  font-size: larger;
+}
+
+.inputs-cadastro-block3 input:focus {
+  outline: none;
+  background-color: #f2f1f1;
 }
