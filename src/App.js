@@ -1,5 +1,3 @@
-import api from "./api";
-import { useState } from "react";
 import "./html-css-template/css/style.css";
 import "./html-css-template/css/reset.css";
 import "./html-css-template/css/cadastro.css"
@@ -10,10 +8,6 @@ import Login from './Jsx/Login.jsx';
 import Logout from './Jsx/Logout.jsx';
 import Especialidades from "./Jsx/Especialidades.jsx";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-
-
-
-
 
 function App() {
   return (

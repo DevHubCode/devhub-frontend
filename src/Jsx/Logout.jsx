@@ -12,7 +12,6 @@ function sair(){
     alert("Saindo")
     navigate('/login')
 
-
 }
 
     return (  

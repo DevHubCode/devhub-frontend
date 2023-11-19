@@ -14,6 +14,8 @@ function Cadastrar() {
     const [usuario, setUsuario] = useState("Contratante");
     const [botao, setCadastrar] = useState("Cadastrar");
     const [form, setForm] = useState([]);
+    const block3Div = document.querySelector('.block-3');
+    const block2Div = document.querySelector('.block-2');
 
     const mudarUsuario = () => {
         const radio = document.getElementById('usuario');
@@ -38,8 +40,6 @@ function Cadastrar() {
     };
 
     function avancar() {
-        const block3Div = document.querySelector('.block-3');
-        const block2Div = document.querySelector('.block-2');
         alert("Entrou");
         block2Div.style.display = 'none';
         block3Div.style.display = 'flex';
@@ -111,7 +111,7 @@ function Cadastrar() {
                                     sessionStorage.setItem("nome", response.data.nome)
                                     sessionStorage.setItem("email", response.data.email)
                                     navigate("/especialidades");
-                                }else {
+                                } else {
                                     sessionStorage.setItem("id", response.data.id)
                                     sessionStorage.setItem("nome", response.data.nome)
                                     sessionStorage.setItem("email", response.data.email)
@@ -128,8 +128,12 @@ function Cadastrar() {
                             }).then((result) => {
                                 if (result.isConfirmed) {
                                     navigate("/cadastro");
-                                }else {
+                                    block2Div.style.display = 'flex';
+                                    block3Div.style.display = 'none';
+                                } else {
                                     navigate("/cadastro");
+                                    block2Div.style.display = 'flex';
+                                    block3Div.style.display = 'none';
                                 }
                             });
                         });

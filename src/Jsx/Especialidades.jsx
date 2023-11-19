@@ -39,8 +39,8 @@ function Especialidades() {
                 .then(response => {
                     console.log(response.data);
                     Swal.fire({
-                        title: "Logando!",
-                        text: "Usuário encontrado, clique em ok para proseguir",
+                        title: "Cadastrado!",
+                        text: "Especialidades cadastrada, faça login para acessar!",
                         icon: "success"
                     }).then((result) => {
                         if (result.isConfirmed) {
