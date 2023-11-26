@@ -12,62 +12,62 @@ function Home() {
     return (
         <>
             <div className="header">
-                <div class="navbar">
-                    <div class="back">
-                        <div class="icon-menu">
+                <div className="navbar">
+                    <div className="back">
+                        <div className="icon-menu">
                             <img src={logoutIcon} alt="" width="30px" />
                         </div>
 
                     </div>
 
-                    <div class="logo-devhub">
+                    <div className="logo-devhub">
                         <img src={logoDevhub} alt="" width="230px" />
                     </div>
 
-                    <div class="img-profile">
+                    <div className="img-profile">
                         <img src={fotoPerfil} width="35px" />
                     </div>
                 </div>
-                <div class="box-menu">
-                    <div class="search">
-                        <div class="search-tittle">Encontre seu Freela</div>
-                        <div class="search-input">
+                <div className="box-menu">
+                    <div className="search">
+                        <div className="search-tittle">Encontre seu Freela</div>
+                        <div className="search-input">
                             <input type="text" />
                         </div>
                     </div>
 
-                    <div class="sub-menu-section">
-                        <div class="icon1">Beanchinmark</div>
-                        <div class="icon2">Todos</div>
-                        <div class="icon2">Publicações</div>
+                    <div className="sub-menu-section">
+                        <div className="icon1">Beanchinmark</div>
+                        <div className="icon2">Todos</div>
+                        <div className="icon2">Publicações</div>
                     </div>
                 </div>
-                <div class="infos-home">
-                    <div class="level-dev">
-                        <div class="level-dev-icons">
-                            <div class="color-level-dev1" ></div>
+                <div className="infos-home">
+                    <div className="level-dev">
+                        <div className="level-dev-icons">
+                            <div className="color-level-dev1" ></div>
 
-                            <div class="text-level-dev">
-                                <div class="name-level-dev">Dev Senior</div>
-                                <div class="yyyy"> 10 Anos</div>
+                            <div className="text-level-dev">
+                                <div className="name-level-dev">Dev Senior</div>
+                                <div className="yyyy"> 10 Anos</div>
                             </div>
                         </div>
 
-                        <div class="level-dev-icons">
-                            <div class="color-level-dev2"></div>
+                        <div className="level-dev-icons">
+                            <div className="color-level-dev2"></div>
 
-                            <div class="text-level-dev">
-                                <div class="name-level-dev">Dev Pleno</div>
-                                <div class="yyyy"> 10 Anos</div>
+                            <div className="text-level-dev">
+                                <div className="name-level-dev">Dev Pleno</div>
+                                <div className="yyyy"> 10 Anos</div>
                             </div>
                         </div>
 
-                        <div class="level-dev-icons">
-                            <div class="color-level-dev3"></div>
+                        <div className="level-dev-icons">
+                            <div className="color-level-dev3"></div>
 
-                            <div class="text-level-dev">
-                                <div class="name-level-dev">Dev Junior</div>
-                                <div class="yyyy"> 10 Anos</div>
+                            <div className="text-level-dev">
+                                <div className="name-level-dev">Dev Junior</div>
+                                <div className="yyyy"> 10 Anos</div>
                             </div>
                         </div>
 
@@ -75,43 +75,43 @@ function Home() {
 
                     </div>
 
-                    <div class="info-values">
-                        <div class="icon-info-value">
+                    <div className="info-values">
+                        <div className="icon-info-value">
                             <img src={warningSVG} alt="" />
                         </div>
-                        <div class="text-info-values">
+                        <div className="text-info-values">
                             Todos os valores de prestação de serviços a baixo são referentes a hora de trabalho do freelancer.
                         </div>
                     </div>
 
                 </div>
             </div>
-            <div className="header-icons">
+            <div classNameName="header-icons">
                 {freelancers.map((freelancer) => {
                     return (
-                        <div class="box-freelancer" key={freelancer.id}>
-                            <div class="image-freelancer" >
+                        <div className="box-freelancer" key={freelancer.id}>
+                            <div className="image-freelancer" >
 
-                                <div class="score-freelancer">
+                                <div className="score-freelancer">
 
-                                    <div class="box-icon-star">
+                                    <div className="box-icon-star">
                                         <img src={star} alt="" width="100%" />
                                     </div>
-                                    <div class="box-score-number">
+                                    <div className="box-score-number">
                                         {freelancer.score}
                                     </div>
 
                                 </div>
                             </div>
-                            <div class="box-information">
-                                <div class="box-classification">
+                            <div className="box-information">
+                                <div className="box-classification">
 
                                 </div>
-                                <div class="box-aux">
-                                    <div class="box-name-age">
+                                <div className="box-aux">
+                                    <div className="box-name-age">
                                         {freelancer.nome}, {freelancer.idade}.
                                     </div>
-                                    <div class="box-price">
+                                    <div className="box-price">
                                         R$ {freelancer.preco}
                                     </div>
                                 </div>

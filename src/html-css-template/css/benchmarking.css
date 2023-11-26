@@ -336,19 +336,13 @@ body {
     align-items: center;
     height: 100%;
     width: 45%;
-    border: #00eaff 2px solid;
 }
 
-.box-cdev {
-    height: 100%;
-    width: 45%;
-    border: #00eaff 2px solid;
-}
 
 .x {
     height: 100%;
     width: 5%;
-    border: #00eaff 2px solid;
+    /* border: #00eaff 2px solid; */
     color: #BFB8B8;
     font-size: 40px;
     display: flex;
@@ -367,7 +361,7 @@ body {
 }
 
 .card-dev-search {
-    display: none;
+    display: flex;
     height: 73%;
     width: 92%;
     background-color: #ffffff;

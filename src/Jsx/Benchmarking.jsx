@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import logoDevhub from '../html-css-template/imagens/logo-devhub-grey.png';
 import fotoPerfil from '../html-css-template/imagens/foto-perfil.svg';
 import warningSVG from '../html-css-template/imagens/Group 108.svg';
@@ -14,58 +14,113 @@ import '../html-css-template/css/benchmarking.css'
 import { freelasComparacao } from '../Data';
 
 function Benchmarking() {
+
+    const [searchId, setSearchId] = useState('');
+    const [showDevCard, setShowDevCard] = useState(false);
+    const [foundDev, setFoundDev] = useState(null);
+
+    const [searchId2, setSearchId2] = useState('');
+    const [showDevCard2, setShowDevCard2] = useState(false);
+    const [foundDev2, setFoundDev2] = useState(null);
+
+    const handleSearchClick = () => {
+        // Lógica de pesquisa aqui com base no 'searchId'
+        // Atualize o estado ou faça chamadas à API conforme necessário
+        // Exemplo: fazer uma chamada de API fictícia usando fetch
+        // fetch(`sua/api/endpoint/${searchId}`)
+        //     .then(response => response.json())
+        //     .then(data => {
+        //         // Atualize o estado ou faça o que for necessário com os dados da pesquisa
+        //         setShowDevCard(true);
+        //     })
+        //     .catch(error => {
+        //         // Trate os erros, se necessário
+        //         console.error('Erro na pesquisa:', error);
+        //     });
+
+        const devFound = freelasComparacao.find(freelancer => freelancer.id === parseInt(searchId));
+
+
+        if (devFound) {
+            console.log('Desenvolvedor encontrado: ', foundDev)
+            setFoundDev(devFound);
+            setShowDevCard(true);
+
+        } else {
+            console.log('Desenvolvedor não encontrado')
+            setFoundDev(null);
+            setShowDevCard(false);
+        }
+    };
+
+    const handleSearchClick2 = () => {
+        const devFound2 = freelasComparacao.find(freelancer => freelancer.id === parseInt(searchId2));
+
+        if (devFound2) {
+            console.log('2o Desenvolvedor encontrado : ', devFound2);
+            setFoundDev2(devFound2);
+            setShowDevCard2(true);
+        } else {
+            console.log('2o Desenvolvedor NÃO encontrado!!');
+            setFoundDev2(null);
+            setShowDevCard2(false);
+        }
+
+    }
+
+
     return (
         <>
-            <div class="header">
-                <div class="navbar">
+            <div className="header">
+                <div className="navbar">
 
-                    <div class="back">
-                        <div class="icon-menu"><img src="././assets/icon-menu.svg" alt="" width="40px" /></div>
+                    <div className="back">
+                        <div className="icon-menu"><img src="././assets/icon-menu.svg" alt="" width="40px" /></div>
                     </div>
 
-                    <div class="logo-devhub">
+                    <div className="logo-devhub">
                         <img src={logoDevhub} alt="" width="200px" />
                     </div>
-                    <div class="img-profile"><img src={fotoPerfil} width="35px" /></div>
+                    <div className="img-profile"><img src={fotoPerfil} width="35px" /></div>
                 </div>
-                <div class="box-menu">
-                    <div class="search">
-                        <div class="search-tittle">Beanchinmark</div>
+                <div className="box-menu">
+                    <div className="search">
+                        <div className="search-tittle">Beanchinmark</div>
 
                     </div>
 
-                    <div class="sub-menu-section">
-                        <button class="icon1">Limpar</button>
-                        <button class="icon2">Comparar</button>
+                    <div className="sub-menu-section">
+                        <button className="icon1">Limpar</button>
+                        <button className="icon2">Comparar</button>
                     </div>
 
                 </div>
-                <div class="infos-home">
-                    <div class="level-dev">
-                        <div class="level-dev-icons">
-                            <div class="color-level-dev1"></div>
+                <div className="infos-home">
+                    <div className="level-dev">
+                        <div className="level-dev-icons">
+                            <div className="color-level-dev1"></div>
 
-                            <div class="text-level-dev">
-                                <div class="name-level-dev">Dev Senior</div>
-                                <div class="yyyy"> 10 Anos</div>
+                            <div className="text-level-dev">
+                                <div className="name-level-dev">Dev Senior</div>
+                                <div className="yyyy"> 10 Anos</div>
                             </div>
                         </div>
 
-                        <div class="level-dev-icons">
-                            <div class="color-level-dev2"></div>
+                        <div className="level-dev-icons">
+                            <div className="color-level-dev2"></div>
 
-                            <div class="text-level-dev">
-                                <div class="name-level-dev">Dev Pleno</div>
-                                <div class="yyyy"> 10 Anos</div>
+                            <div className="text-level-dev">
+                                <div className="name-level-dev">Dev Pleno</div>
+                                <div className="yyyy"> 10 Anos</div>
                             </div>
                         </div>
 
-                        <div class="level-dev-icons">
-                            <div class="color-level-dev3"></div>
+                        <div className="level-dev-icons">
+                            <div className="color-level-dev3"></div>
 
-                            <div class="text-level-dev">
-                                <div class="name-level-dev">Dev Junior</div>
-                                <div class="yyyy"> 10 Anos</div>
+                            <div className="text-level-dev">
+                                <div className="name-level-dev">Dev Junior</div>
+                                <div className="yyyy"> 10 Anos</div>
                             </div>
                         </div>
 
@@ -73,11 +128,11 @@ function Benchmarking() {
 
                     </div>
 
-                    <div class="info-values">
-                        <div class="icon-info-value">
+                    <div className="info-values">
+                        <div className="icon-info-value">
                             <img src={warningSVG} alt="" />
                         </div>
-                        <div class="text-info-values">Todos os valores de prestação de serviços a baixo são referentes a hora de
+                        <div className="text-info-values">Todos os valores de prestação de serviços a baixo são referentes a hora de
                             trabalho do freelancer.</div>
 
                     </div>
@@ -87,93 +142,152 @@ function Benchmarking() {
 
             </div>
 
-            <div class="container-bench">
-                <div class="box-cdev">
+            <div className="container-bench">
 
-                    <div class="card-dev-search">
-                        <div class="input-tittle">Preencha o ID:</div>
-                        <input type="text" />
-                    </div>
+                <div className="box-cdev">
 
-                    <div class="card-dev">
+                    {showDevCard ? (
+                        <div className="card-dev">
+                            <div className="box" key={foundDev.id}>
+                                <div className="box1">
+                                    <div className="image-free">
+                                        <div className="image-ipt">
+                                            <img src={foundDev.image} width="100%" alt="" />
+                                        </div>
+                                    </div>
+                                    <div className="infos-dev">
+                                        <div className="name">{foundDev.nome}</div>
+                                        <div className="function">{foundDev.funcao}d</div>
+                                        <div className="box-about">
+                                            <div className="tittle-about">Sobre mim:</div>
+                                            <div className="text-about">{foundDev.sobre}</div>
+                                            <div className="box-tecnos">
+                                                <div className="icon-tecno"><img src={javaLogo} alt="" width="35px" />
+                                                </div>
+                                                <div className="icon-tecno"><img src={springLogo} alt="" width="38px" />
+                                                </div>
+                                                <div className="icon-tecno"><img src={azureLogo} alt="" width="35px" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="box2">
+                                    <div className="box-price">
+                                        <div className="tittle-price">Valor por hora: </div>
+                                        <div className="price-value">{foundDev.preco}</div>
+                                    </div>
+                                    <div className="links">
+                                        <div className="social">
+                                            <div className="git-hub-link"> <img src={githubLogo} alt="" width="33px" />
+                                            </div>
+                                            <div className="linkedln-link"><img src={linkedinLogo} alt="" width="33px" />
+                                            </div>
+                                        </div>
+                                    </div>
 
-                    </div>
+                                    <div className="box-contact">
+                                        <div className="score-freelancer">
 
+                                            <div className="box-icon-star">
+                                                <img src={star} alt="" width="100%" />
+                                            </div>
+                                            <div className="box-score-number">
+                                                {foundDev.score}
+                                            </div>
+
+                                        </div>
+                                        <button>Contactar</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="color-level-dev"></div>
+                        </div>
+                    ) : (
+                        <div className="card-dev-search">
+                            <div className="input-tittle">Preencha o ID:</div>
+                            <input
+                                type="text"
+                                value={searchId}
+                                onChange={(e) => setSearchId(e.target.value)}
+                            />
+                            <button onClick={handleSearchClick}>Pesquisar</button>
+                        </div>
+                    )}
                 </div>
 
-                <div class="x">x</div>
+                <div className="x">x</div>
 
-                <div class="box-cdev">
-                    
-                    
-                    <div class="card-dev-search">
-                        <div class="input-tittle">Preencha o ID:</div>
-                        <input type="text" />
-                    </div>
+                <div className="box-cdev">
 
-                    <div class="card-dev">
-                        {freelasComparacao.map((freelancer) => {
-                            return (
-                                <div class="box" key={freelancer.id}>
-                                    <div class="box1">
-                                        <div class="image-free">
-                                            <div class="image-ipt">
-                                                <img src={fotoPerfil} width="100%" alt="" />
-                                            </div>
+                    {showDevCard2 ? (
+                        <div className="card-dev">
+                            <div className="box" key={foundDev2.id}>
+                                <div className="box1">
+                                    <div className="image-free">
+                                        <div className="image-ipt">
+                                            <img src={foundDev2.image} width="100%" alt="" />
                                         </div>
-                                        <div class="infos-dev">
-                                            <div class="name">{freelancer.nome}</div>
-                                            <div class="function">{freelancer.funcao}d</div>
-                                            <div class="box-about">
-                                                <div class="tittle-about">Sobre mim:</div>
-                                                <div class="text-about">{freelancer.sobre}</div>
-                                                <div class="box-tecnos">
-                                                    <div class="icon-tecno"><img src={javaLogo} alt="" width="35px" />
-                                                    </div>
-                                                    <div class="icon-tecno"><img src={springLogo} alt="" width="38px" />
-                                                    </div>
-                                                    <div class="icon-tecno"><img src={azureLogo} alt="" width="35px" />
-                                                    </div>
+                                    </div>
+                                    <div className="infos-dev">
+                                        <div className="name">{foundDev2.nome}</div>
+                                        <div className="function">{foundDev2.funcao}d</div>
+                                        <div className="box-about">
+                                            <div className="tittle-about">Sobre mim:</div>
+                                            <div className="text-about">{foundDev2.sobre}</div>
+                                            <div className="box-tecnos">
+                                                <div className="icon-tecno"><img src={javaLogo} alt="" width="35px" />
+                                                </div>
+                                                <div className="icon-tecno"><img src={springLogo} alt="" width="38px" />
+                                                </div>
+                                                <div className="icon-tecno"><img src={azureLogo} alt="" width="35px" />
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="box2">
-                                        <div class="box-price">
-                                            <div class="tittle-price">Valor por hora: </div>
-                                            <div class="price-value">{freelancer.preco}</div>
-                                        </div>
-                                        <div class="links">
-                                            <div class="social">
-                                                <div class="git-hub-link"> <img src={githubLogo} alt="" width="33px" />
-                                                </div>
-                                                <div class="linkedln-link"><img src={linkedinLogo} alt="" width="33px" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="box-contact">
-                                            <div class="score-freelancer">
-
-                                                <div class="box-icon-star">
-                                                    <img src={star} alt="" width="100%" />
-                                                </div>
-                                                <div class="box-score-number">
-                                                    {freelancer.score}
-                                                </div>
-
-                                            </div>
-                                            <button>Contactar</button>
-                                        </div>
-                                    </div>
-
-
                                 </div>
-                            )
-                        })}
-                        <div class="color-level-dev"></div>
-                    </div>
+                                <div className="box2">
+                                    <div className="box-price">
+                                        <div className="tittle-price">Valor por hora: </div>
+                                        <div className="price-value">{foundDev2.preco}</div>
+                                    </div>
+                                    <div className="links">
+                                        <div className="social">
+                                            <div className="git-hub-link"> <img src={githubLogo} alt="" width="33px" />
+                                            </div>
+                                            <div className="linkedln-link"><img src={linkedinLogo} alt="" width="33px" />
+                                            </div>
+                                        </div>
+                                    </div>
 
+                                    <div className="box-contact">
+                                        <div className="score-freelancer">
+
+                                            <div className="box-icon-star">
+                                                <img src={star} alt="" width="100%" />
+                                            </div>
+                                            <div className="box-score-number">
+                                                {foundDev2.score}
+                                            </div>
+
+                                        </div>
+                                        <button>Contactar</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="color-level-dev "></div>
+                        </div>
+                    ) : (
+                        <div className="card-dev-search">
+                            <div className="input-tittle">Preencha o Segundo ID:</div>
+                            <input
+                                type="text"
+                                value={searchId2}
+                                onChange={(e) => setSearchId2(e.target.value)}
+                            />
+                            <button onClick={handleSearchClick2}>Pesquisar</button>
+                        </div>
+                    )}
                 </div>
 
             </div>
