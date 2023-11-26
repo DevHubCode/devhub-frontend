@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { freelancers } from '../Data';
 import logoutIcon from '../html-css-template/imagens/icon-logout.png';
 import logoDevhub from '../html-css-template/imagens/logo-devhub-grey.png';
@@ -9,6 +9,15 @@ import star from '../html-css-template/imagens/icon-star.png';
 import '../html-css-template/css/home.css'
 
 function Home() {
+
+    const [ searchDev, setSearchDev ] = useState('');
+
+    const filteredDevs = freelancers.filter(
+        (freelancer) => 
+        freelancer.nome.toLowerCase().includes(searchDev.toLowerCase()) ||
+        freelancer.id.toString().includes(searchDev)
+    )
+
     return (
         <>
             <div className="header">
@@ -32,7 +41,11 @@ function Home() {
                     <div className="search">
                         <div className="search-tittle">Encontre seu Freela</div>
                         <div className="search-input">
-                            <input type="text" />
+                            <input 
+                                type="text"
+                                value={searchDev}
+                                onChange={(e) => setSearchDev(e.target.value)}
+                            />
                         </div>
                     </div>
 
@@ -86,39 +99,43 @@ function Home() {
 
                 </div>
             </div>
-            <div classNameName="header-icons">
-                {freelancers.map((freelancer) => {
-                    return (
-                        <div className="box-freelancer" key={freelancer.id}>
-                            <div className="image-freelancer" >
-
-                                <div className="score-freelancer">
-
-                                    <div className="box-icon-star">
-                                        <img src={star} alt="" width="100%" />
+            <div className="header-icons">
+                {filteredDevs.length > 0 ? (
+                    filteredDevs.map((freelancer) => {
+                        return (
+                            <div className="box-freelancer" key={freelancer.id}>
+                                <div className="image-freelancer" >
+    
+                                    <div className="score-freelancer">
+    
+                                        <div className="box-icon-star">
+                                            <img src={star} alt="" width="100%" />
+                                        </div>
+                                        <div className="box-score-number">
+                                            {freelancer.score}
+                                        </div>
+    
                                     </div>
-                                    <div className="box-score-number">
-                                        {freelancer.score}
+                                </div>
+                                <div className="box-information">
+                                    <div className="box-classification">
+    
                                     </div>
-
+                                    <div className="box-aux">
+                                        <div className="box-name-age">
+                                            {freelancer.nome}, {freelancer.idade}.
+                                        </div>
+                                        <div className="box-price">
+                                            R$ {freelancer.preco}
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div className="box-information">
-                                <div className="box-classification">
-
-                                </div>
-                                <div className="box-aux">
-                                    <div className="box-name-age">
-                                        {freelancer.nome}, {freelancer.idade}.
-                                    </div>
-                                    <div className="box-price">
-                                        R$ {freelancer.preco}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    )
-                })}
+                        )
+                    })
+                ) : (
+                    <div className="no-results-message">Nenhum desenvolvedor encontrado.</div>
+                )}
             </div>
         </>
     )
