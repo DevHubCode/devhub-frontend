@@ -7,16 +7,23 @@ import Cadastro from './Jsx/Cadastro.jsx';
 import Login from './Jsx/Login.jsx';
 import Logout from './Jsx/Logout.jsx';
 import Especialidades from "./Jsx/Especialidades.jsx";
+import Home from "./Jsx/Home.jsx";
+import Benchmarking from "./Jsx/Benchmarking.jsx";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-      <Route path="/cadastro" element={<Cadastro />} ></Route>
+
+        <Route path="/home" element={<Home />} />
+
+        <Route path="/cadastro" element={<Cadastro />} ></Route>
         <Route path="/login" element={<Login />} ></Route>
         <Route path="/logout" element={<Logout />} ></Route>
         <Route path="/especialidades" element={<Especialidades />} ></Route>
+        <Route path="/benchmarking" element={<Benchmarking />} />
+        
       </Routes>
     </BrowserRouter>
 
