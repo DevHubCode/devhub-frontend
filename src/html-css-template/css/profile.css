@@ -8,7 +8,7 @@
 
     width: 100%;
 
-    background-color: #E5F1F2;
+    background-color: #f2f7f7;
 
     display: flex;
 
@@ -20,10 +20,11 @@
 
 .freela-navbar {
     display: flex;
-    background-color: #0C0C0C;
+    background-color: #ffffff;
     height: 15%;
     width: 100%;
     /* border: 4px solid rgb(201, 11, 11); */
+    box-shadow: 0px 3px 8px 0px #ebebebbd;
 }
 
 
@@ -47,8 +48,12 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100%;
-      width: 38%;
+      height: 90%;
+      width: 37%;
+      margin-top: 2%;
+      margin-left: 2%;
+      border-radius: 10px;
+      box-shadow: 0px 3px 8px 0px #6d6d6dbd;
       /* border: 4px solid rgb(43, 175, 17); */
 }
 
@@ -201,7 +206,7 @@
     margin-top: 75%;
     width: 30%;
     height: 9%;
-    background-color: rgba(0, 0, 0, 0.freela-875);
+    background-color: rgba(0, 0, 0, 0.875);
     border-radius: 4px;
 }
 .freela-icon-star{
@@ -233,7 +238,7 @@
     font-family:"Poppins";
     font-size: 22px;
     font-weight: 200;
-    color: white;
+    color: rgb(185, 185, 185);
     /* border: 3px solid white; */
 }
 .freela-icon-back{
@@ -276,7 +281,7 @@
     font-family:"Poppins";
     font-size: 22px;
     font-weight: 200;
-     color: rgba(30, 30, 30, 0.freela-444);
+     color: rgba(30, 30, 30, 0.444);
     /* border: 3px solid white; */
 } 
 .freela-box-tecnos{
@@ -309,7 +314,7 @@
 .freela-tittle-about{
     font-size: 22px;
     font-weight: 700;
-     color: rgba(30, 30, 30, 0.freela-64);
+     color: rgba(30, 30, 30, 0.64);
     height: 20%;
     width: 90%;
     font-size:25px;

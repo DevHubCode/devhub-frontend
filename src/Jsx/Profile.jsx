@@ -2,12 +2,12 @@ import React from 'react'
 
 import '../html-css-template/css/profile.css';
 import { freelasComparacao } from '../Data';
-
+import foto from "../html-css-template/imagens/image-edficio=devhub.svg"
 import linkedinLogo from '../html-css-template/imagens/LInkdln-logo.svg';
 import githubLogo from '../html-css-template/imagens/github-logo.svg';
 import star from '../html-css-template/imagens/icon-star.png';
-import arrowLeft from '../html-css-template/imagens/arrow-left.svg';
-import logoDevhub from '../html-css-template/imagens/logo-devhub-grey.png';
+import arrowLeft from '../html-css-template/imagens/arrow-left (2).svg';
+import logoDevhub from '../html-css-template/imagens/logo-devhub-white.svg';
 import { useState, useEffect } from 'react';
 import { useParams, } from 'react-router-dom';
 import api from '../api';
