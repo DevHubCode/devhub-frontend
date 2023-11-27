@@ -1,7 +1,4 @@
-import "./html-css-template/css/style.css";
-import "./html-css-template/css/reset.css";
-import "./html-css-template/css/cadastro.css"
-import "./html-css-template/css/especialidades.css"
+
 import "./script.js";
 import Cadastro from './Jsx/Cadastro.jsx';
 import Login from './Jsx/Login.jsx';
@@ -9,6 +6,7 @@ import Logout from './Jsx/Logout.jsx';
 import Especialidades from "./Jsx/Especialidades.jsx";
 import Home from "./Jsx/Home.jsx";
 import Benchmarking from "./Jsx/Benchmarking.jsx";
+import Profile from "./Jsx/Profile.jsx";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
@@ -23,6 +21,7 @@ function App() {
         <Route path="/logout" element={<Logout />} ></Route>
         <Route path="/especialidades" element={<Especialidades />} ></Route>
         <Route path="/benchmarking" element={<Benchmarking />} />
+        <Route path="/profile/:id" element={<Profile />} />
         
       </Routes>
     </BrowserRouter>

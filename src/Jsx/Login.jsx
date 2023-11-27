@@ -5,6 +5,7 @@ import logoDevhubBranco from "../html-css-template/imagens/Group 85.svg"
 import api from "../api.js"
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+import '../html-css-template/css/reset.css'
 
 function Login() {
 

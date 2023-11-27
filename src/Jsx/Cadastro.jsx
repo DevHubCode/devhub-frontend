@@ -5,6 +5,7 @@ import api from "../api.js"
 import Swal from "sweetalert2";
 import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
+import '../html-css-template/css/cadastro.css'
 
 
 function Cadastrar() {

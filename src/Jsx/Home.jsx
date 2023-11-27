@@ -16,7 +16,9 @@ function Home() {
         (freelancer) => 
         freelancer.nome.toLowerCase().includes(searchDev.toLowerCase()) ||
         freelancer.id.toString().includes(searchDev)
-    )
+    );
+
+    
 
     return (
         <>

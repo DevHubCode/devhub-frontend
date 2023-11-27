@@ -8,6 +8,7 @@ import javaLogo from '../html-css-template/imagens/java-logo.svg'
 import springLogo from '../html-css-template/imagens/spring-logo.svg'
 import azureLogo from '../html-css-template/imagens/azure-logo.svg'
 import star from '../html-css-template/imagens/icon-star.png';
+import { Link, useNavigate } from 'react-router-dom';
 
 import '../html-css-template/css/benchmarking.css'
 
@@ -23,26 +24,28 @@ function Benchmarking() {
     const [showDevCard2, setShowDevCard2] = useState(false);
     const [foundDev2, setFoundDev2] = useState(null);
 
+    const navigate = useNavigate();
+
     const handleSearchClick = () => {
         // Lógica de pesquisa aqui com base no 'searchId'
         // Atualize o estado ou faça chamadas à API conforme necessário
         // Exemplo: fazer uma chamada de API fictícia usando fetch
-        // fetch(`sua/api/endpoint/${searchId}`)
-        //     .then(response => response.json())
-        //     .then(data => {
-        //         // Atualize o estado ou faça o que for necessário com os dados da pesquisa
-        //         setShowDevCard(true);
-        //     })
-        //     .catch(error => {
-        //         // Trate os erros, se necessário
-        //         console.error('Erro na pesquisa:', error);
-        //     });
+        fetch(`sua/api/endpoint/${searchId}`)
+            .then(response => response.json())
+            .then(data => {
+                // Atualize o estado ou faça o que for necessário com os dados da pesquisa
+                setShowDevCard(true);
+            })
+            .catch(error => {
+                // Trate os erros, se necessário
+                console.error('Erro na pesquisa:', error);
+            });
 
         const devFound = freelasComparacao.find(freelancer => freelancer.id === parseInt(searchId));
 
 
         if (devFound) {
-            console.log('Desenvolvedor encontrado: ', foundDev)
+            console.log('Desenvolvedor encontrado: ', devFound)
             setFoundDev(devFound);
             setShowDevCard(true);
 
@@ -66,6 +69,19 @@ function Benchmarking() {
             setShowDevCard2(false);
         }
 
+    }
+
+    const handleContactLink = () => {
+        if (foundDev && foundDev.id) {
+            console.log('1o Dev foi escolhido: >>', foundDev);
+            navigate(`/profile/${foundDev.id}`);
+        } else if (foundDev2 && foundDev2.id) {
+            console.log('2o Dev foi o escolhido: >>', foundDev2);
+            navigate(`/profile/${foundDev2.id}`);
+        } else {
+            console.log('Nenhum desenvolvedor encontrado para contato.');
+            // Handle the case where no developer is found for contact
+        }
     }
 
 
@@ -197,7 +213,7 @@ function Benchmarking() {
                                             </div>
 
                                         </div>
-                                        <button>Contactar</button>
+                                        <button onClick={() => handleContactLink(foundDev)}>Contactar</button>
                                     </div>
                                 </div>
                             </div>
@@ -271,7 +287,9 @@ function Benchmarking() {
                                             </div>
 
                                         </div>
-                                        <button>Contactar</button>
+                                        
+                                        <button onClick={() => handleContactLink(foundDev2)}>Contactar</button>
+                                       
                                     </div>
                                 </div>
                             </div>
