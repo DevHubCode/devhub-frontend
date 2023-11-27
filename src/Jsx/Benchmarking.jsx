@@ -30,16 +30,16 @@ function Benchmarking() {
         // Lógica de pesquisa aqui com base no 'searchId'
         // Atualize o estado ou faça chamadas à API conforme necessário
         // Exemplo: fazer uma chamada de API fictícia usando fetch
-        fetch(`sua/api/endpoint/${searchId}`)
-            .then(response => response.json())
-            .then(data => {
-                // Atualize o estado ou faça o que for necessário com os dados da pesquisa
-                setShowDevCard(true);
-            })
-            .catch(error => {
-                // Trate os erros, se necessário
-                console.error('Erro na pesquisa:', error);
-            });
+        // fetch(`sua/api/endpoint/${searchId}`)
+        //     .then(response => response.json())
+        //     .then(data => {
+        //         // Atualize o estado ou faça o que for necessário com os dados da pesquisa
+        //         setShowDevCard(true);
+        //     })
+        //     .catch(error => {
+        //         // Trate os erros, se necessário
+        //         console.error('Erro na pesquisa:', error);
+        //     });
 
         const devFound = freelasComparacao.find(freelancer => freelancer.id === parseInt(searchId));
 

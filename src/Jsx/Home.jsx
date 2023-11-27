@@ -18,6 +18,20 @@ function Home() {
         freelancer.id.toString().includes(searchDev)
     );
 
+    const getSeniorityColor = (senioridade) => {
+        switch (senioridade) {
+            case 'Pleno':
+                return 'pleno-color';
+            case 'Sênior':
+                return 'senior-color';
+            case 'Junior':
+                return 'junior-color';
+            default:
+                return '';
+
+        }
+    };
+
     
 
     return (
@@ -104,6 +118,9 @@ function Home() {
             <div className="home-header-icons">
                 {filteredDevs.length > 0 ? (
                     filteredDevs.map((freelancer) => {
+
+                        const seniorityColorClass = getSeniorityColor(freelancer.senioridade)
+
                         return (
                             <div className="home-box-freelancer" key={freelancer.id}>
                                 <div className="home-image-freelancer" >
@@ -120,7 +137,7 @@ function Home() {
                                     </div>
                                 </div>
                                 <div className="home-box-information">
-                                    <div className="home-box-classification">
+                                    <div className={`home-box-classification ${seniorityColorClass}`}>
     
                                     </div>
                                     <div className="home-box-aux">
@@ -128,7 +145,7 @@ function Home() {
                                             {freelancer.nome}, {freelancer.idade}.
                                         </div>
                                         <div className="home-box-price">
-                                            R$ {freelancer.preco}
+                                            R$ {freelancer.valor_hora}
                                         </div>
                                     </div>
                                 </div>

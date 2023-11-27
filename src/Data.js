@@ -1,88 +1,221 @@
 import freelaImage from "./html-css-template/imagens/foto-modelo-1.png"
 
+// export const freelancers = [
+//     {
+//         id: 1,
+//         nome: 'Sabotage',
+//         cpf: '123.456.789-01',
+//         telefone: '11223344556',
+//         email: 'sabotage@email.com',
+//         senha: 'senha123',
+//         contratacoes: 0,
+//         funcao: 'Desenvolvedor Front-End',
+//         valor_hora: 179.99,
+//         senioridade: null,
+//         imagem: freelaImage,
+//         github: null,
+//         linkedin: null,
+//         descricao: 'Descrição do freelancer 1'
+//     },
+//     {
+//         id: 2,
+//         nome: 'Antonio',
+//         cpf: '234.567.890-12',
+//         telefone: '11223344557',
+//         email: 'antonio@email.com',
+//         senha: 'senha456',
+//         contratacoes: 0,
+//         funcao: 'Desenvolvedor Full-Stack',
+//         valor_hora: 129.99,
+//         senioridade: null,
+//         imagem: freelaImage,
+//         github: null,
+//         linkedin: null,
+//         descricao: 'Descrição do freelancer 2'
+//     },
+//     {
+//         id: 3,
+//         nome: 'Geovana',
+//         cpf: '345.678.901-23',
+//         telefone: '11223344558',
+//         email: 'geovana@email.com',
+//         senha: 'senha789',
+//         contratacoes: 0,
+//         funcao: 'Desenvolvedor Front-End',
+//         valor_hora: 200,
+//         senioridade: null,
+//         imagem: freelaImage,
+//         github: null,
+//         linkedin: null,
+//         descricao: 'Descrição do freelancer 3'
+//     },
+//     {
+//         id: 4,
+//         image: freelaImage,
+//         score: '4,29',
+//         nome: 'Anderson',
+//         idade: '27',
+//         preco: '150,99',
+//         funcao: 'Desenvolvedor Back-End'
+//     },
+//     {
+//         id: 5,
+//         image: freelaImage,
+//         score: '4,99',
+//         nome: 'Mauricio',
+//         idade: '33',
+//         preco: '189,99',
+//         funcao: 'Desenvolvedor Full-Stack'
+//     },
+//     {
+//         id: 6,
+//         image: freelaImage,
+//         score: '4,85',
+//         nome: 'Sabotage',
+//         idade: '33',
+//         preco: '179,99',
+//         funcao: 'Desenvolvedor Front-End'
+//     },
+//     {
+//         id: 7,
+//         image: freelaImage,
+//         score: '4,85',
+//         nome: 'Sabotage',
+//         idade: '33',
+//         preco: '179,99',
+//         funcao: 'Desenvolvedor Back-End'
+//     },
+//     {
+//         id: 8,
+//         image: freelaImage,
+//         score: '4,85',
+//         nome: 'Sabotage',
+//         idade: '33',
+//         preco: '179,99',
+//         funcao: 'Desenvolvedor Full-Stack'
+//     },
+//     {
+//         id: 9,
+//         image: freelaImage,
+//         score: '4,85',
+//         nome: 'Sabotage',
+//         idade: '33',
+//         preco: '179,99',
+//         funcao: 'Desenvolvedor Front-End'
+//     }
+// ]
+
 export const freelancers = [
     {
         id: 1,
-        image: freelaImage,
-        score: '4,85',
         nome: 'Sabotage',
-        idade: '33',
-        preco: '179,99',
-        funcao: 'Desenvolvedor Front-End'
+        cpf: '123.456.789-01',
+        telefone: '11223344556',
+        email: 'sabotage@email.com',
+        senha: 'senha123',
+        contratacoes: 0,
+        funcao: 'Desenvolvedor Front-End',
+        valor_hora: 179.99,
+        senioridade: 'Pleno',
+        image: freelaImage,
+        github: null,
+        linkedin: null,
+        descricao: 'Descrição do freelancer 1',
+        score: '4,29',
+        idade: '33'
     },
     {
         id: 2,
-        image: freelaImage,
-        score: '3,25',
         nome: 'Antonio',
-        idade: '23',
-        preco: '129,99',
-        funcao: 'Desenvolvedor Full-Stack'
+        cpf: '234.567.890-12',
+        telefone: '11223344557',
+        email: 'antonio@email.com',
+        senha: 'senha456',
+        contratacoes: 0,
+        funcao: 'Desenvolvedor Full-Stack',
+        valor_hora: 129.99,
+        senioridade: 'Pleno',
+        image: freelaImage,
+        github: null,
+        linkedin: null,
+        descricao: 'Descrição do freelancer 2',
+        score: '4,29',
+        idade: '33'
     },
     {
         id: 3,
-        image: freelaImage,
-        score: '5,00',
         nome: 'Geovana',
-        idade: '35',
-        preco: '200',
-        funcao: 'Desenvolvedor Front-End'
+        cpf: '345.678.901-23',
+        telefone: '11223344558',
+        email: 'geovana@email.com',
+        senha: 'senha789',
+        contratacoes: 0,
+        funcao: 'Desenvolvedor Front-End',
+        valor_hora: 200,
+        senioridade: 'Junior',
+        image: freelaImage,
+        github: null,
+        linkedin: null,
+        descricao: 'Descrição do freelancer 3',
+        score: '4,29',
+        idade: '33'
     },
     {
         id: 4,
-        image: freelaImage,
-        score: '4,29',
         nome: 'Anderson',
-        idade: '27',
-        preco: '150,99',
-        funcao: 'Desenvolvedor Back-End'
+        cpf: '456.789.012-34',
+        telefone: '11223344559',
+        email: 'anderson@email.com',
+        senha: 'senha987',
+        contratacoes: 0,
+        funcao: 'Desenvolvedor Back-End',
+        valor_hora: 150.99,
+        senioridade: 'Junior',
+        image: freelaImage,
+        github: null,
+        linkedin: null,
+        descricao: 'Descrição do freelancer 4',
+        score: '4,29',
+        idade: '33'
     },
     {
         id: 5,
-        image: freelaImage,
-        score: '4,99',
         nome: 'Mauricio',
-        idade: '33',
-        preco: '189,99',
-        funcao: 'Desenvolvedor Full-Stack'
+        cpf: '567.890.123-45',
+        telefone: '11223344560',
+        email: 'mauricio@email.com',
+        senha: 'senha654',
+        contratacoes: 0,
+        funcao: 'Desenvolvedor Full-Stack',
+        valor_hora: 189.99,
+        senioridade: 'Sênior',
+        image: freelaImage,
+        github: null,
+        linkedin: null,
+        descricao: 'Descrição do freelancer 5',
+        score: '4,29',
+        idade: '33'
     },
     {
         id: 6,
+        nome: 'Outro Nome',
+        cpf: '678.901.234-56',
+        telefone: '11223344561',
+        email: 'outro@email.com',
+        senha: 'senha321',
+        contratacoes: 0,
+        funcao: 'Desenvolvedor Front-End',
+        valor_hora: 179.99,
+        senioridade: 'Sênior',
         image: freelaImage,
-        score: '4,85',
-        nome: 'Sabotage',
-        idade: '33',
-        preco: '179,99',
-        funcao: 'Desenvolvedor Front-End'
+        github: null,
+        linkedin: null,
+        descricao: 'Descrição do freelancer 6',
+        score: '4,29',
+        idade: '33'
     },
-    {
-        id: 7,
-        image: freelaImage,
-        score: '4,85',
-        nome: 'Sabotage',
-        idade: '33',
-        preco: '179,99',
-        funcao: 'Desenvolvedor Back-End'
-    },
-    {
-        id: 8,
-        image: freelaImage,
-        score: '4,85',
-        nome: 'Sabotage',
-        idade: '33',
-        preco: '179,99',
-        funcao: 'Desenvolvedor Full-Stack'
-    },
-    {
-        id: 9,
-        image: freelaImage,
-        score: '4,85',
-        nome: 'Sabotage',
-        idade: '33',
-        preco: '179,99',
-        funcao: 'Desenvolvedor Front-End'
-    }
-]
+];
+
 
 export const freelasComparacao = [
     {
