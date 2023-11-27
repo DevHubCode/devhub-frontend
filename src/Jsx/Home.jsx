@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { freelancers } from '../Data';
 import logoutIcon from '../html-css-template/imagens/icon-logout.png';
 import logoDevhub from '../html-css-template/imagens/logo-devhub-grey.png';
@@ -6,11 +6,33 @@ import fotoPerfil from '../html-css-template/imagens/foto-perfil.svg';
 import warningSVG from '../html-css-template/imagens/Group 108.svg';
 import star from '../html-css-template/imagens/icon-star.png';
 
+import api from '../api';
+
 import '../html-css-template/css/home.css'
 
 function Home() {
 
     const [ searchDev, setSearchDev ] = useState('');
+
+    // const [freelancers, setFreelancers] = useState([]);
+    // const [loading, setLoading] = useState(true);
+
+    // useEffect(() => {
+    //     // Função assincrona para buscar os freelancers na API
+
+    //     const fetchFreelancers = async () => {
+    //         try {
+    //             const response = await api.get(`url_aqui/freelancer`)
+    //             setFreelancers(response.data);
+    //             setLoading(false);
+    //         } catch (error) {
+    //             console.error('Erro ao buscar freelancer >>: ', error);
+    //             setLoading(false)
+    //         }
+    //     }
+
+    //     fetchFreelancers();
+    // }, []) 
 
     const filteredDevs = freelancers.filter(
         (freelancer) => 
@@ -116,7 +138,11 @@ function Home() {
                 </div>
             </div>
             <div className="home-header-icons">
-                {filteredDevs.length > 0 ? (
+                { 
+                // loading ? (
+                //     <div>Carregando...</div>
+                // ) :                    
+                filteredDevs.length > 0 ? (
                     filteredDevs.map((freelancer) => {
 
                         const seniorityColorClass = getSeniorityColor(freelancer.senioridade)
