@@ -83,7 +83,7 @@ function Especialidades() {
                     <div className="logo">
                         <img src={logoDevhubBranco} alt="loogo DevHub" />
                     </div>
-                    <div className="slogan">
+                    <div className="sloganX">
                         &copy; 2023 ; todos os direitos reservados By DevHub Enterprise
                     </div>
                 </div>

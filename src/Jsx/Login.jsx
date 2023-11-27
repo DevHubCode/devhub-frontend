@@ -1,10 +1,10 @@
 import React from "react";
-import ReactDOM from 'react-dom/client';
 import setaEsquerda from "../html-css-template/imagens/arrow-left.svg"
 import logoDevhubBranco from "../html-css-template/imagens/Group 85.svg"
 import api from "../api.js"
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+
 import '../html-css-template/css/reset.css'
 
 function Login() {
@@ -67,7 +67,7 @@ function Login() {
                     <div className="logo">
                         <img src={logoDevhubBranco} alt="loogo DevHub" />
                     </div>
-                    <div className="slogan">
+                    <div className="sloganX">
                         &copy; 2023 ; todos os direitos reservados By DevHub Enterprise
                     </div>
                 </div>

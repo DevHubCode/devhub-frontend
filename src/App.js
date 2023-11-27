@@ -1,4 +1,3 @@
-
 import "./script.js";
 import Cadastro from './Jsx/Cadastro.jsx';
 import Login from './Jsx/Login.jsx';

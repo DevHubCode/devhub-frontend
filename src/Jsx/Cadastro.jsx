@@ -6,6 +6,7 @@ import Swal from "sweetalert2";
 import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import '../html-css-template/css/cadastro.css'
+import "../html-css-template/css/reset.css"
 
 
 function Cadastrar() {
@@ -197,7 +198,7 @@ function Cadastrar() {
                     <div className="logo">
                         <img src={logoDevhubBranco} alt="loogo DevHub" />
                     </div>
-                    <div className="slogan">
+                    <div className="sloganX">
                         &copy; 2023 ; todos os direitos reservados By DevHub Enterprise
                     </div>
                 </div>
