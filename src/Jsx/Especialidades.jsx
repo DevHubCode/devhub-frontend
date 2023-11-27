@@ -75,10 +75,6 @@ function Especialidades() {
         <>
             <div className="body-login">
                 <div className="block-1">
-                    <div className="voltar">
-                        <img src={setaEsquerda} alt="seta" />
-                        Inicio
-                    </div>
                     <div className="frase">Proporcionando encontros entre demanda e competência.</div>
                     <div className="logo">
                         <img src={logoDevhubBranco} alt="loogo DevHub" />

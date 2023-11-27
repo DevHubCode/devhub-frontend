@@ -112,11 +112,13 @@ function Cadastrar() {
                                     sessionStorage.setItem("id", response.data.id)
                                     sessionStorage.setItem("nome", response.data.nome)
                                     sessionStorage.setItem("email", response.data.email)
+                                    sessionStorage.setItem("role", response.data.role)
                                     navigate("/especialidades");
                                 } else {
                                     sessionStorage.setItem("id", response.data.id)
                                     sessionStorage.setItem("nome", response.data.nome)
                                     sessionStorage.setItem("email", response.data.email)
+                                    sessionStorage.setItem("role", response.data.role)
                                     navigate("/especialidades");
                                 }
                             });
@@ -164,9 +166,17 @@ function Cadastrar() {
                             }).then((result) => {
                                 if (result.isConfirmed) {
                                     // Redireciona para a página de login somente quando o botão for clicado
-                                    window.location.href = '/login';
+                                    sessionStorage.setItem("id", response.data.id)
+                                    sessionStorage.setItem("nome", response.data.nome)
+                                    sessionStorage.setItem("email", response.data.email)
+                                    sessionStorage.setItem("role", response.data.role)
+                                    window.location.href = '/imagem';
                                 } else {
-                                    window.location.href = '/login';
+                                    sessionStorage.setItem("id", response.data.id)
+                                    sessionStorage.setItem("nome", response.data.nome)
+                                    sessionStorage.setItem("email", response.data.email)
+                                    sessionStorage.setItem("role", response.data.role)
+                                    window.location.href = '/imagem';
                                 }
                             });
                         }).catch(error => {
@@ -185,12 +195,16 @@ function Cadastrar() {
         }
     }
 
+    function inicio(){
+        window.location.href = '/';
+    }
+
 
     return (
         <>
             <div className="body-cadastro">
                 <div className="block-1">
-                    <div className="voltar">
+                    <div className="voltar" onClick={inicio}>
                         <img src={setaEsquerda} alt="seta" />
                         Inicio
                     </div>

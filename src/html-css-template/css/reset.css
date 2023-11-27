@@ -50,6 +50,7 @@ table {
   align-items: center;
   padding-left: 5%;
   padding-top: 1%;
+  cursor: pointer;
 }
 .voltar img{
   margin-top: 1%;
@@ -95,7 +96,7 @@ padding-left: 7%;
   align-items: center;
   justify-content: center;
   margin-right: 0px;
-  margin-left: 27%;
+  margin-left: 1%;
   padding: 0px;
  
 }

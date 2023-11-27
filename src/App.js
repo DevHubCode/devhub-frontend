@@ -7,6 +7,7 @@ import Home from "./Jsx/Home.jsx";
 import Benchmarking from "./Jsx/Benchmarking.jsx";
 import Profile from "./Jsx/Profile.jsx";
 import Inicial from "./Jsx/Inicial.jsx";
+import TelaImagem from "./Jsx/ColocarImagem.jsx"
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route path="/home" element={<Home />} />
 
         <Route path="/cadastro" element={<Cadastro />} ></Route>
+        <Route path="/imagem" element={<TelaImagem />} ></Route>
         <Route path="/" element={<Inicial />} ></Route>
         <Route path="/login" element={<Login />} ></Route>
         <Route path="/logout" element={<Logout />} ></Route>

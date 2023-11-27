@@ -37,7 +37,14 @@ function Login() {
                             sessionStorage.setItem("nome", response.data.nome)
                             sessionStorage.setItem("email", response.data.email)
                             sessionStorage.setItem("token", response.data.token)
-                            navigate('/logout');
+                            sessionStorage.setItem("role", response.data.role)
+                            sessionStorage.setItem("imagem", response.data.imagem)
+                            if(response.data.role == "CONTRATANTE"){
+                                navigate('/home');
+                            }else{
+                                navigate(`/profile/${response.data.id}`)
+                            }
+                            
                           console.log("O usuário clicou em OK!");
                         }
                       });
@@ -55,12 +62,17 @@ function Login() {
         }
     }
 
+    function inicio(){
+        window.location.href = '/';
+    }
+
+
     return (
         <>
             <div className="body-login">
                 <div className="block-1">
-                    <div className="voltar">
-                        <img src={setaEsquerda} alt="seta" />
+                    <div className="voltar" onClick={inicio}>
+                        <img src={setaEsquerda} alt="seta"/>
                         Inicio
                     </div>
                     <div className="frase">Proporcionando encontros entre demanda e competência.</div>
@@ -94,106 +106,3 @@ function Login() {
 }
 
 export default Login;
-
-const linguagensDeProgramacao = [
-    'JavaScript',
-    'Python',
-    'Java',
-    'C#',
-    'C++',
-    'TypeScript',
-    'Ruby',
-    'Swift',
-    'Kotlin',
-    'Go',
-    'PHP',
-    'HTML/CSS',
-    'Objective-C',
-    'Rust',
-    'MATLAB',
-    'Shell',
-    'R',
-    'Scala',
-    'Dart',
-    'Groovy',
-    'Lua',
-    'Perl',
-    'MATLAB',
-    'Shell Script',
-    'Haskell',
-    'Assembly',
-    'COBOL',
-    'Fortran',
-    'Ada',
-    'Lisp',
-    'Scheme',
-    'Prolog',
-    'SQL',
-    'Erlang',
-    'Clojure',
-    'Apex',
-    'ABAP',
-    'Visual Basic',
-    'PowerShell',
-    'Delphi',
-    'F#',
-    'ActionScript',
-    'Dart',
-    'ColdFusion',
-    'Objective-C',
-    'VHDL',
-    'Verilog',
-    'Julia',
-    'Crystal',
-    'COOL',
-    'Kotlin',
-    'Factor',
-    'Forth',
-    'Groovy',
-    'Scratch',
-    'Ada',
-    'J',
-    'COQ',
-    'Alice',
-    'Simula',
-    'Pascal',
-    'PL/I',
-    'Ada',
-    'Algol',
-    'APL',
-    'Bash',
-    'Eiffel',
-    'Forth',
-    'FoxPro',
-    'HTML',
-    'IDL',
-    'Inform',
-    'JCL',
-    'JavaFX Script',
-    'JScript',
-    'LotusScript',
-    'ML',
-    'Modula',
-    'MUMPS',
-    'Objective-C',
-    'OpenCL',
-    'OpenGL Shading Language',
-    'Oz',
-    'Paradox',
-    'PostScript',
-    'Promela',
-    'Python',
-    'Q',
-    'RPG',
-    'Ruby',
-    'Rust',
-    'S',
-    'SAS',
-    'SPARK',
-    'SQL',
-    'Swift',
-    'TACL',
-    'Tcl',
-    'TeX',
-    'Visual Basic',
-];

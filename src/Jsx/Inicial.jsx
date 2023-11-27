@@ -28,16 +28,14 @@ import seis from "../html-css-template/imagens/06.svg"
 import cinco from "../html-css-template/imagens/cinco.svg"
 import nove from "../html-css-template/imagens/9.svg"
 import dez from "../html-css-template/imagens/12.svg"
-import { useNavigate } from "react-router-dom";
 import { useEffect, useState, useRef } from "react";
 
 import "../html-css-template/css/inicial.css"
 
 function Inicial() {
-    const navigate = useNavigate();
 
     const [currentIndex, setCurrentIndex] = useState(0);
-    const totalSlides = 20;
+    const totalSlides =8;
 
     const carouselContentRef = useRef(null);
     const startXRef = useRef(null);
@@ -70,8 +68,6 @@ function Inicial() {
         draggingRef.current = false;
         document.removeEventListener("mousemove", drag);
         document.removeEventListener("mouseup", endDrag);
-        document.removeEventListener("touchmove", drag);
-        document.removeEventListener("touchend", endDrag);
 
         var threshold = 50;
         if (startXRef.current - event.clientX > threshold && currentIndex < totalSlides - 1) {
@@ -89,6 +85,7 @@ function Inicial() {
 
     function updateCarousel() {
         var newPosition = -currentIndex * (300 + 20);
+        carouselContentRef.current.style.transition = "transform 0.9s ease";
         carouselContentRef.current.style.transform = `translateX(${newPosition}px)`;
     }
 
@@ -98,7 +95,7 @@ function Inicial() {
     }
 
     function startAutoScroll() {
-        setInterval(nextSlide, 9000);
+        setInterval(nextSlide, 8000);
     }
 
     document.addEventListener("DOMContentLoaded", function () {
@@ -159,11 +156,10 @@ function Inicial() {
     return (
         <>
             <div className="navbar">
-                <div className="logo">
+                <div className="logoI">
                     <img src={LogoBlack} alt="" width="170px" />
                 </div>
-                <div className="ntg">
-                </div>
+                
                 <div className="items">
                     <div className="item-navbar" onclick={irParainicio}>Home</div>
                     <div className="item-navbar" onclick={irParaSobre}>Sobre</div>
@@ -171,7 +167,7 @@ function Inicial() {
                     <div className="item-navbar" onclick={irParaFooter}>Contato</div>
                     <div className="button-navbar" onClick={login}>
                         Entrar
-                    </div>
+                </div>
 
                 </div>
             </div>
@@ -299,7 +295,13 @@ function Inicial() {
                                 <div className="carousel-box" style={{ backgroundImage: `url(${dez})`, backgroundSize: "cover", backgroundColor: "#E5F1F2" }}></div>
                                 <div className="carousel-box" style={{ backgroundImage: `url(${seis})`, backgroundSize: "cover", backgroundColor: "#E5F1F2"}}></div>
                                 <div className="carousel-box" style={{ backgroundImage: `url(${cinco})`,backgroundSize: "cover", backgroundColor: "#E5F1F2" }}></div>
-                                <div className="carousel-box" style={{ backgroundImage: `url(${nove})`, backgroundSize: "cover", backgroundColor: "#E5F1F2" }}></div>   
+                                <div className="carousel-box" style={{ backgroundImage: `url(${nove})`, backgroundSize: "cover", backgroundColor: "#E5F1F2" }}></div>
+
+                                <div className="carousel-box" style={{ backgroundImage: `url(${dez})`, backgroundSize: "cover", backgroundColor: "#E5F1F2" }}></div>
+                                <div className="carousel-box" style={{ backgroundImage: `url(${seis})`, backgroundSize: "cover", backgroundColor: "#E5F1F2"}}></div>
+                                <div className="carousel-box" style={{ backgroundImage: `url(${cinco})`,backgroundSize: "cover", backgroundColor: "#E5F1F2" }}></div>
+                                <div className="carousel-box" style={{ backgroundImage: `url(${nove})`, backgroundSize: "cover", backgroundColor: "#E5F1F2" }}></div>
+                                   
                             </div>
                             </div>
                         </div>
