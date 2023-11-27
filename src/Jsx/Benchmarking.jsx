@@ -104,56 +104,56 @@ function Benchmarking() {
 
     return (
         <>
-            <div className="header">
-                <div className="navbar">
+            <div className="bench-header">
+                <div className="bench-navbar">
 
-                    <div className="back">
-                        <div className="icon-menu"><img src="././assets/icon-menu.svg" alt="" width="40px" /></div>
+                    <div className="bench-back">
+                        <div className="bench-icon-menu"><img src="././assets/icon-menu.svg" alt="" width="40px" /></div>
                     </div>
 
-                    <div className="logo-devhub">
+                    <div className="bench-logo-devhub">
                         <img src={logoDevhub} alt="" width="200px" />
                     </div>
-                    <div className="img-profile"><img src={imagemUrl} width="35px" /></div>
+                    <div className="bench-img-profile"><img src={imagemUrl} width="35px" /></div>
                 </div>
-                <div className="box-menu">
-                    <div className="search">
-                        <div className="search-tittle">Beanchinmark</div>
+                <div className="bench-box-menu">
+                    <div className="bench-search">
+                        <div className="bench-search-tittle">Beanchinmark</div>
 
                     </div>
 
-                    <div className="sub-menu-section">
-                        <button className="icon1">Limpar</button>
-                        <button className="icon2">Comparar</button>
+                    <div className="bench-sub-menu-section">
+                        <button className="bench-icon1">Limpar</button>
+                        <button className="bench-icon2">Comparar</button>
                     </div>
 
                 </div>
-                <div className="infos-home">
-                    <div className="level-dev">
-                        <div className="level-dev-icons">
-                            <div className="color-level-dev1"></div>
+                <div className="bench-infos-home">
+                    <div className="bench-level-dev">
+                        <div className="bench-level-dev-icons">
+                            <div className="bench-color-level-dev1"></div>
 
-                            <div className="text-level-dev">
-                                <div className="name-level-dev">Dev Senior</div>
-                                <div className="yyyy"> 10 Anos</div>
+                            <div className="bench-text-level-dev">
+                                <div className="bench-name-level-dev">Dev Senior</div>
+                                <div className="bench-yyyy"> 10 Anos</div>
                             </div>
                         </div>
 
-                        <div className="level-dev-icons">
-                            <div className="color-level-dev2"></div>
+                        <div className="bench-level-dev-icons">
+                            <div className="bench-color-level-dev2"></div>
 
-                            <div className="text-level-dev">
-                                <div className="name-level-dev">Dev Pleno</div>
-                                <div className="yyyy"> 10 Anos</div>
+                            <div className="bench-text-level-dev">
+                                <div className="bench-name-level-dev">Dev Pleno</div>
+                                <div className="bench-yyyy"> 10 Anos</div>
                             </div>
                         </div>
 
-                        <div className="level-dev-icons">
-                            <div className="color-level-dev3"></div>
+                        <div className="bench-level-dev-icons">
+                            <div className="bench-color-level-dev3"></div>
 
-                            <div className="text-level-dev">
-                                <div className="name-level-dev">Dev Junior</div>
-                                <div className="yyyy"> 10 Anos</div>
+                            <div className="bench-text-level-dev">
+                                <div className="bench-name-level-dev">Dev Junior</div>
+                                <div className="bench-yyyy"> 10 Anos</div>
                             </div>
                         </div>
 
@@ -161,11 +161,11 @@ function Benchmarking() {
 
                     </div>
 
-                    <div className="info-values">
-                        <div className="icon-info-value">
+                    <div className="bench-info-values">
+                        <div className="bench-icon-info-value">
                             <img src={warningSVG} alt="" />
                         </div>
-                        <div className="text-info-values">Todos os valores de prestação de serviços a baixo são referentes a hora de
+                        <div className="bench-text-info-values">Todos os valores de prestação de serviços a baixo são referentes a hora de
                             trabalho do freelancer.</div>
 
                     </div>
@@ -175,57 +175,57 @@ function Benchmarking() {
 
             </div>
 
-            <div className="container-bench">
+            <div className="bench-container-bench">
 
-                <div className="box-cdev">
+                <div className="bench-box-cdev">
 
                     {showDevCard ? (
-                        <div className="card-dev">
-                            <div className="box" key={foundDev.id}>
-                                <div className="box1">
-                                    <div className="image-free">
-                                        <div className="image-ipt">
+                        <div className="bench-card-dev">
+                            <div className="bench-box" key={foundDev.id}>
+                                <div className="bench-box1">
+                                    <div className="bench-image-free">
+                                        <div className="bench-image-ipt">
                                             <img src={foundDev.image} width="100%" alt="" />
                                         </div>
                                     </div>
-                                    <div className="infos-dev">
-                                        <div className="name">{foundDev.nome}</div>
-                                        <div className="function">{foundDev.funcao}d</div>
-                                        <div className="box-about">
-                                            <div className="tittle-about">Sobre mim:</div>
-                                            <div className="text-about">{foundDev.sobre}</div>
-                                            <div className="box-tecnos">
-                                                <div className="icon-tecno"><img src={javaLogo} alt="" width="35px" />
+                                    <div className="bench-infos-dev">
+                                        <div className="bench-name">{foundDev.nome}</div>
+                                        <div className="bench-function">{foundDev.funcao}d</div>
+                                        <div className="bench-box-about">
+                                            <div className="bench-tittle-about">Sobre mim:</div>
+                                            <div className="bench-text-about">{foundDev.sobre}</div>
+                                            <div className="bench-box-tecnos">
+                                                <div className="bench-icon-tecno"><img src={javaLogo} alt="" width="35px" />
                                                 </div>
-                                                <div className="icon-tecno"><img src={springLogo} alt="" width="38px" />
+                                                <div className="bench-icon-tecno"><img src={springLogo} alt="" width="38px" />
                                                 </div>
-                                                <div className="icon-tecno"><img src={azureLogo} alt="" width="35px" />
+                                                <div className="bench-icon-tecno"><img src={azureLogo} alt="" width="35px" />
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div className="box2">
-                                    <div className="box-price">
-                                        <div className="tittle-price">Valor por hora: </div>
-                                        <div className="price-value">{foundDev.preco}</div>
+                                <div className="bench-box2">
+                                    <div className="bench-box-price">
+                                        <div className="bench-tittle-price">Valor por hora: </div>
+                                        <div className="bench-price-value">{foundDev.preco}</div>
                                     </div>
-                                    <div className="links">
-                                        <div className="social">
-                                            <div className="git-hub-link"> <img src={githubLogo} alt="" width="33px" />
+                                    <div className="bench-links">
+                                        <div className="bench-social">
+                                            <div className="bench-git-hub-link"> <img src={githubLogo} alt="" width="33px" />
                                             </div>
-                                            <div className="linkedln-link"><img src={linkedinLogo} alt="" width="33px" />
+                                            <div className="bench-linkedln-link"><img src={linkedinLogo} alt="" width="33px" />
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div className="box-contact">
-                                        <div className="score-freelancer">
+                                    <div className="bench-box-contact">
+                                        <div className="bench-score-freelancer">
 
-                                            <div className="box-icon-star">
+                                            <div className="bench-box-icon-star">
                                                 <img src={star} alt="" width="100%" />
                                             </div>
-                                            <div className="box-score-number">
+                                            <div className="bench-box-score-number">
                                                 {foundDev.score}
                                             </div>
 
@@ -234,11 +234,11 @@ function Benchmarking() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="color-level-dev"></div>
+                            <div className="bench-color-level-dev"></div>
                         </div>
                     ) : (
-                        <div className="card-dev-search">
-                            <div className="input-tittle">Preencha o ID:</div>
+                        <div className="bench-card-dev-search">
+                            <div className="bench-input-tittle">Preencha o ID:</div>
                             <input
                                 type="text"
                                 value={searchId}
@@ -249,57 +249,57 @@ function Benchmarking() {
                     )}
                 </div>
 
-                <div className="x">x</div>
+                <div className="bench-x">x</div>
 
-                <div className="box-cdev">
+                <div className="bench-box-cdev">
 
                     {showDevCard2 ? (
-                        <div className="card-dev">
-                            <div className="box" key={foundDev2.id}>
-                                <div className="box1">
-                                    <div className="image-free">
-                                        <div className="image-ipt">
+                        <div className="bench-card-dev">
+                            <div className="bench-box" key={foundDev2.id}>
+                                <div className="bench-box1">
+                                    <div className="bench-image-free">
+                                        <div className="bench-image-ipt">
                                             <img src={foundDev2.image} width="100%" alt="" />
                                         </div>
                                     </div>
-                                    <div className="infos-dev">
-                                        <div className="name">{foundDev2.nome}</div>
-                                        <div className="function">{foundDev2.funcao}d</div>
-                                        <div className="box-about">
-                                            <div className="tittle-about">Sobre mim:</div>
-                                            <div className="text-about">{foundDev2.sobre}</div>
-                                            <div className="box-tecnos">
-                                                <div className="icon-tecno"><img src={javaLogo} alt="" width="35px" />
+                                    <div className="bench-infos-dev">
+                                        <div className="bench-name">{foundDev2.nome}</div>
+                                        <div className="bench-function">{foundDev2.funcao}d</div>
+                                        <div className="bench-box-about">
+                                            <div className="bench-tittle-about">Sobre mim:</div>
+                                            <div className="bench-text-about">{foundDev2.sobre}</div>
+                                            <div className="bench-box-tecnos">
+                                                <div className="bench-icon-tecno"><img src={javaLogo} alt="" width="35px" />
                                                 </div>
-                                                <div className="icon-tecno"><img src={springLogo} alt="" width="38px" />
+                                                <div className="bench-icon-tecno"><img src={springLogo} alt="" width="38px" />
                                                 </div>
-                                                <div className="icon-tecno"><img src={azureLogo} alt="" width="35px" />
+                                                <div className="bench-icon-tecno"><img src={azureLogo} alt="" width="35px" />
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div className="box2">
-                                    <div className="box-price">
-                                        <div className="tittle-price">Valor por hora: </div>
-                                        <div className="price-value">{foundDev2.preco}</div>
+                                <div className="bench-box2">
+                                    <div className="bench-box-price">
+                                        <div className="bench-tittle-price">Valor por hora: </div>
+                                        <div className="bench-price-value">{foundDev2.preco}</div>
                                     </div>
-                                    <div className="links">
-                                        <div className="social">
-                                            <div className="git-hub-link"> <img src={githubLogo} alt="" width="33px" />
+                                    <div className="bench-links">
+                                        <div className="bench-social">
+                                            <div className="bench-git-hub-link"> <img src={githubLogo} alt="" width="33px" />
                                             </div>
-                                            <div className="linkedln-link"><img src={linkedinLogo} alt="" width="33px" />
+                                            <div className="bench-linkedln-link"><img src={linkedinLogo} alt="" width="33px" />
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div className="box-contact">
-                                        <div className="score-freelancer">
+                                    <div className="bench-box-contact">
+                                        <div className="bench-score-freelancer">
 
-                                            <div className="box-icon-star">
+                                            <div className="bench-box-icon-star">
                                                 <img src={star} alt="" width="100%" />
                                             </div>
-                                            <div className="box-score-number">
+                                            <div className="bench-box-score-number">
                                                 {foundDev2.score}
                                             </div>
 
@@ -310,11 +310,11 @@ function Benchmarking() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="color-level-dev "></div>
+                            <div className="bench-color-level-dev "></div>
                         </div>
                     ) : (
-                        <div className="card-dev-search">
-                            <div className="input-tittle">Preencha o Segundo ID:</div>
+                        <div className="bench-card-dev-search">
+                            <div className="bench-input-tittle">Preencha o Segundo ID:</div>
                             <input
                                 type="text"
                                 value={searchId2}

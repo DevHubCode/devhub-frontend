@@ -71,36 +71,36 @@ function Profile() {
 
     return (
         <>
-            <div className="header">
-                <div className="navbar">
-                    <div className="back">
-                        <div className="icon-back">
+            <div className="freela-header">
+                <div className="freela-navbar">
+                    <div className="freela-back">
+                        <div className="freela-icon-back">
                             <img src={arrowLeft} alt="" width="20px" />
                         </div>
-                        <div className="text-back">Voltar</div>
+                        <div className="freela-text-back">Voltar</div>
                     </div>
 
-                    <div className="logo-devhub">
+                    <div className="freela-logo-devhub">
                         <img src={logoDevhub} alt="" width="160px" />
                     </div>
                 </div>
 
-                <div className="items">
-                    <div className="img" style={{backgroundImage: `url(${imagemUrl})`}}>
-                        <div className="score-freelancer">
-                            <div className="icon-star">
+                <div className="freela-items">
+                    <div className="freela-img" style={{backgroundImage: `url(${imagemUrl})`}}>
+                        <div className="freela-score-freelancer">
+                            <div className="freela-icon-star">
                                 <img src={star} alt="" width="30px"/>
                             </div>
-                            <div className="num-score">{avaliacao}</div>
+                            <div className="freela-num-score">{avaliacao}</div>
                         </div>
                     </div>
 
-                    <div className="profile">
-                        <div className="info">
-                            <div className="name">{nome}</div>
-                            <div className="function">{funcao}</div>
-                            <div className="tecno">
-                                <div className="box-tecnos">
+                    <div className="freela-profile">
+                        <div className="freela-info">
+                            <div className="freela-name">{nome}</div>
+                            <div className="freela-function">{funcao}</div>
+                            <div className="freela-tecno">
+                                <div className="freela-box-tecnos">
                                     <Select options={especialidades.map(especialidade => ({
                                         value: especialidade,
                                         label: especialidade,
@@ -110,35 +110,35 @@ function Profile() {
                                     </Select>
                                 </div>
                             </div>
-                            <div className="about">
-                                <div className="box-about">
-                                    <div className="tittle-about">Sobre mim:</div>
-                                    <div className="text-about">
+                            <div className="freela-about">
+                                <div className="freela-box-about">
+                                    <div className="freela-tittle-about">Sobre mim:</div>
+                                    <div className="freela-text-about">
                                         {descricao}
                                     </div>
                                 </div>
                             </div>
-                            <div className="box-price-contact">
-                                <div className="box-price">
-                                    <div className="tittle-price">Valor por hora</div>
-                                    <div className="price-value">R$ {preco}</div>
+                            <div className="freela-box-price-contact">
+                                <div className="freela-box-price">
+                                    <div className="freela-tittle-price">Valor por hora</div>
+                                    <div className="freela-price-value">R$ {preco}</div>
                                 </div>
-                                <div className="box-contact">
+                                <div className="freela-box-contact">
                                     <button>Contactar</button>
                                 </div>
                             </div>
                         </div>
 
-                        <div className="links">
-                            <div className="social">
-                                <div className="git-hub-link">
+                        <div className="freela-links">
+                            <div className="freela-social">
+                                <div className="freela-git-hub-link">
                                     <img src={githubLogo} alt="" width="80px" />
                                 </div>
-                                <div className="linkedln-link">
+                                <div className="freela-linkedln-link">
                                     <img src={linkedinLogo} alt="" width="80px" />
                                 </div>
                             </div>
-                            <div className="id">{idDev}</div>
+                            <div className="freela-id">{idDev}</div>
                         </div>
                     </div>
                 </div>

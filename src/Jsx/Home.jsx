@@ -22,27 +22,27 @@ function Home() {
 
     return (
         <>
-            <div className="header">
-                <div className="navbar">
-                    <div className="back">
-                        <div className="icon-menu">
+            <div className="home-header">
+                <div className="home-navbar">
+                    <div className="home-back">
+                        <div className="home-icon-menu">
                             <img src={logoutIcon} alt="" width="30px" />
                         </div>
 
                     </div>
 
-                    <div className="logo-devhub">
+                    <div className="home-logo-devhub">
                         <img src={logoDevhub} alt="" width="230px" />
                     </div>
 
-                    <div className="img-profile">
+                    <div className="home-img-profile">
                         <img src={fotoPerfil} width="35px" />
                     </div>
                 </div>
-                <div className="box-menu">
-                    <div className="search">
-                        <div className="search-tittle">Encontre seu Freela</div>
-                        <div className="search-input">
+                <div className="home-box-menu">
+                    <div className="home-search">
+                        <div className="home-search-tittle">Encontre seu Freela</div>
+                        <div className="home-search-input">
                             <input 
                                 type="text"
                                 value={searchDev}
@@ -51,38 +51,38 @@ function Home() {
                         </div>
                     </div>
 
-                    <div className="sub-menu-section">
-                        <div className="icon1">Beanchinmark</div>
-                        <div className="icon2">Todos</div>
-                        <div className="icon2">Publicações</div>
+                    <div className="home-sub-menu-section">
+                        <div className="home-icon1">Beanchinmark</div>
+                        <div className="home-icon2">Todos</div>
+                        <div className="home-icon2">Publicações</div>
                     </div>
                 </div>
-                <div className="infos-home">
-                    <div className="level-dev">
-                        <div className="level-dev-icons">
-                            <div className="color-level-dev1" ></div>
+                <div className="home-infos-home">
+                    <div className="home-level-dev">
+                        <div className="home-level-dev-icons">
+                            <div className="home-color-level-dev1" ></div>
 
-                            <div className="text-level-dev">
-                                <div className="name-level-dev">Dev Senior</div>
-                                <div className="yyyy"> 10 Anos</div>
+                            <div className="home-text-level-dev">
+                                <div className="home-name-level-dev">Dev Senior</div>
+                                <div className="home-yyyy"> 10 Anos</div>
                             </div>
                         </div>
 
-                        <div className="level-dev-icons">
-                            <div className="color-level-dev2"></div>
+                        <div className="home-level-dev-icons">
+                            <div className="home-color-level-dev2"></div>
 
-                            <div className="text-level-dev">
-                                <div className="name-level-dev">Dev Pleno</div>
-                                <div className="yyyy"> 10 Anos</div>
+                            <div className="home-text-level-dev">
+                                <div className="home-name-level-dev">Dev Pleno</div>
+                                <div className="home-yyyy"> 10 Anos</div>
                             </div>
                         </div>
 
-                        <div className="level-dev-icons">
-                            <div className="color-level-dev3"></div>
+                        <div className="home-level-dev-icons">
+                            <div className="home-color-level-dev3"></div>
 
-                            <div className="text-level-dev">
-                                <div className="name-level-dev">Dev Junior</div>
-                                <div className="yyyy"> 10 Anos</div>
+                            <div className="home-text-level-dev">
+                                <div className="home-name-level-dev">Dev Junior</div>
+                                <div className="home-yyyy"> 10 Anos</div>
                             </div>
                         </div>
 
@@ -90,44 +90,44 @@ function Home() {
 
                     </div>
 
-                    <div className="info-values">
-                        <div className="icon-info-value">
+                    <div className="home-info-values">
+                        <div className="home-icon-info-value">
                             <img src={warningSVG} alt="" />
                         </div>
-                        <div className="text-info-values">
+                        <div className="home-text-info-values">
                             Todos os valores de prestação de serviços a baixo são referentes a hora de trabalho do freelancer.
                         </div>
                     </div>
 
                 </div>
             </div>
-            <div className="header-icons">
+            <div className="home-header-icons">
                 {filteredDevs.length > 0 ? (
                     filteredDevs.map((freelancer) => {
                         return (
-                            <div className="box-freelancer" key={freelancer.id}>
-                                <div className="image-freelancer" >
+                            <div className="home-box-freelancer" key={freelancer.id}>
+                                <div className="home-image-freelancer" >
     
-                                    <div className="score-freelancer">
+                                    <div className="home-score-freelancer">
     
-                                        <div className="box-icon-star">
+                                        <div className="home-box-icon-star">
                                             <img src={star} alt="" width="100%" />
                                         </div>
-                                        <div className="box-score-number">
+                                        <div className="home-box-score-number">
                                             {freelancer.score}
                                         </div>
     
                                     </div>
                                 </div>
-                                <div className="box-information">
-                                    <div className="box-classification">
+                                <div className="home-box-information">
+                                    <div className="home-box-classification">
     
                                     </div>
-                                    <div className="box-aux">
-                                        <div className="box-name-age">
+                                    <div className="home-box-aux">
+                                        <div className="home-box-name-age">
                                             {freelancer.nome}, {freelancer.idade}.
                                         </div>
-                                        <div className="box-price">
+                                        <div className="home-box-price">
                                             R$ {freelancer.preco}
                                         </div>
                                     </div>
@@ -136,7 +136,7 @@ function Home() {
                         )
                     })
                 ) : (
-                    <div className="no-results-message">Nenhum desenvolvedor encontrado.</div>
+                    <div className="home-no-results-message">Nenhum desenvolvedor encontrado.</div>
                 )}
             </div>
         </>

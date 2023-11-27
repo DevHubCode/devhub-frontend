@@ -2,7 +2,7 @@
 
 
 
-.header {
+.freela-header {
 
     height: 585px;
 
@@ -18,7 +18,7 @@
 
 
 
-.navbar {
+.freela-navbar {
     display: flex;
     background-color: #0C0C0C;
     height: 15%;
@@ -28,7 +28,7 @@
 
 
 
-.items {
+.freela-items {
 
     display: flex;
 
@@ -42,7 +42,7 @@
 
 
 
-.img {
+.freela-img {
       background-size: cover;
       display: flex;
       justify-content: center;
@@ -55,7 +55,7 @@
 
 
 
-.profile {
+.freela-profile {
 
     height: 99%;
 
@@ -71,7 +71,7 @@
 
 
 
-.info {
+.freela-info {
      
     justify-content: space-between;
 
@@ -89,7 +89,7 @@
 
 
 
-.links {
+.freela-links {
 
     height: 99%;
 
@@ -104,7 +104,7 @@
 
 
 
-.name {
+.freela-name {
 
     padding-top: 4%;
 
@@ -130,7 +130,7 @@
 
 
 
-.function {
+.freela-function {
     padding-top: 1%;
 
     padding-left: 8%;
@@ -153,7 +153,7 @@
 
 }
 
-.tecno {
+.freela-tecno {
     align-items: center;
 
     padding-left: 8%;
@@ -176,7 +176,7 @@
 
 }
 
-.about {
+.freela-about {
 
     padding-left: 8%;
 
@@ -196,15 +196,15 @@
 
 }
 
-.score-freelancer {
+.freela-score-freelancer {
     display: flex;
     margin-top: 75%;
     width: 30%;
     height: 9%;
-    background-color: rgba(0, 0, 0, 0.875);
+    background-color: rgba(0, 0, 0, 0.freela-875);
     border-radius: 4px;
 }
-.icon-star{
+.freela-icon-star{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -213,7 +213,7 @@
     padding-left: 10%;
 }
 
-.num-score{
+.freela-num-score{
     display: flex;
     /* justify-content: center; */
     align-items: center;
@@ -224,7 +224,7 @@
     font-weight: 700;
     color: white;
 }
-.back{
+.freela-back{
     display: flex;
     /* justify-content: center; */
     align-items: center;
@@ -236,7 +236,7 @@
     color: white;
     /* border: 3px solid white; */
 }
-.icon-back{
+.freela-icon-back{
     padding-right: 5%;
     height: 30%;
     width: 10%;
@@ -247,7 +247,7 @@
     margin-left: 10%;
 }
 
-.navbar .logo-devhub{
+.freela-navbar .freela-logo-devhub{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -257,7 +257,7 @@
     padding-right: 13%;
 }
 
-.social{
+.freela-social{
     display: flex;
     flex-direction: column;
     
@@ -267,7 +267,7 @@
     padding-top: 10%;
 }
 
-.id{ 
+.freela-id{ 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -276,10 +276,10 @@
     font-family:"Poppins";
     font-size: 22px;
     font-weight: 200;
-     color: rgba(30, 30, 30, 0.444);
+     color: rgba(30, 30, 30, 0.freela-444);
     /* border: 3px solid white; */
 } 
-.box-tecnos{
+.freela-box-tecnos{
     display: flex;
     background-color: white;
     width: 50%;
@@ -287,7 +287,7 @@
     box-shadow: 0px 3px 8px 0px #484848bd;
 }
 
-.box-about{
+.freela-box-about{
     display: flex;
     background-color: white;
     width: 80%;
@@ -297,7 +297,7 @@
     justify-content: center;
     align-items: center;
 }
-.box-tecnos .icon-tecno{
+.freela-box-tecnos .freela-icon-tecno{
     display: flex;
     background-color: white;
     width: 33%;
@@ -306,10 +306,10 @@
     align-items: center;
 }
 
-.tittle-about{
+.freela-tittle-about{
     font-size: 22px;
     font-weight: 700;
-     color: rgba(30, 30, 30, 0.64);
+     color: rgba(30, 30, 30, 0.freela-64);
     height: 20%;
     width: 90%;
     font-size:25px;
@@ -317,21 +317,21 @@
     margin-top: 2%;
     margin-bottom: 1%;
 }
-.text-about{
+.freela-text-about{
     height: 80%;
     width: 90%;
     font-size:14px;
     color:  #797979;
 }
 
-.box-price-contact{
+.freela-box-price-contact{
     height: 20%;
     width: 100%;
     display: flex;
     /* border: 3px solid black; */
 }
 
-.box-price{
+.freela-box-price{
     margin-top: 1%;
     height: 100%;
     width: 50%;
@@ -342,7 +342,7 @@
     padding-left: 8%;
 }
 
-.tittle-price{
+.freela-tittle-price{
    height: 20%;
    width: 100%;
    /* border: 3px solid black; */
@@ -352,7 +352,7 @@
   
 }
 
-.price-value{
+.freela-price-value{
     height: 80%;
     width: 100%;
     /* border: 3px solid black; */
@@ -361,14 +361,14 @@
     color: #525252;
 }
 
-.box-contact{
+.freela-box-contact{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
     width: 50%;
 }
-.box-contact button{
+.freela-box-contact button{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -383,12 +383,12 @@
     border: 0px;
 }
 
-.box-contact button:hover{
+.freela-box-contact button:hover{
     background-color: #397423;
 
 }
 
-.box-contact button:active{
+.freela-box-contact button:active{
     background-color: rgb(35, 116, 39);
     
 }

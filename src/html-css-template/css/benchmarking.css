@@ -5,7 +5,7 @@ body {
 }
 
 
-.header {
+.bench-header {
     padding-top: 10px;
 
     height: 280px;
@@ -22,7 +22,7 @@ body {
 
 
 
-.navbar {
+.bench-navbar {
     display: flex;
     background-color: #E5F1F2;
     height: 35%;
@@ -30,7 +30,7 @@ body {
     /* border: 4px solid rgb(201, 11, 11); */
 }
 
-.back {
+.bench-back {
     display: flex;
     /* justify-content: center; */
     align-items: center;
@@ -43,7 +43,7 @@ body {
     /* border: 3px solid white; */
 }
 
-.icon-menu {
+.bench-icon-menu {
     padding-right: 5%;
     height: 30%;
     width: 10%;
@@ -54,7 +54,7 @@ body {
     margin-left: 25%;
 }
 
-.navbar .logo-devhub {
+.bench-navbar .bench-logo-devhub {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -64,7 +64,7 @@ body {
     padding-right: 2%;
 }
 
-.img-profile {
+.bench-img-profile {
     height: 100%;
     width: 20%;
     display: flex;
@@ -73,11 +73,11 @@ body {
     border-radius: 100%;
 }
 
-.img-profile img {
+.bench-img-profile img {
     border-radius: 30px;
 }
 
-.icon1 {
+.bench-icon1 {
     margin-top: 5%;
     height: 50%;
     width: 25%;
@@ -90,7 +90,7 @@ body {
     border: 0px;
 }
 
-.icon2 {
+.bench-icon2 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -103,7 +103,7 @@ body {
     border: 0px;
 }
 
-.box-menu {
+.bench-box-menu {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -112,7 +112,7 @@ body {
     /* border: 4px solid rgb(29, 29, 31); */
 }
 
-.search {
+.bench-search {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -124,7 +124,7 @@ body {
 
 }
 
-.search-tittle {
+.bench-search-tittle {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -138,7 +138,7 @@ body {
     font-family: "Poppins";
 }
 
-.search-input {
+.bench-search-input {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -148,7 +148,7 @@ body {
     /* border: 4px solid rgb(29, 29, 31); */
 }
 
-.search-input input {
+.bench-search-input input {
     margin: 2%;
     display: flex;
     justify-content: center;
@@ -161,7 +161,7 @@ body {
     border: 0px solid;
 }
 
-.sub-menu-section {
+.bench-sub-menu-section {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -171,7 +171,7 @@ body {
     margin-bottom: 1%;
 }
 
-.infos-home {
+.bench-infos-home {
     height: 33%;
     width: 100%;
     display: flex;
@@ -181,7 +181,7 @@ body {
 
 }
 
-.level-dev {
+.bench-level-dev {
     height: 80%;
     width: 30%;
     display: flex;
@@ -190,7 +190,7 @@ body {
     background-color: #F9F9F9;
 }
 
-.info-values {
+.bench-info-values {
     height: 100%;
     width: 70%;
     display: flex;
@@ -200,7 +200,7 @@ body {
     box-shadow: 0px 5px 5px 2px #dbdbdb;
 }
 
-.icon-info-value {
+.bench-icon-info-value {
     height: 100%;
     width: 6%;
     display: flex;
@@ -209,7 +209,7 @@ body {
 
 }
 
-.text-info-values {
+.bench-text-info-values {
     height: 100%;
     width: 75%;
     display: flex;
@@ -219,7 +219,7 @@ body {
     color: #848484;
 }
 
-.name-level-dev {
+.bench-name-level-dev {
     height: 100%;
     width: 75%;
     display: flex;
@@ -231,7 +231,7 @@ body {
 
 }
 
-.level-dev {
+.bench-level-dev {
     height: 85%;
     width: 30%;
     display: flex;
@@ -242,7 +242,7 @@ body {
 
 }
 
-.level-dev-icons {
+.bench-level-dev-icons {
     height: 100%;
     width: 23%;
     display: flex;
@@ -253,7 +253,7 @@ body {
     /* border:  solid 1px black; */
 }
 
-.color-level-dev1 {
+.bench-color-level-dev1 {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -264,7 +264,7 @@ body {
 
 }
 
-.color-level-dev2 {
+.bench-color-level-dev2 {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -275,7 +275,7 @@ body {
 
 }
 
-.color-level-dev3 {
+.bench-color-level-dev3 {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -287,7 +287,7 @@ body {
 }
 
 
-.text-level-dev {
+.bench-text-level-dev {
     height: 100%;
     width: 80%;
     display: flex;
@@ -301,7 +301,7 @@ body {
 
 }
 
-.name-level-dev {
+.bench-name-level-dev {
     height: 30%;
     width: 100%;
     font-size: 12px;
@@ -310,7 +310,7 @@ body {
 
 }
 
-.yyyy {
+.bench-yyyy {
     height: 20%;
     width: 100%;
     display: flex;
@@ -321,7 +321,7 @@ body {
 
 }
 
-.container-bench {
+.bench-container-bench {
     height: 450px;
     width: 100%;
     background-color: #E5F1F2;
@@ -330,7 +330,7 @@ body {
     align-items: center;
 }
 
-.box-cdev {
+.bench-box-cdev {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -339,7 +339,7 @@ body {
 }
 
 
-.x {
+.bench-x {
     height: 100%;
     width: 5%;
     /* border: #00eaff 2px solid; */
@@ -350,7 +350,7 @@ body {
     align-items: center;
 }
 
-.card-dev {
+.bench-card-dev {
     display: flex;
     height: 73%;
     width: 92%;
@@ -360,7 +360,7 @@ body {
 
 }
 
-.card-dev-search {
+.bench-card-dev-search {
     display: flex;
     height: 73%;
     width: 92%;
@@ -374,7 +374,7 @@ body {
 }
 
 
-.card-dev-search input {
+.bench-card-dev-search input {
     margin: 2%;
     display: flex;
     justify-content: center;
@@ -390,12 +390,12 @@ body {
     margin-bottom: 10%;
 }
 
-.card-dev-search input:focus {
+.bench-card-dev-search input:focus {
     outline: none;
     /* Remove a borda de foco */
 }
 
-.input-tittle {
+.bench-input-tittle {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -408,32 +408,32 @@ body {
 }
 
 
-.icon2:hover {
+.bench-icon2:hover {
     background-color: #19afbc;
 
 }
 
-.icon2:active {
+.bench-icon2:active {
     background-color: #10bac9;
 
 }
 
-.icon1:hover {
+.bench-icon1:hover {
     background-color: #0e0e0e;
 
 }
 
-.icon1:active {
+.bench-icon1:active {
     background-color: rgb(33, 33, 33);
 
 }
 
-.card-dev {
+.bench-card-dev {
     display: flex;
     flex-direction: column;
 }
 
-.box {
+.bench-box {
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -442,19 +442,19 @@ body {
 
 }
 
-.color-level-dev {
+.bench-color-level-dev {
     height: 3%;
     width: 100%;
     background-color: #741040;
 }
 
-.box1{
+.bench-box1{
     height: 65%;
     width: 100%;
     /* border: 4px solid rgb(29, 29, 31);  */
     display: flex;
 }
-.box2{
+.bench-box2{
     height: 35%;
     width: 100%;
     /* border: 4px solid rgb(29, 29, 31);  */
@@ -462,7 +462,7 @@ body {
     justify-content: center;
 }
 
-.image-free{
+.bench-image-free{
     height: 100%;
     width: 35%;
     display: flex;
@@ -470,7 +470,7 @@ body {
 
 }
 
-.infos-dev{
+.bench-infos-dev{
     height: 100%;
     width: 65%;
     display: flex;
@@ -481,12 +481,12 @@ body {
     text-align: left;
 
 }
-.image-ipt{
+.bench-image-ipt{
     width: 100%;
 }
 
 
-.name {
+.bench-name {
 
     padding-top: 1%;
 
@@ -512,7 +512,7 @@ body {
 
 
 
-.function {
+.bench-function {
     padding-top: 1%;
 
     padding-left: 8%;
@@ -535,7 +535,7 @@ body {
 
 }
 
-.box-about {
+.bench-box-about {
 
     padding-left: 8%;
 
@@ -556,9 +556,9 @@ body {
 
 }
 
-.tittle-about{
+.bench-tittle-about{
     font-weight: 700;
-     color: rgba(30, 30, 30, 0.64);
+     color: rgba(30, 30, 30, 0.bench-64);
     height: 20%;
     width: 90%;
     font-size:11px;
@@ -566,7 +566,7 @@ body {
     margin-top: 2%;
     margin-bottom: 1%;
 }
-.text-about{
+.bench-text-about{
     height: 80%;
     width: 80%;
     font-size:8px;
@@ -574,7 +574,7 @@ body {
     text-align: left;
 }
 
-.box-price{
+.bench-box-price{
     margin-top: 6%;
     height: 100%;
     width: 25%;
@@ -584,7 +584,7 @@ body {
     font-family: "Poppins";
 }
 
-.tittle-price{
+.bench-tittle-price{
    height: 20%;
    width: 100%;
    /* border: 3px solid black; */
@@ -594,7 +594,7 @@ body {
   
 }
 
-.price-value{
+.bench-price-value{
     height: 80%;
     width: 100%;
     /* border: 3px solid black; */
@@ -603,7 +603,7 @@ body {
     color: #525252;
 }
 
-.box-contact{
+.bench-box-contact{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -612,7 +612,7 @@ body {
     width: 50%;
     margin-right: 20px;
 }
-.box-contact button{
+.bench-box-contact button{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -627,16 +627,16 @@ body {
     border: 0px;
 }
 
-.box-contact button:hover{
+.bench-box-contact button:hover{
     background-color: #397423;
 
 }
 
-.box-contact button:active{
+.bench-box-contact button:active{
     background-color: rgb(35, 116, 39);
     
 }
-.box-tecnos .icon-tecno{
+.bench-box-tecnos .bench-icon-tecno{
     display: flex;
     background-color: white;
     width: 33%;
@@ -644,7 +644,7 @@ body {
     justify-content: center;
     align-items: center;
 }
-.box-tecnos{
+.bench-box-tecnos{
     display: flex;
     background-color: white;
     width: 60%;
@@ -652,7 +652,7 @@ body {
     box-shadow: 0px 3px 8px 0px #484848bd;
     margin-top: 2%;
 }
-.links {
+.bench-links {
     
     height: 99%;
     width: 25%;
@@ -661,15 +661,15 @@ body {
     justify-content: center;
 }
 
-.score-freelancer {
+.bench-score-freelancer {
     display: flex;
     width: 30%;
     height: 20%;
-    background-color: rgba(0, 0, 0, 0.875);
+    background-color: rgba(0, 0, 0, 0.bench-875);
     border-radius: 4px;
     padding: 0 10px;
 }
-.icon-star{
+.bench-icon-star{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -678,7 +678,7 @@ body {
     padding-left: 10%;
 }
 
-.num-score{
+.bench-num-score{
     display: flex;
     /* justify-content: center; */
     align-items: center;
@@ -690,23 +690,23 @@ body {
     color: white;
 }
 
-.score-freelancer{
+.bench-score-freelancer{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    background-color: rgba(0, 0, 0, 0.853);
+    background-color: rgba(0, 0, 0, 0.bench-853);
     border-radius: 6%;
     padding: 5px;
  }
- .box-icon-star{
+ .bench-box-icon-star{
     display: flex;
     /* height: 90%;
     width: 30%;   */
     justify-content: center;
     align-items: center;
  }
- .box-score-number{ 
+ .bench-box-score-number{ 
     
     font-family: 'Poppins';
     font-weight: bold;
