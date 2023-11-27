@@ -5,6 +5,7 @@ import logoDevhub from '../html-css-template/imagens/logo-devhub-grey.png';
 import fotoPerfil from '../html-css-template/imagens/foto-perfil.svg';
 import warningSVG from '../html-css-template/imagens/Group 108.svg';
 import star from '../html-css-template/imagens/icon-star.png';
+import ItemFooter from '../components/ItemFooter';
 
 import '../html-css-template/css/home.css'
 
@@ -156,6 +157,8 @@ function Home() {
                     <div className="home-no-results-message">Nenhum desenvolvedor encontrado.</div>
                 )}
             </div>
+
+            <ItemFooter/>
         </>
     )
 }

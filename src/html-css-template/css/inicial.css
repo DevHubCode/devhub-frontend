@@ -49,7 +49,7 @@ body {
     font-size: 18px;
     color: black;
     height: 25%;
-    width: 14%;
+    width: 10%;
     border-bottom: 6px solid transparent;
     margin-left: 10%;
     margin-top: 5.7%;
@@ -67,7 +67,7 @@ body {
     font-weight: lighter;
     font-size: 18px;
     color: rgb(255, 255, 255);
-    height: 50%;
+    height:60%;
     width: 50%;
     background-color: #23c1f1;
     /* border: 5px solid rgb(229, 255, 0); */
@@ -635,4 +635,10 @@ body {
     display: flex;
     color: #C9C5C5;
     margin-top: 8%;
+  }
+
+  .button-navbar button{
+    height:60%;
+    width: 90%;
+
   }
