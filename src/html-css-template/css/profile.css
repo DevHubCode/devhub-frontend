@@ -386,6 +386,7 @@
     background-color: #448f29;
     font-size: 30px;
     border: 0px;
+    cursor: pointer;
 }
 
 .freela-box-contact button:hover{

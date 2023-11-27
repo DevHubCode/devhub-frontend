@@ -29,6 +29,7 @@ import cinco from "../html-css-template/imagens/cinco.svg"
 import nove from "../html-css-template/imagens/9.svg"
 import dez from "../html-css-template/imagens/12.svg"
 import { useEffect, useState, useRef } from "react";
+import { Link, animateScroll as scroll } from 'react-scroll';
 
 import "../html-css-template/css/inicial.css"
 
@@ -98,51 +99,38 @@ function Inicial() {
         setInterval(nextSlide, 8000);
     }
 
-    document.addEventListener("DOMContentLoaded", function () {
-
-        var items = document.querySelectorAll(".item-navbar");
-
-        for (var i = 0; i < items.length; i++) {
-
-            if (i === 0) {
-                items[i].style.borderBottom = "6px solid #23c1f1";
-            }
-
-            items[i].addEventListener("click", function () {
-
-                var itemAtual = this;
-
-
-                for (var j = 0; j < items.length; j++) {
-                    if (items[j] !== itemAtual) {
-                        items[j].style.borderBottom = "";
-                    }
-                }
-
-
-                itemAtual.style.borderBottom = "6px solid #23c1f1";
-            });
-        }
-    });
-
+    
+  
     function irParaServicos() {
-
-        window.scrollTo(0, 1840);
+        scroll.scrollTo(1840, {
+            smooth: true,
+            duration: 500,
+        });
     }
 
     function irParaSobre() {
-
-        window.scrollTo(0, 520);
+        scroll.scrollTo(520, {
+            smooth: true,
+            duration: 500,
+        });
     }
 
     function irParaFooter() {
-
-        window.scrollTo(0, 18324324);
+      
+        scroll.scrollTo(18324324, {
+            smooth: true,
+            duration: 500,
+        });
     }
 
-    function irParainicio() {
+    function irParaInicio() {
+      
+        scroll.scrollTo(0, {
+            smooth: true,
+            duration: 500,
+        });
 
-        window.scrollTo(0, 0);
+       
     }
 
     function login() {
@@ -153,6 +141,8 @@ function Inicial() {
         window.location.href = '/cadastro';
     }
 
+
+    
     return (
         <>
             <div className="navbar">
@@ -161,10 +151,18 @@ function Inicial() {
                 </div>
                 
                 <div className="items">
-                    <div className="item-navbar" onclick={irParainicio}>Home</div>
-                    <div className="item-navbar" onclick={irParaSobre}>Sobre</div>
-                    <div className="item-navbar" onclick={irParaServicos}>Serviços</div>
-                    <div className="item-navbar" onclick={irParaFooter}>Contato</div>
+                    <div className="item-navbar" onClick={irParaInicio} id="home">
+                        Home
+                    </div>
+                    <div className="item-navbar" onClick={irParaSobre}>
+                        Sobre
+                    </div>
+                    <div className="item-navbar" onClick={irParaServicos}>
+                        Serviços
+                    </div>
+                    <div className="item-navbar" onClick={irParaFooter}>
+                        Contato
+                    </div>
                     <div className="button-navbar" onClick={login}>
                         Entrar
                 </div>
@@ -240,7 +238,7 @@ function Inicial() {
                         <div className="icons-c4">
 
                             <div className="box-icon">
-                                <div className="icon1-c4-1"><img src={PlayStore} alt="" width="32px" /></div>
+                                <div className="icon1-c4-1"><img src={PlayStore} alt="" width="32px"style={{ paddingTop: "2px", paddingRight: "10px" }} /></div>
                                 <div className="text-icon-c4">
                                     <div className="text-icon-c4-1">Baixe no</div>
                                     <div className="text-icon-c4-2">Google Play</div>
@@ -249,7 +247,7 @@ function Inicial() {
 
                             <div className="box-icon">
                                 <div className="icon1-c4-2"><img src={AppleStore} alt="" width="37px"
-                                    style={{ paddingTop: "6px" }} /></div>
+                                    style={{ paddingTop: "6px", paddingRight: "10px" }} /></div>
                                 <div className="text-icon-c4">
                                     <div className="text-icon-c4-1">Baixe na</div>
                                     <div className="text-icon-c4-2">Apple Store</div>
