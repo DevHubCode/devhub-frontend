@@ -60,12 +60,13 @@ function Especialidades() {
                 const response = await api.patch(`/freelancers/foto/${id}`, formData);
             }
             
-            // Se necessário, você pode tratar a resposta do backend aqui
 
             Swal.fire({
                 title: "Cadastro realizado com sucesso!",
                 icon: "success",
             });
+
+            sessionStorage.clear();
 
             // Redirecione ou faça outra ação após o sucesso do cadastro
             navigate("/login");

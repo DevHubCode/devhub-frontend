@@ -23,6 +23,7 @@ function Profile() {
     const [preco, setPreco] = useState("");
     const [idDev, setId] = useState("");
     const [especialidades, setEspecialidades] = useState([]);
+    const [imagemUrl, setImagemUrl] = useState(null);
 
     const { id } = useParams();
 
@@ -50,6 +51,24 @@ function Profile() {
             });
     }, []);
 
+    useEffect(() => {
+        const imagemEmByte = sessionStorage.getItem('imagem');
+    
+        if (imagemEmByte) {
+          const binaryString = atob(imagemEmByte);
+          const byteArray = new Uint8Array(binaryString.length);
+    
+          for (let i = 0; i < binaryString.length; i++) {
+            byteArray[i] = binaryString.charCodeAt(i);
+          }
+    
+          const blob = new Blob([byteArray], { type: 'image/**' });
+          const url = URL.createObjectURL(blob);
+    
+          setImagemUrl(url);
+        }
+      }, []);
+
     return (
         <>
             <div className="header">
@@ -67,10 +86,10 @@ function Profile() {
                 </div>
 
                 <div className="items">
-                    <div className="img">
+                    <div className="img" style={{backgroundImage: `url(${imagemUrl})`}}>
                         <div className="score-freelancer">
                             <div className="icon-star">
-                                <img src={star} alt="" width="30px" />
+                                <img src={star} alt="" width="30px"/>
                             </div>
                             <div className="num-score">{avaliacao}</div>
                         </div>

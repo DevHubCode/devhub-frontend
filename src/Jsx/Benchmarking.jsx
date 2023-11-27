@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import logoDevhub from '../html-css-template/imagens/logo-devhub-grey.png';
 import fotoPerfil from '../html-css-template/imagens/foto-perfil.svg';
 import warningSVG from '../html-css-template/imagens/Group 108.svg';
@@ -9,7 +9,6 @@ import springLogo from '../html-css-template/imagens/spring-logo.svg'
 import azureLogo from '../html-css-template/imagens/azure-logo.svg'
 import star from '../html-css-template/imagens/icon-star.png';
 import { Link, useNavigate } from 'react-router-dom';
-
 import '../html-css-template/css/benchmarking.css'
 
 import { freelasComparacao } from '../Data';
@@ -19,6 +18,7 @@ function Benchmarking() {
     const [searchId, setSearchId] = useState('');
     const [showDevCard, setShowDevCard] = useState(false);
     const [foundDev, setFoundDev] = useState(null);
+    const [imagemUrl, setImagemUrl] = useState(null);
 
     const [searchId2, setSearchId2] = useState('');
     const [showDevCard2, setShowDevCard2] = useState(false);
@@ -83,7 +83,24 @@ function Benchmarking() {
             // Handle the case where no developer is found for contact
         }
     }
-
+    
+    useEffect(() => {
+        const imagemEmByte = sessionStorage.getItem('imagem');
+    
+        if (imagemEmByte) {
+          const binaryString = atob(imagemEmByte);
+          const byteArray = new Uint8Array(binaryString.length);
+    
+          for (let i = 0; i < binaryString.length; i++) {
+            byteArray[i] = binaryString.charCodeAt(i);
+          }
+    
+          const blob = new Blob([byteArray], { type: 'image/**' });
+          const url = URL.createObjectURL(blob);
+    
+          setImagemUrl(url);
+        }
+      }, []);
 
     return (
         <>
@@ -97,7 +114,7 @@ function Benchmarking() {
                     <div className="logo-devhub">
                         <img src={logoDevhub} alt="" width="200px" />
                     </div>
-                    <div className="img-profile"><img src={fotoPerfil} width="35px" /></div>
+                    <div className="img-profile"><img src={imagemUrl} width="35px" /></div>
                 </div>
                 <div className="box-menu">
                     <div className="search">
