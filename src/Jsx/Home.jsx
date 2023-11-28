@@ -143,9 +143,9 @@ function Home() {
             </div>
             <div className="home-header-icons">
                 { 
-                // loading ? (
-                //     <div>Carregando...</div>
-                // ) :                    
+                loading ? (
+                    <div>Carregando...</div>
+                ) :                    
                 filteredDevs.length > 0 ? (
                     filteredDevs.map((freelancer) => {
 
@@ -177,6 +177,9 @@ function Home() {
                                         <div className="home-box-price">
                                             R$ {freelancer.valorHora}
                                         </div>
+                                        <div className="home-box-profile-image">
+                                        <img src={freelancer.imagemUrl} alt={`Imagem de perfil de ${freelancer.nome}`} />
+                                    </div>
                                     </div>
                                 </div>
                             </div>
