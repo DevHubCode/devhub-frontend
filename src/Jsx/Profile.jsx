@@ -34,11 +34,34 @@ function Profile() {
                 const devSelecionado = response.data;
                 setId(devSelecionado.id_freelancer);
                 setNome(devSelecionado.nome);
-                setAvaliacao(devSelecionado.avaliacao);
                 setFuncao(devSelecionado.funcao);
                 setDescricao(devSelecionado.descricao);
                 setPreco(devSelecionado.valorHora);
                 setEspecialidades(devSelecionado.especialidades.map(especialidade => especialidade.descricao));
+
+                const imagemEmByte = devSelecionado.imagem;
+    
+                if (imagemEmByte) {
+                  const binaryString = atob(imagemEmByte);
+                  const byteArray = new Uint8Array(binaryString.length);
+            
+                  for (let i = 0; i < binaryString.length; i++) {
+                    byteArray[i] = binaryString.charCodeAt(i);
+                  }
+            
+                  const blob = new Blob([byteArray], { type: 'image/**' });
+                  const url = URL.createObjectURL(blob);
+            
+                  setImagemUrl(url);
+                }
+
+                if(devSelecionado.nota == null){
+                    setAvaliacao("5.00")
+                }else{
+                    setAvaliacao(devSelecionado.nota)
+                }
+                
+
 
                 console.log(devSelecionado)
             })
@@ -52,7 +75,7 @@ function Profile() {
     }, []);
 
     useEffect(() => {
-        const imagemEmByte = sessionStorage.getItem('imagem');
+        const imagemEmByte = imagemUrl;
     
         if (imagemEmByte) {
           const binaryString = atob(imagemEmByte);
@@ -70,7 +93,12 @@ function Profile() {
       }, []);
       
       function voltar(){
-        window.location.href = '/home'
+        const role = sessionStorage.getItem("role")
+        if(role == "FREELANCER"){
+            window.location.href = '/publicacoes'
+        }else{
+            window.location.href = '/home'
+        } 
       }
 
     return (

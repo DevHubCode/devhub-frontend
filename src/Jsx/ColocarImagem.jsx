@@ -54,15 +54,15 @@ function Especialidades() {
             console.log(formData)
             const role = sessionStorage.getItem("role");
             
-            if(role == "CONTRATANTE"){
-                const response = await api.patch(`/contratantes/foto/${id}`, formData);
-            }else{
+            if(role == "FREELANCER"){
                 const response = await api.patch(`/freelancers/foto/${id}`, formData);
+            }else{
+                const response = await api.patch(`/contratantes/foto/${id}`, formData);
             }
             
 
             Swal.fire({
-                title: "Cadastro realizado com sucesso!",
+                title: "imagem registrada com sucesso!",
                 icon: "success",
             });
 

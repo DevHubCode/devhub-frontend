@@ -17,6 +17,7 @@ function Home() {
 
     const [freelancers, setFreelancers] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [imagemUrl, setImagemUrl] = useState(null);
 
     useEffect(() => {
         // Função assincrona para buscar os freelancers na API
@@ -24,7 +25,7 @@ function Home() {
         const fetchFreelancers = async () => {
             try {
                 const response = await api.get(`/freelancers`)
-                setFreelancers(response.data.content);
+                setFreelancers(response.data);
                 setLoading(false);
                 console.log(freelancers)
             } catch (error) {
@@ -36,6 +37,24 @@ function Home() {
         fetchFreelancers();
     }, [])
 
+    useEffect(() => {
+        const imagemEmByte = sessionStorage.getItem('imagem');
+    
+        if (imagemEmByte) {
+          const binaryString = atob(imagemEmByte);
+          const byteArray = new Uint8Array(binaryString.length);
+    
+          for (let i = 0; i < binaryString.length; i++) {
+            byteArray[i] = binaryString.charCodeAt(i);
+          }
+    
+          const blob = new Blob([byteArray], { type: 'image/**' });
+          const url = URL.createObjectURL(blob);
+    
+          setImagemUrl(url);
+        }
+      }, []);
+
     console.log(freelancers);
 
     const filteredDevs = freelancers.filter(
@@ -44,7 +63,6 @@ function Home() {
         freelancer.id.toString().includes(searchDev)
     );
     
-
     const getSeniorityColor = (freelancer) => {
         switch (freelancer) {
             case "Pleno":
@@ -79,6 +97,20 @@ function Home() {
         sessionStorage.clear();
     }
 
+    function arrumarNota(nota){
+        if(nota == null){
+            return "5.00";
+        }
+        return nota;
+    }
+
+    function publicacoes(){
+        window.location.href = "/publicacoes"
+    }
+
+    function beanchinmark(){
+        window.location.href = "/benchmarking"
+    }
     
 
     return (
@@ -97,7 +129,7 @@ function Home() {
                     </div>
 
                     <div className="home-img-profile">
-                        <img src={fotoPerfil} width="35px" />
+                        <img src={imagemUrl} width="35px" />
                     </div>
                 </div>
                 <div className="home-box-menu">
@@ -113,9 +145,9 @@ function Home() {
                     </div>
 
                     <div className="home-sub-menu-section">
-                        <div className="home-icon1">Beanchinmark</div>
+                        <div className="home-icon1" onClick={beanchinmark}>Beanchinmark</div>
                         <div className="home-icon2">Todos</div>
-                        <div className="home-icon2">Publicações</div>
+                        <div className="home-icon2" onClick={publicacoes}>Publicações</div>
                     </div>
                 </div>
                 <div className="home-infos-home">
@@ -174,6 +206,8 @@ function Home() {
 
                         const firstName = freelancer.nome.split(' ')[0];
 
+                        const freelancerNota = arrumarNota(freelancer.nota);
+
                         const decodedImage = atob(freelancer.imagem);
 
                         return (
@@ -186,7 +220,7 @@ function Home() {
                                             <img src={star} alt="" width="100%" />
                                         </div>
                                         <div className="home-box-score-number">
-                                            {freelancer.score}
+                                            {freelancerNota}
                                         </div>
     
                                     </div>

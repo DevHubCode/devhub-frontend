@@ -42,13 +42,13 @@ function Especialidades() {
                     console.log(response.data);
                     Swal.fire({
                         title: "Cadastrado!",
-                        text: "Especialidades cadastrada, faça login para acessar!",
+                        text: "Especialidades cadastrada",
                         icon: "success"
                     }).then((result) => {
                         if (result.isConfirmed) {
-                            navigate('/login');
+                            navigate('/imagem');
                         } else {
-                            navigate('/login');
+                            navigate('/imagem');
                         }
                     });
                 })

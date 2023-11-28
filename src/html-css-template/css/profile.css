@@ -221,6 +221,7 @@
 .freela-num-score{
     display: flex;
     /* justify-content: center; */
+    
     align-items: center;
     width: 60%;
     height: 100%;

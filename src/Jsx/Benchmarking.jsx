@@ -8,6 +8,7 @@ import javaLogo from '../html-css-template/imagens/java-logo.svg'
 import springLogo from '../html-css-template/imagens/spring-logo.svg'
 import azureLogo from '../html-css-template/imagens/azure-logo.svg'
 import star from '../html-css-template/imagens/icon-star.png';
+import arrowLeft from '../html-css-template/imagens/arrow-left (2).svg';
 import { Link, useNavigate } from 'react-router-dom';
 import '../html-css-template/css/benchmarking.css'
 
@@ -102,10 +103,21 @@ function Benchmarking() {
         }
       }, []);
 
+      function voltar(){
+        window.location.href = "/home"
+      }
+
     return (
         <>
             <div className="bench-header">
                 <div className="bench-navbar">
+
+                <div className="freela-back">
+                        <div className="freela-icon-back">
+                            <img src={arrowLeft} alt="" width="20px" />
+                        </div>
+                        <div className="freela-text-back" onClick={voltar}>Voltar</div>
+                    </div>
 
                     <div className="bench-back">
                         <div className="bench-icon-menu"><img src="././assets/icon-menu.svg" alt="" width="40px" /></div>

@@ -1,96 +1,97 @@
-body{
- font-family: "Poppins";
- margin: 0px;
+body {
+    font-family: "Poppins";
+    margin: 0px;
 }
+
 .publi-header {
-    
 
-   height: 70px;
 
-   width: 100%;
+    height: 70px;
 
-   background-color:  #faf8f8;
-   
-   display: flex;
+    width: 100%;
 
-   flex-direction: column;
- 
-   position: fixed;
-   box-shadow: 0px 1px 1px 1px #dadada;
+    background-color: #faf8f8;
+
+    display: flex;
+
+    flex-direction: column;
+
+    position: fixed;
+    box-shadow: 0px 1px 1px 1px #dadada;
 }
 
 
 
 .publi-navbar {
-   display: flex;
-   background-color: #fdfcfc;
-   height: 100%;
-   width: 100%;
-   /* border: 4px solid rgb(201, 11, 11); */
+    display: flex;
+    background-color: #fdfcfc;
+    height: 100%;
+    width: 100%;
+    /* border: 4px solid rgb(201, 11, 11); */
 }
 
 .publi-back {
-   display: flex;
-   /* justify-content: center; */
-   align-items: center;
-   width: 18%;
-   height: 100%;
-   font-family: "Poppins";
-   font-size: 22px;
-   font-weight: 200;
-   color: white;
-   /* border: 3px solid white; */
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    width: 18%;
+    height: 100%;
+    font-family: "Poppins";
+    font-size: 22px;
+    font-weight: 200;
+    color: white;
+    /* border: 3px solid white; */
 }
 
 .publi-icon-menu {
-   padding-right: 7%;
-   height: 30%;
-   width: 8%;
-   /* border: 4px solid rgb(29, 29, 31); */
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   margin-left: 32%;
-   margin-top: 6%;
+    padding-right: 7%;
+    height: 30%;
+    width: 8%;
+    /* border: 4px solid rgb(29, 29, 31); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 32%;
+    margin-top: 6%;
 }
 
 .publi-navbar .publi-logo-devhub {
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   width: 95%;
-   height: 100%;
-   /* border: 4px solid rgb(29, 29, 31); */
-   padding-right: 2%;
-  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    height: 100%;
+    /* border: 4px solid rgb(29, 29, 31); */
+    padding-right: 2%;
+
 }
 
-.publi-img-profile{
-   height: 100%;
-   width: 20%;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   border-radius: 100%;
+.publi-img-profile {
+    height: 100%;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
 }
 
-.publi-img-profile img{
-border-radius: 30px;
+.publi-img-profile img {
+    border-radius: 30px;
 }
 
-.publicar{
-height: 130px;
-width: 100%;
-display: flex;
-justify-content: center;
-align-items: center;
-padding-top: 70px;
-box-shadow: 0px 1px 1px 1px #c9c8c8;
-background-color: #ffffff  ;
-padding-top: 5%;
+.publicar {
+    height: 130px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 70px;
+    box-shadow: 0px 1px 1px 1px #c9c8c8;
+    background-color: #ffffff;
+    padding-top: 5%;
 }
 
-.publicar-img-icone{
+.publicar-img-icone {
     height: 100%;
     width: 20%;
     display: flex;
@@ -98,27 +99,36 @@ padding-top: 5%;
     align-items: center;
     margin-top: 2%;
 }
-.publicar-img-icone img{
-border-radius: 49px;
+
+.publicar-img-icone img {
+    cursor: pointer;
+    border-radius: 49px;
 }
-.publicar input{
+
+.publicar-img-icone img:hover{
+    filter: blur(1px);
+}
+
+.publicar input {
     margin-top: 2%;
-height: 50%;
-width: 40%;
-background-color: #f7f7fa3d;
-border: none;
-padding-left: 3%;
-border-radius: 10px;
-box-shadow: 0px 1px 1px 1px #dad9d9;
-font-size: 20px;
-color: #7b7a7a;
+    height: 50%;
+    width: 40%;
+    background-color: #f7f7fa3d;
+    border: none;
+    padding-left: 3%;
+    border-radius: 10px;
+    box-shadow: 0px 1px 1px 1px #dad9d9;
+    font-size: 20px;
+    color: #7b7a7a;
 
 }
+
 .publicar input:focus {
     outline: none;
     border: none;
 }
-.publicar button{
+
+.publicar button {
     height: 30%;
     width: 8%;
     background-color: rgb(22, 142, 175);
@@ -131,26 +141,27 @@ color: #7b7a7a;
     margin-top: 2%;
 }
 
-.publicar button:hover{
+.publicar button:hover {
     height: 31%;
     width: 9%;
     background-color: rgb(22, 97, 118);
-   
+
 }
 
-.publicar button:active{
+.publicar button:active {
     height: 31%;
     width: 9%;
     background-color: rgb(19, 120, 148);
-   
-}
-
-.publicar button:focus{
-   border: none;
-
 
 }
-.feed{
+
+.publicar button:focus {
+    border: none;
+
+
+}
+
+.feed {
     height: auto;
     width: 100%;
     display: flex;
@@ -158,11 +169,11 @@ color: #7b7a7a;
     background-color: #f6f6f6;
 }
 
-.feed-tittle{
+.feed-tittle {
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
     align-items: center;
     height: 90px;
     width: 100%;
@@ -171,7 +182,7 @@ color: #7b7a7a;
     font-size: 35px;
 }
 
-.feed-body{
+.feed-body {
     margin-top: 20px;
     margin-bottom: 20px;
     height: auto;
@@ -186,42 +197,43 @@ color: #7b7a7a;
     gap: 20px;
     justify-content: space-around;
 }
-.post-item{
-   height: 300px;
-   width: 70%;
-   background-color: #ffffff;
-   box-shadow: 0px 1px 1px 1px #dadada;
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
+
+.post-item {
+    height: 300px;
+    width: 70%;
+    background-color: #ffffff;
+    box-shadow: 0px 1px 1px 1px #dadada;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
 
 
-  
-.post-user-infos{
+
+.post-user-infos {
     display: flex;
-    
+
     height: 20%;
-    width:100%;
+    width: 100%;
 
 }
 
-.imagem-feed{
+.imagem-feed {
     display: flex;
     height: 100%;
-    width:16%;
+    width: 16%;
     justify-content: center;
     align-items: center;
     margin-left: 1.8%;
     margin-top: 3%;
 }
 
-.imagem-feed img{
+.imagem-feed img {
     border-radius: 5px;
 }
 
-.feed-name-function{
+.feed-name-function {
     display: flex;
     height: 100%;
     width: 70%;
@@ -229,24 +241,25 @@ color: #7b7a7a;
 
 }
 
-.feed-name{
+.feed-name {
     margin-top: 3%;
     font-size: 30px;
     font-weight: 900;
     color: #171717;
 }
-.feed-function{
+
+.feed-function {
     padding-top: 1%;
     font-size: 15px;
     font-weight: 900;
     color: #4b4b4b;
 }
 
-.text-feed{
+.text-feed {
     justify-content: center;
     align-items: center;
     display: flex;
     height: 70%;
-    width:90%;
+    width: 90%;
     font-size: 13px;
 }

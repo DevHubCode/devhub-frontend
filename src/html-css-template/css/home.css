@@ -75,7 +75,9 @@
 .home-img-profile img{
 border-radius: 30px;
 }
+
 .home-icon1 {
+   cursor: pointer;
    margin-top: 5%;
    height: 50%;
    width: 25%;
@@ -87,7 +89,12 @@ border-radius: 30px;
    color: white;
 }
 
+.home-icon1:hover{
+   background-color: blue;
+}
+
 .home-icon2 {
+   cursor: pointer;
    display: flex;
    justify-content: center;
    align-items: center;
@@ -97,6 +104,10 @@ border-radius: 30px;
    background-color: #ffffff;
    margin-left: 2%;
    color: #8A8A8A;
+}
+
+.home-icon2:hover{
+   background-color: #b4e9f9;
 }
 
 .home-box-menu {
@@ -202,7 +213,9 @@ border-radius: 30px;
    padding-top: 0%;
    padding-bottom: 0%;
 }
-.home-box-score-number{ 
+.home-box-score-number{
+   display: flex;
+   align-items: center;
    height: 90%;
    width: 70%; 
    font-family: 'Poppins';

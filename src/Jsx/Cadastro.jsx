@@ -42,7 +42,6 @@ function Cadastrar() {
     };
 
     function avancar() {
-        alert("Entrou");
         block2Div.style.display = 'none';
         block3Div.style.display = 'flex';
         setCadastrar("Cadastrar");
@@ -159,20 +158,22 @@ function Cadastrar() {
                             console.log(response.data);
                             Swal.fire({
                                 title: "Cadastrado!",
-                                text: "Cadastro efetuado, redirecionando para tela de login",
+                                text: "Cadastro efetuado, redirecionando para tela de imagem",
                                 icon: "success",
                                 showConfirmButton: false,
                                 timer: 2000
                             }).then((result) => {
                                 if (result.isConfirmed) {
                                     // Redireciona para a página de login somente quando o botão for clicado
-                                    sessionStorage.setItem("id", response.data.id)
+                                    sessionStorage.setItem("id", response.data.id_contratante)
                                     sessionStorage.setItem("nome", response.data.nome)
                                     sessionStorage.setItem("email", response.data.email)
                                     sessionStorage.setItem("role", response.data.role)
+                                    console.log(response)
                                     window.location.href = '/imagem';
                                 } else {
-                                    sessionStorage.setItem("id", response.data.id)
+                                    console.log(response)
+                                    sessionStorage.setItem("id", response.data.id_contratante)
                                     sessionStorage.setItem("nome", response.data.nome)
                                     sessionStorage.setItem("email", response.data.email)
                                     sessionStorage.setItem("role", response.data.role)

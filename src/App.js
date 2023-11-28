@@ -20,7 +20,7 @@ function App() {
 
         <Route path="/cadastro" element={<Cadastro />} ></Route>
         <Route path="/imagem" element={<TelaImagem />} ></Route>
-        <Route path="/Publicacoes" element={<Publicacoes />} ></Route>
+        <Route path="/publicacoes" element={<Publicacoes />} ></Route>
         <Route path="/" element={<Inicial />} ></Route>
         <Route path="/login" element={<Login />} ></Route>
         <Route path="/logout" element={<Logout />} ></Route>
