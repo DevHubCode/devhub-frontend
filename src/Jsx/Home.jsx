@@ -36,6 +36,7 @@ function Home() {
         fetchFreelancers();
     }, [])
 
+    console.log(freelancers);
 
     const filteredDevs = freelancers.filter(
         (freelancer) => 
@@ -44,8 +45,8 @@ function Home() {
     );
     
 
-    const getSeniorityColor = (senioridade) => {
-        switch (senioridade) {
+    const getSeniorityColor = (freelancer) => {
+        switch (freelancer) {
             case 'Pleno':
                 return 'pleno-color';
             case 'Sênior':
@@ -57,6 +58,21 @@ function Home() {
 
         }
     };
+
+    const renderImageFromBytes = (bytes) => {
+        if (bytes) {
+            const binaryString = atob(bytes);
+            const byteArray = new Uint8Array(binaryString.length);
+      
+            for (let i = 0; i < binaryString.length; i++) {
+              byteArray[i] = binaryString.charCodeAt(i);
+            }
+      
+            const blob = new Blob([byteArray], { type: 'image/**' });
+            const url = URL.createObjectURL(blob);
+
+            return url;
+    }}
     
 
     
@@ -156,7 +172,7 @@ function Home() {
 
                         return (
                             <div className="home-box-freelancer" key={freelancer.id_freelancer}>
-                                <div className="home-image-freelancer" >
+                                <div className="home-image-freelancer" style={{backgroundImage: `url(${renderImageFromBytes(freelancer.imagem)})`}}>
     
                                     <div className="home-score-freelancer">
     
@@ -175,14 +191,11 @@ function Home() {
                                     </div>
                                     <div className="home-box-aux">
                                         <div className="home-box-name-age">
-                                            {freelancer.nome}, {freelancer.idade}.
+                                            {freelancer.nome}
                                         </div>
                                         <div className="home-box-price">
                                             R$ {freelancer.valorHora}
                                         </div>
-                                        <div className="home-box-profile-image">
-                                        <img src={`data:image/png;base64,${decodedImage}`} alt={`Imagem de perfil de ${freelancer.nome}`} />
-                                    </div>
                                     </div>
                                 </div>
                             </div>

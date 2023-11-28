@@ -68,6 +68,10 @@ function Profile() {
           setImagemUrl(url);
         }
       }, []);
+      
+      function voltar(){
+        window.location.href = '/home'
+      }
 
     return (
         <>
@@ -77,7 +81,7 @@ function Profile() {
                         <div className="freela-icon-back">
                             <img src={arrowLeft} alt="" width="20px" />
                         </div>
-                        <div className="freela-text-back">Voltar</div>
+                        <div className="freela-text-back" onClick={voltar}>Voltar</div>
                     </div>
 
                     <div className="freela-logo-devhub">

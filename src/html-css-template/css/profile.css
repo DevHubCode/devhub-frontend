@@ -239,6 +239,7 @@
     font-size: 22px;
     font-weight: 200;
     color: rgb(185, 185, 185);
+    cursor: pointer;
     /* border: 3px solid white; */
 }
 .freela-icon-back{
