@@ -100,7 +100,6 @@ function Profile() {
                             <div className="freela-name">{nome}</div>
                             <div className="freela-function">{funcao}</div>
                             <div className="freela-tecno">
-                                <div className="freela-box-tecnos">
                                     <Select options={especialidades.map(especialidade => ({
                                         value: especialidade,
                                         label: especialidade,
@@ -108,7 +107,7 @@ function Profile() {
                                     }))}  placeholder=" Especialidades ">
                                         Especialidades
                                     </Select>
-                                </div>
+
                             </div>
                             <div className="freela-about">
                                 <div className="freela-box-about">

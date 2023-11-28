@@ -15,31 +15,34 @@ function Home() {
 
     const [ searchDev, setSearchDev ] = useState('');
 
-    // const [freelancers, setFreelancers] = useState([]);
-    // const [loading, setLoading] = useState(true);
+    const [freelancers, setFreelancers] = useState([]);
+    const [loading, setLoading] = useState(true);
 
-    // useEffect(() => {
-    //     // Função assincrona para buscar os freelancers na API
+    useEffect(() => {
+        // Função assincrona para buscar os freelancers na API
 
-    //     const fetchFreelancers = async () => {
-    //         try {
-    //             const response = await api.get(`url_aqui/freelancer`)
-    //             setFreelancers(response.data);
-    //             setLoading(false);
-    //         } catch (error) {
-    //             console.error('Erro ao buscar freelancer >>: ', error);
-    //             setLoading(false)
-    //         }
-    //     }
+        const fetchFreelancers = async () => {
+            try {
+                const response = await api.get(`/freelancers`)
+                setFreelancers(response.data.content);
+                setLoading(false);
+                console.log(freelancers)
+            } catch (error) {
+                console.error('Erro ao buscar freelancer >>: ', error);
+                setLoading(false)
+            }
+        }
 
-    //     fetchFreelancers();
-    // }, []) 
+        fetchFreelancers();
+    }, [])
+
 
     const filteredDevs = freelancers.filter(
         (freelancer) => 
         freelancer.nome.toLowerCase().includes(searchDev.toLowerCase()) ||
         freelancer.id.toString().includes(searchDev)
     );
+    
 
     const getSeniorityColor = (senioridade) => {
         switch (senioridade) {
@@ -149,12 +152,12 @@ function Home() {
                         const seniorityColorClass = getSeniorityColor(freelancer.senioridade)
 
                         return (
-                            <div className="home-box-freelancer" key={freelancer.id}>
+                            <div className="home-box-freelancer" key={freelancer.id_freelancer}>
                                 <div className="home-image-freelancer" >
     
                                     <div className="home-score-freelancer">
     
-                                        <div className="home-box-icon-star">
+                                        <div className="home-box-icon-star" >
                                             <img src={star} alt="" width="100%" />
                                         </div>
                                         <div className="home-box-score-number">
@@ -172,7 +175,7 @@ function Home() {
                                             {freelancer.nome}, {freelancer.idade}.
                                         </div>
                                         <div className="home-box-price">
-                                            R$ {freelancer.valor_hora}
+                                            R$ {freelancer.valorHora}
                                         </div>
                                     </div>
                                 </div>
