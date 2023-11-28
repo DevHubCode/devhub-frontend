@@ -53,7 +53,7 @@ function Publicacoes() {
     function paginaPerfil(){
         const id = sessionStorage.getItem('id');
 
-        window.location.href = `/profile/${id}`
+        window.location.href = `/profileCrud/${id}`
     }
 
 

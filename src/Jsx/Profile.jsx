@@ -4,6 +4,7 @@ import '../html-css-template/css/profile.css';
 import { freelasComparacao } from '../Data';
 import foto from "../html-css-template/imagens/image-edficio=devhub.svg"
 import linkedinLogo from '../html-css-template/imagens/LInkdln-logo.svg';
+import ModalComponent from '../ModalJsx/ModalContactar';
 import githubLogo from '../html-css-template/imagens/github-logo.svg';
 import star from '../html-css-template/imagens/icon-star.png';
 import arrowLeft from '../html-css-template/imagens/arrow-left (2).svg';
@@ -24,8 +25,19 @@ function Profile() {
     const [idDev, setId] = useState("");
     const [especialidades, setEspecialidades] = useState([]);
     const [imagemUrl, setImagemUrl] = useState(null);
+    const [telefone, setTelefone] = useState("");
 
     const { id } = useParams();
+
+    const [modalOpen, setModalOpen] = useState(false);
+
+    const openModal = () => {
+      setModalOpen(true);
+    };
+  
+    const closeModal = () => {
+      setModalOpen(false);
+    };
 
 
     useEffect(() => {
@@ -38,6 +50,7 @@ function Profile() {
                 setDescricao(devSelecionado.descricao);
                 setPreco(devSelecionado.valorHora);
                 setEspecialidades(devSelecionado.especialidades.map(especialidade => especialidade.descricao));
+                setTelefone(devSelecionado.telefone);
 
                 const imagemEmByte = devSelecionado.imagem;
     
@@ -155,7 +168,7 @@ function Profile() {
                                     <div className="freela-price-value">R$ {preco}</div>
                                 </div>
                                 <div className="freela-box-contact">
-                                    <button>Contactar</button>
+                                    <button onClick={openModal}>Contactar</button>
                                 </div>
                             </div>
                         </div>
@@ -174,6 +187,7 @@ function Profile() {
                     </div>
                 </div>
             </div>
+        <ModalComponent isOpen={modalOpen} onClose={closeModal} whatsappNumber={"55" + telefone} />
         </>
     )
 }
