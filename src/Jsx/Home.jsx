@@ -57,6 +57,7 @@ function Home() {
 
         }
     };
+    
 
     
 
@@ -151,6 +152,8 @@ function Home() {
 
                         const seniorityColorClass = getSeniorityColor(freelancer.senioridade)
 
+                        const decodedImage = atob(freelancer.imagem);
+
                         return (
                             <div className="home-box-freelancer" key={freelancer.id_freelancer}>
                                 <div className="home-image-freelancer" >
@@ -178,7 +181,7 @@ function Home() {
                                             R$ {freelancer.valorHora}
                                         </div>
                                         <div className="home-box-profile-image">
-                                        <img src={freelancer.imagemUrl} alt={`Imagem de perfil de ${freelancer.nome}`} />
+                                        <img src={`data:image/png;base64,${decodedImage}`} alt={`Imagem de perfil de ${freelancer.nome}`} />
                                     </div>
                                     </div>
                                 </div>
