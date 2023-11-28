@@ -4,6 +4,7 @@ import Login from './Jsx/Login.jsx';
 import Logout from './Jsx/Logout.jsx';
 import Especialidades from "./Jsx/Especialidades.jsx";
 import Home from "./Jsx/Home.jsx";
+import Publicacoes from "./Jsx/Publicacoes.jsx";
 import Benchmarking from "./Jsx/Benchmarking.jsx";
 import Profile from "./Jsx/Profile.jsx";
 import Inicial from "./Jsx/Inicial.jsx";
@@ -19,6 +20,7 @@ function App() {
 
         <Route path="/cadastro" element={<Cadastro />} ></Route>
         <Route path="/imagem" element={<TelaImagem />} ></Route>
+        <Route path="/Publicacoes" element={<Publicacoes />} ></Route>
         <Route path="/" element={<Inicial />} ></Route>
         <Route path="/login" element={<Login />} ></Route>
         <Route path="/logout" element={<Logout />} ></Route>
