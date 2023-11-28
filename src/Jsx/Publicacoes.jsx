@@ -52,8 +52,14 @@ function Publicacoes() {
 
     function paginaPerfil(){
         const id = sessionStorage.getItem('id');
+        const role = sessionStorage.getItem('role');
 
-        window.location.href = `/profileCrud/${id}`
+        if(role == "FREELANCER"){
+            window.location.href = `/profileCrud/${id}`
+        }else{
+            window.location.href = `/profileContratante/${id}`
+        }
+
     }
 
 

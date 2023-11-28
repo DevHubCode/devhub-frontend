@@ -11,6 +11,7 @@ import Inicial from "./Jsx/Inicial.jsx";
 import TelaImagem from "./Jsx/ColocarImagem.jsx"
 import ProfileCrud from "./Jsx/ProfileCrud.jsx"
 import UpdateImage from "./ModalJsx/ColocarImagemCrud.jsx"
+import ProfileContratante from "./Jsx/ProfileContratante.jsx"
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
 
         <Route path="/cadastro" element={<Cadastro />} ></Route>
         <Route path="/imagem" element={<TelaImagem />} ></Route>
+        <Route path="/profileContratante/:id" element={<ProfileContratante />} ></Route>
         <Route path="/atualizarImagem" element={<UpdateImage />} ></Route>
         <Route path="/profileCrud/:id" element={<ProfileCrud />} ></Route>
         <Route path="/publicacoes" element={<Publicacoes />} ></Route>

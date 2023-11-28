@@ -112,6 +112,11 @@ function Home() {
         window.location.href = "/benchmarking"
     }
     
+    function profileFreelancer(){
+        const id = sessionStorage.getItem("id")
+
+        window.location.href = `/profileContratante/${id}`
+    }
 
     return (
         <>
@@ -129,7 +134,7 @@ function Home() {
                     </div>
 
                     <div className="home-img-profile">
-                        <img src={imagemUrl} width="35px" />
+                        <img onClick={profileFreelancer} src={imagemUrl} width="35px" />
                     </div>
                 </div>
                 <div className="home-box-menu">
@@ -166,7 +171,7 @@ function Home() {
 
                             <div className="home-text-level-dev">
                                 <div className="home-name-level-dev">Dev Pleno</div>
-                                <div className="home-yyyy"> 10 Anos</div>
+                                <div className="home-yyyy"> 5-9 Anos</div>
                             </div>
                         </div>
 
@@ -175,7 +180,7 @@ function Home() {
 
                             <div className="home-text-level-dev">
                                 <div className="home-name-level-dev">Dev Junior</div>
-                                <div className="home-yyyy"> 10 Anos</div>
+                                <div className="home-yyyy"> 1-4 Ano(s)</div>
                             </div>
                         </div>
 
