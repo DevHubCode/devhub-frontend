@@ -280,7 +280,7 @@ function Cadastrar() {
                             </div>
                             <form className="input-form" action="">
                                 <label htmlFor="descricao">Descrição:</label>
-                                <input onChange={onChange} type="text" id="descricao" placeholder="Insira a descrição aqui..." />
+                                <textarea onChange={onChange} type="text" id="descricao" placeholder="Insira a descrição aqui..." />
                             </form>
                         </div>
                         <div className="button-cadastro">

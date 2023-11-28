@@ -47,11 +47,11 @@ function Home() {
 
     const getSeniorityColor = (freelancer) => {
         switch (freelancer) {
-            case 'Pleno':
+            case "Pleno":
                 return 'pleno-color';
-            case 'Sênior':
+            case "Senior":
                 return 'senior-color';
-            case 'Junior':
+            case "Junior":
                 return 'junior-color';
             default:
                 return '';
@@ -74,6 +74,10 @@ function Home() {
             return url;
     }}
     
+    function sair(){
+        window.location.href = "/";
+        sessionStorage.clear();
+    }
 
     
 
@@ -82,7 +86,7 @@ function Home() {
             <div className="home-header">
                 <div className="home-navbar">
                     <div className="home-back">
-                        <div className="home-icon-menu">
+                        <div className="home-icon-menu" onClick={sair}>
                             <img src={logoutIcon} alt="" width="30px" />
                         </div>
 
@@ -168,6 +172,8 @@ function Home() {
 
                         const seniorityColorClass = getSeniorityColor(freelancer.senioridade)
 
+                        const firstName = freelancer.nome.split(' ')[0];
+
                         const decodedImage = atob(freelancer.imagem);
 
                         return (
@@ -191,7 +197,7 @@ function Home() {
                                     </div>
                                     <div className="home-box-aux">
                                         <div className="home-box-name-age">
-                                            {freelancer.nome}
+                                            {firstName}
                                         </div>
                                         <div className="home-box-price">
                                             R$ {freelancer.valorHora}

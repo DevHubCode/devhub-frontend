@@ -215,7 +215,7 @@ input:checked + .slider:before {
   width: 100%;
 }
 
-.input-form > input {
+.input-form > textarea {
   height:100px;
   width: 400px;
 }
