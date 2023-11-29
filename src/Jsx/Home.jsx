@@ -145,12 +145,17 @@ function Home() {
         menuHome.style.display = 'none'; // Hide the menu
     }
 
-    function profile(){
-        const id = document.getElementById("freela")
+    function profile(event, freelancerId){
+        // const id = document.getElementById("freela")
 
-        console.log(id.value)
+        // console.log(id.value)
 
-        window.location.href = `/profile/${id.value}`
+        event.stopPropagation(); // Evitar que o evento seja propagado para divs pais
+
+        console.log(freelancerId);
+
+        // window.location.href = `/profile/${id.value}`
+        window.location.href = `/profile/${freelancerId}`
     }
 
     return (
