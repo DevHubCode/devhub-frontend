@@ -1,3 +1,4 @@
+
 import React from "react";
 import setaEsquerda from "../html-css-template/imagens/arrow-left.svg"
 import logoDevhubBranco from "../html-css-template/imagens/Group 85.svg"
@@ -42,7 +43,7 @@ function Login() {
                             if(response.data.role == "CONTRATANTE"){
                                 navigate('/home');
                             }else{
-                                navigate(`/publicacoes`)
+                                navigate(`/profile/${response.data.id}`)
                             }
                             
                           console.log("O usuário clicou em OK!");
@@ -73,7 +74,7 @@ function Login() {
                 <div className="block-1">
                     <div className="voltar" onClick={inicio}>
                         <img src={setaEsquerda} alt="seta"/>
-                        Inicio
+                        <div className="text-voltar">Inicio</div>
                     </div>
                     <div className="frase">Proporcionando encontros entre demanda e competência.</div>
                     <div className="logo">

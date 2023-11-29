@@ -42,6 +42,7 @@ function Cadastrar() {
     };
 
     function avancar() {
+        alert("Entrou");
         block2Div.style.display = 'none';
         block3Div.style.display = 'flex';
         setCadastrar("Cadastrar");
@@ -158,22 +159,20 @@ function Cadastrar() {
                             console.log(response.data);
                             Swal.fire({
                                 title: "Cadastrado!",
-                                text: "Cadastro efetuado, redirecionando para tela de imagem",
+                                text: "Cadastro efetuado, redirecionando para tela de login",
                                 icon: "success",
                                 showConfirmButton: false,
                                 timer: 2000
                             }).then((result) => {
                                 if (result.isConfirmed) {
                                     // Redireciona para a página de login somente quando o botão for clicado
-                                    sessionStorage.setItem("id", response.data.id_contratante)
+                                    sessionStorage.setItem("id", response.data.id)
                                     sessionStorage.setItem("nome", response.data.nome)
                                     sessionStorage.setItem("email", response.data.email)
                                     sessionStorage.setItem("role", response.data.role)
-                                    console.log(response)
                                     window.location.href = '/imagem';
                                 } else {
-                                    console.log(response)
-                                    sessionStorage.setItem("id", response.data.id_contratante)
+                                    sessionStorage.setItem("id", response.data.id)
                                     sessionStorage.setItem("nome", response.data.nome)
                                     sessionStorage.setItem("email", response.data.email)
                                     sessionStorage.setItem("role", response.data.role)
@@ -203,49 +202,49 @@ function Cadastrar() {
 
     return (
         <>
-            <div className="body-cadastro">
-                <div className="block-1">
-                    <div className="voltar" onClick={inicio}>
-                        <img src={setaEsquerda} alt="seta" />
-                        Inicio
+            <div className="cadastro-body-cadastro">
+                <div className="cadastro-block-1">
+                <div className="cadastro-voltar" onClick={inicio}>
+                        <img src={setaEsquerda} alt="seta"/>
+                        <div className="cadastro-text-voltar">Inicio</div>
                     </div>
-                    <div className="frase">Proporcionando encontros entre demanda e competência.</div>
-                    <div className="logo">
+                    <div className="cadastro-frase">Proporcionando encontros entre demanda e competência.</div>
+                    <div className="cadastro-logo">
                         <img src={logoDevhubBranco} alt="loogo DevHub" />
                     </div>
-                    <div className="sloganX">
+                    <div className="cadastro-sloganX">
                         &copy; 2023 ; todos os direitos reservados By DevHub Enterprise
                     </div>
                 </div>
 
-                <div className="block-2">
-                    <div className="block-inputs">
-                        <div className="text-cadastro-tittle">Preencha seus dados pessoais</div>
-                        <div className="inputs-cadastro">
+                <div className="cadastro-block-2">
+                    <div className="cadastro-block-inputs">
+                        <div className="cadastro-text-cadastro-tittle">Preencha seus dados pessoais</div>
+                        <div className="cadastro-inputs-cadastro">
                             <input onChange={onChange} type="name" useState="email" id="nome" placeholder="Nome Completo" />
                             <input onChange={onChange} type="email" useState="senha" id="email" placeholder="Email" />
                             <input onChange={onChange} useState="senha" id="telefone" placeholder="Telefone" />
                             <input onChange={onChange} type="password" useState="senha" id="senha" placeholder="Senha" />
                             <input onChange={onChange} useState="senha" id="identificador" placeholder="CPF / CNPJ" />
                         </div>
-                        <div className="button-cadastro">
+                        <div className="cadastro-button-cadastro">
                             <button onClick={cadastrar}>{botao}</button>
                         </div>
                     </div>
-                    <div className="alter_user">
-                        <label class="switch">
+                    <div className="cadastro-alter_user">
+                        <label class="cadastro-switch">
                             <input type="radio" name="toggle" id="usuario" checked />
-                            <span onClick={mudarUsuario} class="slider"></span>
+                            <span onClick={mudarUsuario} class="cadastro-slider"></span>
                         </label>
                         <div>
                             {usuario}
                         </div>
                     </div>
                 </div>
-                <div className="block-3">
-                    <div className="block-inputs">
-                        <div className="text-cadastro-tittle-block3">Preencha seus dados profissionais</div>
-                        <div className="inputs-cadastro-block3">
+                <div className="cadastro-block-3">
+                    <div className="cadastro-block-inputs">
+                        <div className="cadastro-text-cadastro-tittle-block3">Preencha seus dados profissionais</div>
+                        <div className="cadastro-inputs-cadastro-block3">
                             <label for="cargos">Cargo</label>
                             <select placeholder="Escolha um cargo" onChange={onChange} id="cargos">
                                 <option value="" disabled selected>Escolha um cargo</option>
@@ -279,12 +278,12 @@ function Cadastrar() {
                                     </label>
                                 </div>
                             </div>
-                            <form className="input-form" action="">
+                            <form className="cadastro-input-form" action="">
                                 <label htmlFor="descricao">Descrição:</label>
                                 <textarea onChange={onChange} type="text" id="descricao" placeholder="Insira a descrição aqui..." />
                             </form>
                         </div>
-                        <div className="button-cadastro">
+                        <div className="cadastro-button-cadastro">
                             <button onClick={cadastrar}>{botao}</button>
                         </div>
                     </div>
