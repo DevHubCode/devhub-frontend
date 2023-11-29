@@ -21,6 +21,7 @@ function Benchmarking() {
     const [showDevCard, setShowDevCard] = useState(false);
     const [foundDev, setFoundDev] = useState(null);
     const [imagemUrl, setImagemUrl] = useState(null);
+    const [segundaPesquisa, setSegundaPesquisa] = useState(false)
 
     const [searchId2, setSearchId2] = useState('');
     const [showDevCard2, setShowDevCard2] = useState(false);
@@ -30,10 +31,16 @@ function Benchmarking() {
 
     const fetchDeveloperById = async (developerId) => {
         try {
-            const response = await api.get(`/freelancers/${developerId.id_freelancer}`);
-            return response.data;
+            if(segundaPesquisa == false){
+                const response = await api.get(`/freelancers/${searchId}`);
+                return response.data;
+            }else{
+                const response = await api.get(`/freelancers/${searchId2}`);
+                return response.data;
+            }
+            
         } catch (error) {
-            console.error(`Erro ao buscar desenvolvedor:  ${developerId.id_freelancer}`);
+            console.error(`Erro ao buscar desenvolvedor:  ${searchId}`);
             return null;
         }
     }
@@ -61,6 +68,7 @@ function Benchmarking() {
                 console.log('Desenvolvedor encontrado: ', devFound);
                 setFoundDev(devFound);
                 setShowDevCard(true);
+                setSegundaPesquisa(true)
             } else {
                 console.log('Desenvolvedor não encontrado');
                 setFoundDev(null);
@@ -71,19 +79,39 @@ function Benchmarking() {
         }
     };
 
+    // const handleSearchClick2 = async () => {
+    //     const devFound2 = freelasComparacao.find(freelancer => freelancer.id === parseInt(searchId2));
+
+    //     if (devFound2) {
+    //         console.log('2o Desenvolvedor encontrado : ', devFound2);
+    //         setFoundDev2(devFound2);
+    //         setShowDevCard2(true);
+    //     } else {
+    //         console.log('2o Desenvolvedor NÃO encontrado!!');
+    //         setFoundDev2(null);
+    //         setShowDevCard2(false);
+    //     }
+
+    //     try {
+    //         const devFound2 = await fetchDeveloperById(searchId2);
+    
+    //         if (devFound2) {
+    //             console.log('2o Desenvolvedor encontrado : ', devFound2);
+    //             setFoundDev2(devFound2);
+    //             setShowDevCard2(true);
+    //         } else {
+    //             console.log('2o Desenvolvedor NÃO encontrado!!');
+    //             setFoundDev2(null);
+    //             setShowDevCard2(false);
+    //         }
+    //     } catch (error) {
+    //         console.error('Erro ao buscar desenvolvedor:', error);
+    //     }
+
+    // }
+
     const handleSearchClick2 = async () => {
-        const devFound2 = freelasComparacao.find(freelancer => freelancer.id === parseInt(searchId2));
-
-        if (devFound2) {
-            console.log('2o Desenvolvedor encontrado : ', devFound2);
-            setFoundDev2(devFound2);
-            setShowDevCard2(true);
-        } else {
-            console.log('2o Desenvolvedor NÃO encontrado!!');
-            setFoundDev2(null);
-            setShowDevCard2(false);
-        }
-
+        // Use o valor atualizado diretamente
         try {
             const devFound2 = await fetchDeveloperById(searchId2);
     
@@ -99,8 +127,7 @@ function Benchmarking() {
         } catch (error) {
             console.error('Erro ao buscar desenvolvedor:', error);
         }
-
-    }
+    };
 
     const handleContactLink = async () => {
         // if (foundDev && foundDev.id) {
@@ -131,6 +158,7 @@ function Benchmarking() {
             if (selectedDev) {
                 console.log('Redirecionando para o perfil do desenvolvedor:', selectedDev);
                 navigate(`/freelancers/${selectedDev.id}`);
+                console.log(selectedDev)
             } else {
                 console.log('Desenvolvedor não encontrado para contato.');
             }
@@ -138,7 +166,7 @@ function Benchmarking() {
             console.error('Erro ao buscar desenvolvedor para contato:', error);
         }
     }
-    
+
     useEffect(() => {
         const imagemEmByte = sessionStorage.getItem('imagem');
     
@@ -160,6 +188,21 @@ function Benchmarking() {
       function voltar(){
         window.location.href = "/home"
       }
+
+      const renderImageFromBytes = (bytes) => {
+        if (bytes) {
+            const binaryString = atob(bytes);
+            const byteArray = new Uint8Array(binaryString.length);
+      
+            for (let i = 0; i < binaryString.length; i++) {
+              byteArray[i] = binaryString.charCodeAt(i);
+            }
+      
+            const blob = new Blob([byteArray], { type: 'image/**' });
+            const url = URL.createObjectURL(blob);
+
+            return url;
+    }}
 
     return (
         <>
@@ -251,15 +294,15 @@ function Benchmarking() {
                                 <div className="bench-box1">
                                     <div className="bench-image-free">
                                         <div className="bench-image-ipt">
-                                            <img src={foundDev.image} width="100%" alt="" />
+                                            <img src={renderImageFromBytes(foundDev.imagem)} width="100%" alt="" />
                                         </div>
                                     </div>
                                     <div className="bench-infos-dev">
                                         <div className="bench-name">{foundDev.nome}</div>
-                                        <div className="bench-function">{foundDev.funcao}d</div>
+                                        <div className="bench-function">{foundDev.funcao}</div>
                                         <div className="bench-box-about">
                                             <div className="bench-tittle-about">Sobre mim:</div>
-                                            <div className="bench-text-about">{foundDev.sobre}</div>
+                                            <div className="bench-text-about">{foundDev.descricao}</div>
                                             <div className="bench-box-tecnos">
                                                 <div className="bench-icon-tecno"><img src={javaLogo} alt="" width="35px" />
                                                 </div>
@@ -274,7 +317,7 @@ function Benchmarking() {
                                 <div className="bench-box2">
                                     <div className="bench-box-price">
                                         <div className="bench-tittle-price">Valor por hora: </div>
-                                        <div className="bench-price-value">{foundDev.preco}</div>
+                                        <div className="bench-price-value">R$ {foundDev.valorHora}</div>
                                     </div>
                                     <div className="bench-links">
                                         <div className="bench-social">
@@ -325,15 +368,15 @@ function Benchmarking() {
                                 <div className="bench-box1">
                                     <div className="bench-image-free">
                                         <div className="bench-image-ipt">
-                                            <img src={foundDev2.image} width="100%" alt="" />
+                                            <img src={renderImageFromBytes(foundDev2.imagem)}  width="100%" alt="" />
                                         </div>
                                     </div>
                                     <div className="bench-infos-dev">
                                         <div className="bench-name">{foundDev2.nome}</div>
-                                        <div className="bench-function">{foundDev2.funcao}d</div>
+                                        <div className="bench-function">{foundDev2.funcao}</div>
                                         <div className="bench-box-about">
                                             <div className="bench-tittle-about">Sobre mim:</div>
-                                            <div className="bench-text-about">{foundDev2.sobre}</div>
+                                            <div className="bench-text-about">{foundDev2.descricao}</div>
                                             <div className="bench-box-tecnos">
                                                 <div className="bench-icon-tecno"><img src={javaLogo} alt="" width="35px" />
                                                 </div>
@@ -348,7 +391,7 @@ function Benchmarking() {
                                 <div className="bench-box2">
                                     <div className="bench-box-price">
                                         <div className="bench-tittle-price">Valor por hora: </div>
-                                        <div className="bench-price-value">{foundDev2.preco}</div>
+                                        <div className="bench-price-value">R$ {foundDev2.valorHora}</div>
                                     </div>
                                     <div className="bench-links">
                                         <div className="bench-social">
