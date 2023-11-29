@@ -24,6 +24,7 @@ function Benchmarking() {
     const [imagemUrl, setImagemUrl] = useState(null);
     const [segundaPesquisa, setSegundaPesquisa] = useState(false);
     const [seniorityColor, setSeniorityColor] = useState('');
+    const [seniorityColor2, setSeniorityColor2] = useState('');
 
     const [searchId2, setSearchId2] = useState('');
     const [showDevCard2, setShowDevCard2] = useState(false);
@@ -71,6 +72,8 @@ function Benchmarking() {
                 setFoundDev(devFound);
                 setShowDevCard(true);
                 setSegundaPesquisa(true)
+
+                setSeniorityColor(getSeniorityColor(devFound))
             } else {
                 console.log('Desenvolvedor não encontrado');
                 setFoundDev(null);
@@ -80,6 +83,7 @@ function Benchmarking() {
             console.error('Erro ao buscar desenvolvedor:', error);
         }
     };
+    
 
     // const handleSearchClick2 = async () => {
     //     const devFound2 = freelasComparacao.find(freelancer => freelancer.id === parseInt(searchId2));
@@ -121,6 +125,11 @@ function Benchmarking() {
                 console.log('2o Desenvolvedor encontrado : ', devFound2);
                 setFoundDev2(devFound2);
                 setShowDevCard2(true);
+
+                setSeniorityColor2(getSeniorityColor(devFound2))
+
+                console.log(setSeniorityColor2(getSeniorityColor(devFound2))
+                )
 
             } else {
                 console.log('2o Desenvolvedor NÃO encontrado!!');
@@ -215,8 +224,8 @@ function Benchmarking() {
         }
     }
 
-    const getSeniorityColor = (freelancer) => {
-        switch (freelancer) {
+    const getSeniorityColor = (devFound) => {
+        switch (devFound.senioridade) {
             case "Pleno":
                 return 'pleno-color';
             case "Senior":
@@ -225,9 +234,9 @@ function Benchmarking() {
                 return 'junior-color';
             default:
                 return '';
-
         }
     };
+    
 
     return (
         <>
@@ -368,7 +377,7 @@ function Benchmarking() {
                                     </div>
                                 </div>
                             </div>
-                            <div className={`bench-color-level-dev ${getSeniorityColor(foundDev.senioridade)}`}></div>
+                            <div className={`bench-color-level-dev ${seniorityColor}`}></div>
                         </div>
                     ) : (
                         <div className="bench-card-dev-search">
@@ -445,7 +454,7 @@ function Benchmarking() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="bench-color-level-dev " onChange={getSeniorityColor(foundDev2.senioridade)}></div>
+                            <div className={`bench-color-level-dev ${seniorityColor2}`}></div>
                         </div>
                     ) : (
                         <div className="bench-card-dev-search">

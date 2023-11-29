@@ -42,7 +42,7 @@ function Especialidades() {
                     console.log(response.data);
                     Swal.fire({
                         title: "Cadastrado!",
-                        text: "Especialidades cadastrada",
+                        text: "Especialidades cadastrada, redirecionando para imagem!",
                         icon: "success"
                     }).then((result) => {
                         if (result.isConfirmed) {

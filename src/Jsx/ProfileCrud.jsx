@@ -165,8 +165,8 @@ function Profile() {
                 // Lida com a resposta do servidor após um login bem-sucedido
                 console.log(response.data);
                 Swal.fire({
-                    title: "Logando!",
-                    text: "Usuário encontrado, clique em ok para proseguir",
+                    title: "Atualizado",
+                    text: "Dados atualizados",
                     icon: "success"
                 }).then((result) => {
                     if (result.isConfirmed) {

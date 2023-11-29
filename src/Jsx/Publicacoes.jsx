@@ -57,7 +57,7 @@ function Publicacoes() {
         if(role == "FREELANCER"){
             window.location.href = `/profileCrud/${id}`
         }else{
-            window.location.href = `/profileContratante/${id}`
+            window.location.href = `/profileCrudContratante/${id}`
         }
 
     }
