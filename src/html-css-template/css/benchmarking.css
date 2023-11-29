@@ -576,6 +576,7 @@ body {
 
 .bench-box-price{
     margin-top: 6%;
+    margin-top: 2%;
     height: 100%;
     width: 25%;
     display: flex;
@@ -591,7 +592,7 @@ body {
    font-size: 14px;
    font-weight: 900px;
    color: #b6b5b5;
-  
+
 }
 
 .bench-price-value{
