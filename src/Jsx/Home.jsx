@@ -63,8 +63,8 @@ function Home() {
         const searchTermLower = searchDev.toLowerCase();
         
         return (
-            freelancer.especialidade &&
-            freelancer.especialidade.some((especialidade) =>
+            freelancer.especialidades &&
+            freelancer.especialidades.some((especialidade) =>
                 especialidade.descricao.toLowerCase().startsWith(searchTermLower)
             ) ||
             freelancer.id.toString().includes(searchTermLower)
@@ -138,7 +138,7 @@ function Home() {
     function profileFreelancer(){
         const id = sessionStorage.getItem("id")
 
-        window.location.href = `/profileContratante/${id}`
+        window.location.href = `/profileCrudContratante/${id}`
     }
     const menuHome = document.querySelector('.menu-home');
   

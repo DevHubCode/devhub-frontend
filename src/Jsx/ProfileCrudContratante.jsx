@@ -167,7 +167,6 @@ function Profile() {
                 <div className="freela-items">
                     <div className="freela-img" style={{backgroundImage: `url(${imagemUrl})`}}>
                     <div className="freela-edit-icon">
-                                    <img src={lapisIcon} alt="Editar" width="20px" />
                                 </div>
                        
                     </div>

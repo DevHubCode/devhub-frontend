@@ -23,6 +23,7 @@ function Benchmarking() {
     const [foundDev, setFoundDev] = useState(null);
     const [imagemUrl, setImagemUrl] = useState(null);
     const [segundaPesquisa, setSegundaPesquisa] = useState(false);
+    const [seniorityColor, setSeniorityColor] = useState('');
 
     const [searchId2, setSearchId2] = useState('');
     const [showDevCard2, setShowDevCard2] = useState(false);
@@ -214,6 +215,20 @@ function Benchmarking() {
         }
     }
 
+    const getSeniorityColor = (freelancer) => {
+        switch (freelancer) {
+            case "Pleno":
+                return 'pleno-color';
+            case "Senior":
+                return 'senior-color';
+            case "Junior":
+                return 'junior-color';
+            default:
+                return '';
+
+        }
+    };
+
     return (
         <>
             <div className="bench-header">
@@ -345,7 +360,7 @@ function Benchmarking() {
                                                 <img src={star} alt="" width="100%" />
                                             </div>
                                             <div className="bench-box-score-number">
-                                                {foundDev.score}
+                                                5.00
                                             </div>
 
                                         </div>
@@ -353,7 +368,7 @@ function Benchmarking() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="bench-color-level-dev"></div>
+                            <div className={`bench-color-level-dev ${getSeniorityColor(foundDev.senioridade)}`}></div>
                         </div>
                     ) : (
                         <div className="bench-card-dev-search">
@@ -373,6 +388,7 @@ function Benchmarking() {
                 <div className="bench-box-cdev">
 
                     {showDevCard2 ? (
+                        
                         <div className="bench-card-dev">
                             <div className="bench-box" key={foundDev2.id}>
                                 <div className="bench-box1">
@@ -419,7 +435,7 @@ function Benchmarking() {
                                                 <img src={star} alt="" width="100%" />
                                             </div>
                                             <div className="bench-box-score-number">
-                                                {foundDev2.score}
+                                                    5.00
                                             </div>
 
                                         </div>
@@ -429,7 +445,7 @@ function Benchmarking() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="bench-color-level-dev "></div>
+                            <div className="bench-color-level-dev " onChange={getSeniorityColor(foundDev2.senioridade)}></div>
                         </div>
                     ) : (
                         <div className="bench-card-dev-search">

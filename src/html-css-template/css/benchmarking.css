@@ -716,6 +716,18 @@ body {
     font-family: 'Poppins';
     font-weight: bold;
     font-size: 20px;
-    color: white;
+    color: black;
  
  }
+
+ .pleno-color {
+    background-color: #13A5D3; /* Cor para Pleno */
+  }
+  
+  .senior-color {
+    background-color: #EFC900; /* Cor para Sênior */
+  }
+  
+  .junior-color {
+    background-color: #741040; /* Cor para Junior */
+  }
