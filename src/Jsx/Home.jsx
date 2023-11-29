@@ -115,7 +115,7 @@ function Home() {
     function profileFreelancer(){
         const id = sessionStorage.getItem("id")
 
-        window.location.href = `/profileContratante/${id}`
+        window.location.href = `/profileCrudContratante/${id}`
     }
 
     return (

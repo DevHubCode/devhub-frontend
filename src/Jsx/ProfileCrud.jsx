@@ -208,14 +208,10 @@ function Profile() {
 
                 <div className="freela-items">
                     <div className="freela-img" style={{ backgroundImage: `url(${imagemUrl})` }}>
-                        <div className="freela-edit-icon" onClick={atualizarImagem}>
-                            <img src={lapisIcon} alt="Editar" width="20px" />
-                        </div>
-                        <div className="freela-score-freelancer">
+                        <div className="freela-score-freelancer-crud">
                             <div className="freela-icon-star">
-                                <img src={star} alt="" width="30px" />
                             </div>
-                            <div className="freela-num-score">{avaliacao}</div>
+                            <div className="freela-num-score" onClick={atualizarImagem}><img src={lapisIcon} alt="Editar" width="20px" /></div>
                         </div>
                     </div>
 
@@ -233,7 +229,7 @@ function Profile() {
                                     <img src={lapisIcon} alt="Editar" width="20px" />
                                 </div>
                             </div>
-                            <div className="freela-tecno">
+                            <div className="freela-tecno-especialidades">
                                 <Select
                                     options={especialidades.map((especialidade) => ({
                                         value: especialidade,
@@ -245,22 +241,16 @@ function Profile() {
                             </div>
                             <div className="freela-about">
                                 <div className="freela-box-about">
-                                    <div className="freela-tittle-about">Sobre mim:</div>
+                                    <div className="freela-tittle-about">Sobre mim: <img onClick={() => abrirModalEdicao('descricao', descricao)} src={lapisIcon} alt="Editar" width="20px" /></div>
                                     <div className="freela-text-about">
                                         {descricao}
-                                        <div className="freela-edit-icon" onClick={() => abrirModalEdicao('descricao', descricao)}>
-                                            <img src={lapisIcon} alt="Editar" width="20px" />
-                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <div className="freela-box-price-contact">
                                 <div className="freela-box-price">
                                     <div className="freela-tittle-price">Valor por hora</div>
-                                    <div className="freela-price-value">R$ {preco}</div>
-                                    <div className="freela-edit-icon" onClick={() => abrirModalEdicao('valorHora', preco)}>
-                                        <img src={lapisIcon} alt="Editar" width="20px" />
-                                    </div>
+                                    <div className="freela-price-value">R$ {preco}<img src={lapisIcon} alt="Editar" width="20px" onClick={() => abrirModalEdicao('valorHora', preco)}/></div>
                                 </div>
                                 <div className="freela-box-contact">
                                     <button onClick={salvar}>Salvar</button>
