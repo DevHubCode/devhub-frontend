@@ -30,10 +30,10 @@ function Benchmarking() {
 
     const fetchDeveloperById = async (developerId) => {
         try {
-            // const response = await api.get(`/freelancers/${id_freelancer}`);
-            // return response.data;
+            const response = await api.get(`/freelancers/${developerId.id_freelancer}`);
+            return response.data;
         } catch (error) {
-            // console.error(`Erro ao buscar desenvolvedor:  ${id_freelancer}`);
+            console.error(`Erro ao buscar desenvolvedor:  ${developerId.id_freelancer}`);
             return null;
         }
     }

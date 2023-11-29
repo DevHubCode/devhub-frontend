@@ -57,11 +57,24 @@ function Home() {
 
     console.log(freelancers);
 
-    const filteredDevs = freelancers.filter(
-        (freelancer) => 
-        freelancer.nome.toLowerCase().includes(searchDev.toLowerCase()) ||
-        freelancer.id.toString().includes(searchDev)
-    );
+    // const filteredDevs = freelancers.filter(
+    //     (freelancer) => 
+    //     freelancer.nome.toLowerCase().includes(searchDev.toLowerCase()) ||
+    //     freelancer.id.toString().includes(searchDev)
+    // );
+
+    const filteredDevs = freelancers.filter((freelancer) => {
+        const searchTermLower = searchDev.toLowerCase();
+        
+        return (
+            freelancer.nome.toLowerCase().includes(searchTermLower) ||
+            freelancer.id_freelancer.toString().includes(searchTermLower) ||
+            freelancer.especialidades.some(
+            (especialidade) =>
+                especialidade.descricao.toLowerCase().includes(searchTermLower)
+            )
+        );
+    });
     
     const getSeniorityColor = (freelancer) => {
         switch (freelancer) {
@@ -115,7 +128,7 @@ function Home() {
     function profileFreelancer(){
         const id = sessionStorage.getItem("id")
 
-        window.location.href = `/profileCrudContratante/${id}`
+        window.location.href = `/profileContratante/${id}`
     }
 
     return (
