@@ -7,6 +7,7 @@ import fotoPerfil from '../html-css-template/imagens/foto-perfil.svg';
 import warningSVG from '../html-css-template/imagens/Group 108.svg';
 import star from '../html-css-template/imagens/icon-star.png';
 import ItemFooter from '../components/ItemFooter';
+import { Link } from 'react-router-dom'
 
 import api from '../api';
 
@@ -66,10 +67,12 @@ function Home() {
 
     const filteredDevs = freelancers.filter((freelancer) => {
         const searchTermLower = searchDev.toLowerCase();
-        
+        console.log(freelancer.id)
+
+
         return (
             freelancer.nome.toLowerCase().includes(searchTermLower) ||
-            freelancer.id_freelancer.toString().includes(searchTermLower) ||
+            freelancer.id.toString().includes(searchTermLower) ||
             freelancer.especialidades.some(
             (especialidade) =>
                 especialidade.descricao.toLowerCase().includes(searchTermLower)
@@ -141,6 +144,15 @@ function Home() {
     function fecharMenu() {
         menuHome.style.display = 'none'; // Hide the menu
     }
+
+    function profile(){
+        const id = document.getElementById("freela")
+
+        console.log(id.value)
+
+        window.location.href = `/profile/${id.value}`
+    }
+
     return (
         <>
             <div className="home-header">
@@ -244,7 +256,7 @@ function Home() {
                         const decodedImage = atob(freelancer.imagem);
 
                         return (
-                            <div className="home-box-freelancer" key={freelancer.id_freelancer}>
+                            <div className="home-box-freelancer" value={freelancer.id} id='freela' onClick={profile} key={freelancer.id_freelancer}>
                                 <div className="home-image-freelancer" style={{backgroundImage: `url(${renderImageFromBytes(freelancer.imagem)})`}}>
     
                                     <div className="home-score-freelancer">

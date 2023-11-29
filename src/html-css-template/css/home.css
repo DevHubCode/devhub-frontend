@@ -325,6 +325,13 @@ border-radius: 30px;
   box-shadow: 0px 2px 2px 2px #c3bebe;
 }
 
+.home-image-freelancer:hover{
+   cursor: pointer;
+   height: 310px;
+   width: 87%; 
+   filter: grayscale(50%);
+}
+
 .home-score-freelancer{
    margin-top: 2%;
    display: flex;

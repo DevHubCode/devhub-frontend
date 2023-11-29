@@ -21,7 +21,7 @@ function Benchmarking() {
     const [showDevCard, setShowDevCard] = useState(false);
     const [foundDev, setFoundDev] = useState(null);
     const [imagemUrl, setImagemUrl] = useState(null);
-    const [segundaPesquisa, setSegundaPesquisa] = useState(false)
+    const [segundaPesquisa, setSegundaPesquisa] = useState(false);
 
     const [searchId2, setSearchId2] = useState('');
     const [showDevCard2, setShowDevCard2] = useState(false);
@@ -119,6 +119,7 @@ function Benchmarking() {
                 console.log('2o Desenvolvedor encontrado : ', devFound2);
                 setFoundDev2(devFound2);
                 setShowDevCard2(true);
+                
             } else {
                 console.log('2o Desenvolvedor NÃO encontrado!!');
                 setFoundDev2(null);
@@ -130,6 +131,13 @@ function Benchmarking() {
     };
 
     const handleContactLink = async () => {
+
+        const id = document.getElementById("botao")
+
+        console.log(id.value)
+
+        navigate(`/profile/${id.value}`);
+
         // if (foundDev && foundDev.id) {
         //     console.log('1o Dev foi escolhido: >>', foundDev);
         //     navigate(`/profile/${foundDev.id}`);
@@ -142,7 +150,7 @@ function Benchmarking() {
         // }
 
         try {
-            let selectedDev = null;
+            const selectedDev = null
     
             if (foundDev && foundDev.id) {
                 console.log('1o Dev foi escolhido: >>', foundDev);
@@ -414,7 +422,7 @@ function Benchmarking() {
 
                                         </div>
                                         
-                                        <button onClick={() => handleContactLink(foundDev2)}>Contactar</button>
+                                        <button value={foundDev2.id_freelancer} id='botao' onClick={() => handleContactLink(foundDev2)}>Contactar</button>
                                        
                                     </div>
                                 </div>
