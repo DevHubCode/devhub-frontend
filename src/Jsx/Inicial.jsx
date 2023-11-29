@@ -1,3 +1,5 @@
+
+
 import React from "react";
 import LogoBlack from "../html-css-template/imagens/Logo-DevHub-Black.svg"
 import Mascote from "../html-css-template/imagens/macote-devhub.png"
@@ -151,7 +153,7 @@ function Inicial() {
                 </div>
                 
                 <div className="items">
-                    <div className="item-navbar" onClick={irParaInicio} id="home">
+                    <div className="item-navbar" onClick={irParaInicio} >
                         Home
                     </div>
                     <div className="item-navbar" onClick={irParaSobre}>

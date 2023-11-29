@@ -22,7 +22,7 @@ body {
   .logoI {
     display: flex;
     height: 100%;
-    width: 100%;
+    width:30%;
     /* border: 5px solid rgb(255, 0, 43); */
     justify-content: flex-start;
     margin-left: 10%;
@@ -31,9 +31,10 @@ body {
   .items {
     display: flex;
     height: 100%;
-    width: 100%;
+    width: 70%;
     /* border: 5px solid rgb(229, 255, 0); */
-    margin-right: 10%;
+    margin-right: 3%;
+
   }
   
   
@@ -67,13 +68,13 @@ body {
     font-weight: lighter;
     font-size: 18px;
     color: rgb(255, 255, 255);
-    height:60%;
-    width: 50%;
+    height:40%;
+    width: 20%;
     background-color: #23c1f1;
     /* border: 5px solid rgb(229, 255, 0); */
-    margin-right: 20%;
+   
     margin-left: 4%;
-    margin-top: 4.6%;
+    margin-top: 5.2%;
   }
   
   .button-navbar:hover {
@@ -193,6 +194,10 @@ body {
   }
   
   
+  .icon1:hover{
+    color: #ffff;
+    background-color: #168bae;
+  }
   .icon1 {
     margin-top: 5%;
     height: 50%;
@@ -203,6 +208,7 @@ body {
     justify-content: center;
     align-items: center;
     color: #ffff;
+    cursor:  pointer;
   }
   
   .icon2 {
@@ -215,13 +221,14 @@ body {
     justify-content: center;
     align-items: center;
     color: #13A5D3;
+    cursor:  pointer;
+  }
+  .icon2:hover{
+    
+    background-color: #f0f0f0;
+    color: #19a9d5;
   }
 
-  .icon2:hover{
-    height: 52%;
-    width: 2%4;
-    color: #b8b7b7;
-  }
   
   .container3 {
     display: flex;
@@ -477,11 +484,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #F5F5F5;
+    background-color: #9fdde2;
   }
   .carousel-box-tec{
   padding-left: 3% ;
   padding-right: 3%;
+  background-color: #9fdde2;
   }
   
   .carousel-box {

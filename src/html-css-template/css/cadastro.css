@@ -1,4 +1,227 @@
-.body-cadastro {
+
+@import url("https://fonts.cadastro-googleapis.cadastro-com/css?family=Poppins");
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.cadastro-body-login {
+  background-color: #10A3D2;
+  display: flex;
+  width: 100%;
+  height: 585px;
+}
+
+.cadastro-block-1 {
+  background-color: #10A3D2;
+  /* border: 3px pink solid; */
+  display: flex;
+  width: 26%;
+  height: 100%;
+  border-top-left-radius: 20%;
+  flex-direction: column;
+}
+
+.cadastro-voltar{
+  width: 100%;
+  height: 10%;
+  /* border: 5px solid rgb(255, 0, 43); */
+  font-weight: 700;
+  font-size: 21px;
+  color: #ffffff;
+  display: flex;
+  font-family: "Poppins" ;
+  align-items: center;
+  padding-left: 5%;
+  cursor: pointer;
+  
+}
+
+.cadastro-text-voltar{
+  margin-top: 2%;
+  width: 100%;
+  height: 10%;
+}
+.cadastro-voltar img{
+  margin-top: 4%;
+padding-right:2%;
+padding-top: 3%;
+}
+
+.cadastro-frase{
+  /* border: 5px solid rgb(48, 132, 56); */
+  width: 90%;
+  height: 60%;
+  font-weight: lighter;
+  font-size: 30px;
+  color: #ffffff;
+  font-family: "Poppins" ;
+  margin-top: 25%;
+display: flex;
+justify-content: center;
+align-items: center;
+padding-left: 7%;
+}
+
+
+.cadastro-sloganX{
+  /* border: 5px solid rgb(255, 0, 43); */
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 5%;
+  font-weight: 1px;
+  font-size: 9px;
+  color: #bbbbbb;
+  font-family: "Poppins" ;
+  margin-bottom: 5%;
+ padding-left: 7%;
+}
+
+.cadastro-logo{
+  /* border: 5px solid rgb(255, 0, 43); */
+  width: 100%;
+  height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0px;
+  margin-left: 1%;
+  padding: 0px;
+ 
+}
+.cadastro-logo-logout{
+  /* border: 5px solid rgb(255, 0, 43); */
+  width: 100%;
+  height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0px;
+  padding: 0px;
+ margin-top: 65%;
+
+}
+.cadastro-block-2 {
+  background-color: #f4f4f4;
+  /* border: 3px pink solid; */
+  display: flex;
+  width: 74%;
+  height: 98.3%;
+  border-top-left-radius: 28px;
+  margin-top: 0.8%;
+  display: flex;
+  justify-content: center;
+
+  
+}
+
+.cadastro-block-inputs {
+  /* border: 3px rgb(255, 0, 43) solid; */
+  height: 80%;
+  width: 60%;
+
+}
+
+.cadastro-text-login-tittle {
+  height: 25%;
+  width: 100%;
+  /* background-color: rgb(255, 0, 43); */
+  color: #3C3C3C;
+  font-weight: 400;
+  font-size: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Poppins';
+}
+
+.cadastro-inputs-login {
+  display: flex;
+  justify-content: center;
+  height: 40%;
+  width: 100%;
+  /* background-color: rgb(0, 0, 0); */
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.cadastro-inputs-login input {
+  margin: 2%;
+  display: flex;
+  justify-content: center;
+  height: 30%;
+  width: 60%;
+  background-color: rgb(255, 255, 255);
+  border-radius: 2px;
+  box-shadow: 0px 5px 5px 2px #dbdbdb;
+  border: 0px solid;
+  padding-left: 14px;
+  font-size: larger;
+ 
+}
+.cadastro-inputs-login input:focus {
+  outline: none;
+  background-color: #f2f1f1;
+}
+
+.cadastro-button-login {  
+  display: flex;
+  height: 5%;
+  width: 100%;
+  /* background-color: rgb(38, 88, 35); */
+  justify-content: center;
+  align-items: center ;
+}
+
+.cadastro-button-login button {
+  border-radius: 2px;
+  width: 30%;
+  height: 13%;
+  background-color: #4b7482;
+  color: #ffffff;
+  font-family: "Poppins";
+  font-size: x-large;
+  border: 0px solid;
+}
+
+
+.cadastro-button-login button:hover {
+  background-color: #1299c6;
+}
+
+
+.cadastro-button-login button:active {
+  background-color: #14637d;
+}
+
+.cadastro-not_cadastro{
+  display: flex;
+  height: 5%;
+  width: 100%;
+  justify-content: center;
+  align-items: center ;
+}
+.cadastro-body-cadastro {
     background-color: #10A3D2;
     display: flex;
     width: 100%;
@@ -6,10 +229,10 @@
 }
 
 
-.inputs-cadastro {
+.cadastro-inputs-cadastro {
     display: flex;
     justify-content: center;
-    height: 52%;
+    height: 79%;
     width: 100%;
     /* background-color: rgb(0, 0, 0); */
     flex-direction: column;
@@ -17,7 +240,7 @@
   }
   
   
-  .inputs-cadastro input {
+  .cadastro-inputs-cadastro input {
     margin: 2%;
     display: flex;
     justify-content: center;
@@ -31,7 +254,7 @@
     font-size: larger;
   }
 
-  .inputs-cadastro-block3 select {
+  .cadastro-inputs-cadastro-block3 select {
     margin: 2%;
     display: flex;
     justify-content: center;
@@ -46,12 +269,12 @@
     margin-top: 10px;
   }
 
-  .inputs-cadastro input:focus {
+  .cadastro-inputs-cadastro input:focus {
     outline: none;
     background-color: #f2f1f1;
   }
 
-  .text-cadastro-tittle {
+  .cadastro-text-cadastro-tittle {
     height: 25%;
     width: 100%;
     /* background-color: rgb(255, 0, 43); */
@@ -64,19 +287,20 @@
     font-family: 'Poppins';
   }
   
-  .button-cadastro {
+  .cadastro-button-cadastro {
     display: flex;
-    height: 35%;
+    height: 12%;
     width: 100%;
     /* background-color: rgb(38, 88, 35); */
     justify-content: center;
     align-items: center ;
+    padding-top: 2%;
   }
 
-  .button-cadastro button {
+  .cadastro-button-cadastro button {
     border-radius: 2px;
     width: 35%;
-    height: 35%;
+    height: 95%;
     background-color: #10A3D2;
     color: #ffffff;
     font-family: "Poppins";
@@ -84,18 +308,18 @@
     border: 0px solid;
   }
 
-  .button-cadastro button:hover {
+  .cadastro-button-cadastro button:hover {
     background-color: #1299c6;
   }
   
   
-  .button-cadastro button:active {
+  .cadastro-button-cadastro button:active {
     background-color: #14637d;
   }
 
   
 /* Estilize o container do switch */
-.switch {
+.cadastro-switch {
   position: relative;
   display: inline-block;
   width: 60px;
@@ -103,14 +327,14 @@
 }
 
 /* Estilize o input radio (oculte-o) */
-.switch input {
+.cadastro-switch input {
   opacity: 0;
   width: 0;
   height: 0;
 }
 
 /* Estilize o controle deslizante (a alavanca do switch) */
-.slider {
+.cadastro-slider {
   position: absolute;
   cursor: pointer;
   top: 0;
@@ -118,14 +342,14 @@
   right: 0;
   bottom: 0;
   background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0..4s;
   border-radius: 30px;
   width: 98px;
 }
 
 /* Estilize a alavanca do switch quando o input radio estiver marcado */
-.slider:before {
+.cadastro-slider:before {
   position: absolute;
   content: "";
   height: 26px;
@@ -133,24 +357,24 @@
   left: 4px;
   bottom: 4px;
   background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
   border-radius: 30px;
 }
 
 /* Estilize o input radio quando estiver marcado */
-input:checked + .slider {
+input:checked + .cadastro-slider {
   background-color: #2196F3;
 }
 
 /* Estilize a alavanca do switch quando o input radio estiver marcado */
-input:checked + .slider:before {
+input:checked + .cadastro-slider:before {
   -webkit-transform: translateX(62px);
   -ms-transform: translateX(62px);
   transform: translateX(62px);
 }
  
-.alter_user {
+.cadastro-alter_user {
   display: flex;
   flex-direction: column; /* Define a direção dos itens como uma coluna */
   align-items: flex-start; /* Alinha os itens à esquerda */
@@ -159,11 +383,11 @@ input:checked + .slider:before {
   border-radius: 30%;
 }
 
-.alter_user input{
+.cadastro-alter_user input{
   border-radius: 30px;
 }
 
-.block-3{
+.cadastro-block-3{
   display: none;
   background-color: #f4f4f4;
   /* border: 3px pink solid; */
@@ -176,19 +400,19 @@ input:checked + .slider:before {
   align-items: center;
 }
 
-.block-inputs {
+.cadastro-block-inputs {
   /* border: 3px rgb(255, 0, 43) solid; */
   height: 80%;
   width: 60%;
 }
 
-.check {
+.cadastro-check {
   display: flex;
   align-items: center;
   gap: 32px;
 }
 
-.check-input input{
+.cadastro-check-input input{
   height: 100%;
   width: 100%;
   display: flex;
@@ -196,36 +420,36 @@ input:checked + .slider:before {
   background-color: none;
 }
 
-.check-input > label {
+.cadastro-check-input > label {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.check-input {
+.cadastro-check-input {
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 
-.input-form {
+.cadastro-input-form {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
 }
 
-.input-form > textarea {
+.cadastro-input-form > textarea {
   height:100px;
   width: 400px;
 }
 
-.text-cadastro-tittle-block3{
+.cadastro-text-cadastro-tittle-block3{
   font-size: 30px;
   margin-bottom: 5%;
 }
 
-.inputs-cadastro-block3 {
+.cadastro-inputs-cadastro-block3 {
   display: flex;
   justify-content: center;
   height: 52%;
@@ -235,7 +459,7 @@ input:checked + .slider:before {
 }
 
 
-.inputs-cadastro-block3 > input {
+.cadastro-inputs-cadastro-block3 > input {
   margin: 2%;
   display: flex;
   justify-content: center;
@@ -248,7 +472,7 @@ input:checked + .slider:before {
   font-size: larger;
 }
 
-.inputs-cadastro-block3 input:focus {
+.cadastro-inputs-cadastro-block3 input:focus {
   outline: none;
   background-color: #f2f1f1;
 }
