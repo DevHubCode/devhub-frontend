@@ -11,6 +11,7 @@ import star from '../html-css-template/imagens/icon-star.png';
 import arrowLeft from '../html-css-template/imagens/arrow-left (2).svg';
 import { Link, useNavigate } from 'react-router-dom';
 import '../html-css-template/css/benchmarking.css'
+import api from '../api';
 
 import { freelasComparacao } from '../Data';
 
@@ -27,37 +28,50 @@ function Benchmarking() {
 
     const navigate = useNavigate();
 
-    const handleSearchClick = () => {
-        // Lógica de pesquisa aqui com base no 'searchId'
-        // Atualize o estado ou faça chamadas à API conforme necessário
-        // Exemplo: fazer uma chamada de API fictícia usando fetch
-        // fetch(`sua/api/endpoint/${searchId}`)
-        //     .then(response => response.json())
-        //     .then(data => {
-        //         // Atualize o estado ou faça o que for necessário com os dados da pesquisa
-        //         setShowDevCard(true);
-        //     })
-        //     .catch(error => {
-        //         // Trate os erros, se necessário
-        //         console.error('Erro na pesquisa:', error);
-        //     });
+    const fetchDeveloperById = async (developerId) => {
+        try {
+            // const response = await api.get(`/freelancers/${id_freelancer}`);
+            // return response.data;
+        } catch (error) {
+            // console.error(`Erro ao buscar desenvolvedor:  ${id_freelancer}`);
+            return null;
+        }
+    }
 
-        const devFound = freelasComparacao.find(freelancer => freelancer.id === parseInt(searchId));
+    const handleSearchClick = async () => {
+
+        // const devFound = freelasComparacao.find(freelancer => freelancer.id === parseInt(searchId));
 
 
-        if (devFound) {
-            console.log('Desenvolvedor encontrado: ', devFound)
-            setFoundDev(devFound);
-            setShowDevCard(true);
+        // if (devFound) {
+        //     console.log('Desenvolvedor encontrado: ', devFound)
+        //     setFoundDev(devFound);
+        //     setShowDevCard(true);
 
-        } else {
-            console.log('Desenvolvedor não encontrado')
-            setFoundDev(null);
-            setShowDevCard(false);
+        // } else {
+        //     console.log('Desenvolvedor não encontrado')
+        //     setFoundDev(null);
+        //     setShowDevCard(false);
+        // }
+
+        try {
+            const devFound = await fetchDeveloperById(searchId);
+    
+            if (devFound) {
+                console.log('Desenvolvedor encontrado: ', devFound);
+                setFoundDev(devFound);
+                setShowDevCard(true);
+            } else {
+                console.log('Desenvolvedor não encontrado');
+                setFoundDev(null);
+                setShowDevCard(false);
+            }
+        } catch (error) {
+            console.error('Erro ao buscar desenvolvedor:', error);
         }
     };
 
-    const handleSearchClick2 = () => {
+    const handleSearchClick2 = async () => {
         const devFound2 = freelasComparacao.find(freelancer => freelancer.id === parseInt(searchId2));
 
         if (devFound2) {
@@ -70,18 +84,58 @@ function Benchmarking() {
             setShowDevCard2(false);
         }
 
+        try {
+            const devFound2 = await fetchDeveloperById(searchId2);
+    
+            if (devFound2) {
+                console.log('2o Desenvolvedor encontrado : ', devFound2);
+                setFoundDev2(devFound2);
+                setShowDevCard2(true);
+            } else {
+                console.log('2o Desenvolvedor NÃO encontrado!!');
+                setFoundDev2(null);
+                setShowDevCard2(false);
+            }
+        } catch (error) {
+            console.error('Erro ao buscar desenvolvedor:', error);
+        }
+
     }
 
-    const handleContactLink = () => {
-        if (foundDev && foundDev.id) {
-            console.log('1o Dev foi escolhido: >>', foundDev);
-            navigate(`/profile/${foundDev.id}`);
-        } else if (foundDev2 && foundDev2.id) {
-            console.log('2o Dev foi o escolhido: >>', foundDev2);
-            navigate(`/profile/${foundDev2.id}`);
-        } else {
-            console.log('Nenhum desenvolvedor encontrado para contato.');
-            // Handle the case where no developer is found for contact
+    const handleContactLink = async () => {
+        // if (foundDev && foundDev.id) {
+        //     console.log('1o Dev foi escolhido: >>', foundDev);
+        //     navigate(`/profile/${foundDev.id}`);
+        // } else if (foundDev2 && foundDev2.id) {
+        //     console.log('2o Dev foi o escolhido: >>', foundDev2);
+        //     navigate(`/profile/${foundDev2.id}`);
+        // } else {
+        //     console.log('Nenhum desenvolvedor encontrado para contato.');
+        //     
+        // }
+
+        try {
+            let selectedDev = null;
+    
+            if (foundDev && foundDev.id) {
+                console.log('1o Dev foi escolhido: >>', foundDev);
+                selectedDev = await fetchDeveloperById(foundDev.id);
+            } else if (foundDev2 && foundDev2.id) {
+                console.log('2o Dev foi o escolhido: >>', foundDev2);
+                selectedDev = await fetchDeveloperById(foundDev2.id);
+            } else {
+                console.log('Nenhum desenvolvedor encontrado para contato.');
+                return;
+            }
+    
+            if (selectedDev) {
+                console.log('Redirecionando para o perfil do desenvolvedor:', selectedDev);
+                navigate(`/freelancers/${selectedDev.id}`);
+            } else {
+                console.log('Desenvolvedor não encontrado para contato.');
+            }
+        } catch (error) {
+            console.error('Erro ao buscar desenvolvedor para contato:', error);
         }
     }
     
