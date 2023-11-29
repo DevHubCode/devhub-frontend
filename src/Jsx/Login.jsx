@@ -43,7 +43,7 @@ function Login() {
                             if(response.data.role == "CONTRATANTE"){
                                 navigate('/home');
                             }else{
-                                navigate(`/profile/${response.data.id}`)
+                                navigate(`/publicacoes`)
                             }
                             
                           console.log("O usuário clicou em OK!");

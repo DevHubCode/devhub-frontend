@@ -652,6 +652,11 @@ body {
     box-shadow: 0px 3px 8px 0px #484848bd;
     margin-top: 2%;
 }
+
+.select-especialidades{
+    width: 60%;
+}
+
 .bench-links {
     
     height: 99%;

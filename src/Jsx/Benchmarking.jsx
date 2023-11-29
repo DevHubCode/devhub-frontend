@@ -12,6 +12,7 @@ import arrowLeft from '../html-css-template/imagens/arrow-left (2).svg';
 import { Link, useNavigate } from 'react-router-dom';
 import '../html-css-template/css/benchmarking.css'
 import api from '../api';
+import Select from 'react-select';
 
 import { freelasComparacao } from '../Data';
 
@@ -31,14 +32,14 @@ function Benchmarking() {
 
     const fetchDeveloperById = async (developerId) => {
         try {
-            if(segundaPesquisa == false){
+            if (segundaPesquisa == false) {
                 const response = await api.get(`/freelancers/${searchId}`);
                 return response.data;
-            }else{
+            } else {
                 const response = await api.get(`/freelancers/${searchId2}`);
                 return response.data;
             }
-            
+
         } catch (error) {
             console.error(`Erro ao buscar desenvolvedor:  ${searchId}`);
             return null;
@@ -63,7 +64,7 @@ function Benchmarking() {
 
         try {
             const devFound = await fetchDeveloperById(searchId);
-    
+
             if (devFound) {
                 console.log('Desenvolvedor encontrado: ', devFound);
                 setFoundDev(devFound);
@@ -94,7 +95,7 @@ function Benchmarking() {
 
     //     try {
     //         const devFound2 = await fetchDeveloperById(searchId2);
-    
+
     //         if (devFound2) {
     //             console.log('2o Desenvolvedor encontrado : ', devFound2);
     //             setFoundDev2(devFound2);
@@ -114,12 +115,12 @@ function Benchmarking() {
         // Use o valor atualizado diretamente
         try {
             const devFound2 = await fetchDeveloperById(searchId2);
-    
+
             if (devFound2) {
                 console.log('2o Desenvolvedor encontrado : ', devFound2);
                 setFoundDev2(devFound2);
                 setShowDevCard2(true);
-                
+
             } else {
                 console.log('2o Desenvolvedor NÃO encontrado!!');
                 setFoundDev2(null);
@@ -151,7 +152,7 @@ function Benchmarking() {
 
         try {
             const selectedDev = null
-    
+
             if (foundDev && foundDev.id) {
                 console.log('1o Dev foi escolhido: >>', foundDev);
                 selectedDev = await fetchDeveloperById(foundDev.id);
@@ -162,7 +163,7 @@ function Benchmarking() {
                 console.log('Nenhum desenvolvedor encontrado para contato.');
                 return;
             }
-    
+
             if (selectedDev) {
                 console.log('Redirecionando para o perfil do desenvolvedor:', selectedDev);
                 navigate(`/freelancers/${selectedDev.id}`);
@@ -177,47 +178,48 @@ function Benchmarking() {
 
     useEffect(() => {
         const imagemEmByte = sessionStorage.getItem('imagem');
-    
+
         if (imagemEmByte) {
-          const binaryString = atob(imagemEmByte);
-          const byteArray = new Uint8Array(binaryString.length);
-    
-          for (let i = 0; i < binaryString.length; i++) {
-            byteArray[i] = binaryString.charCodeAt(i);
-          }
-    
-          const blob = new Blob([byteArray], { type: 'image/**' });
-          const url = URL.createObjectURL(blob);
-    
-          setImagemUrl(url);
+            const binaryString = atob(imagemEmByte);
+            const byteArray = new Uint8Array(binaryString.length);
+
+            for (let i = 0; i < binaryString.length; i++) {
+                byteArray[i] = binaryString.charCodeAt(i);
+            }
+
+            const blob = new Blob([byteArray], { type: 'image/**' });
+            const url = URL.createObjectURL(blob);
+
+            setImagemUrl(url);
         }
-      }, []);
+    }, []);
 
-      function voltar(){
+    function voltar() {
         window.location.href = "/home"
-      }
+    }
 
-      const renderImageFromBytes = (bytes) => {
+    const renderImageFromBytes = (bytes) => {
         if (bytes) {
             const binaryString = atob(bytes);
             const byteArray = new Uint8Array(binaryString.length);
-      
+
             for (let i = 0; i < binaryString.length; i++) {
-              byteArray[i] = binaryString.charCodeAt(i);
+                byteArray[i] = binaryString.charCodeAt(i);
             }
-      
+
             const blob = new Blob([byteArray], { type: 'image/**' });
             const url = URL.createObjectURL(blob);
 
             return url;
-    }}
+        }
+    }
 
     return (
         <>
             <div className="bench-header">
                 <div className="bench-navbar">
 
-                <div className="freela-back">
+                    <div className="freela-back">
                         <div className="freela-icon-back">
                             <img src={arrowLeft} alt="" width="20px" />
                         </div>
@@ -311,14 +313,14 @@ function Benchmarking() {
                                         <div className="bench-box-about">
                                             <div className="bench-tittle-about">Sobre mim:</div>
                                             <div className="bench-text-about">{foundDev.descricao}</div>
-                                            <div className="bench-box-tecnos">
-                                                <div className="bench-icon-tecno"><img src={javaLogo} alt="" width="35px" />
-                                                </div>
-                                                <div className="bench-icon-tecno"><img src={springLogo} alt="" width="38px" />
-                                                </div>
-                                                <div className="bench-icon-tecno"><img src={azureLogo} alt="" width="35px" />
-                                                </div>
-                                            </div>
+                                            <Select className='select-especialidades'
+                                                    options={foundDev.especialidades.map(especialidade => ({
+                                                        value: especialidade.descricao,
+                                                        label: especialidade.descricao,
+                                                        isDisabled: true,
+                                                    }))}
+                                                    placeholder="Especialidades"
+                                                />
                                         </div>
                                     </div>
                                 </div>
@@ -376,7 +378,7 @@ function Benchmarking() {
                                 <div className="bench-box1">
                                     <div className="bench-image-free">
                                         <div className="bench-image-ipt">
-                                            <img src={renderImageFromBytes(foundDev2.imagem)}  width="100%" alt="" />
+                                            <img src={renderImageFromBytes(foundDev2.imagem)} width="100%" alt="" />
                                         </div>
                                     </div>
                                     <div className="bench-infos-dev">
@@ -385,14 +387,14 @@ function Benchmarking() {
                                         <div className="bench-box-about">
                                             <div className="bench-tittle-about">Sobre mim:</div>
                                             <div className="bench-text-about">{foundDev2.descricao}</div>
-                                            <div className="bench-box-tecnos">
-                                                <div className="bench-icon-tecno"><img src={javaLogo} alt="" width="35px" />
-                                                </div>
-                                                <div className="bench-icon-tecno"><img src={springLogo} alt="" width="38px" />
-                                                </div>
-                                                <div className="bench-icon-tecno"><img src={azureLogo} alt="" width="35px" />
-                                                </div>
-                                            </div>
+                                            <Select className='select-especialidades'
+                                                    options={foundDev2.especialidades.map(especialidade => ({
+                                                        value: especialidade.descricao,
+                                                        label: especialidade.descricao,
+                                                        isDisabled: true,
+                                                    }))}
+                                                    placeholder="Especialidades"
+                                                />
                                         </div>
                                     </div>
                                 </div>
@@ -421,9 +423,9 @@ function Benchmarking() {
                                             </div>
 
                                         </div>
-                                        
+
                                         <button value={foundDev2.id_freelancer} id='botao' onClick={() => handleContactLink(foundDev2)}>Contactar</button>
-                                       
+
                                     </div>
                                 </div>
                             </div>

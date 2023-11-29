@@ -59,26 +59,32 @@ function Home() {
 
     console.log(freelancers);
 
-    // const filteredDevs = freelancers.filter(
-    //     (freelancer) => 
-    //     freelancer.nome.toLowerCase().includes(searchDev.toLowerCase()) ||
-    //     freelancer.id.toString().includes(searchDev)
-    // );
-
     const filteredDevs = freelancers.filter((freelancer) => {
         const searchTermLower = searchDev.toLowerCase();
-        console.log(freelancer.id)
-
-
+        
         return (
-            freelancer.nome.toLowerCase().includes(searchTermLower) ||
-            freelancer.id.toString().includes(searchTermLower) ||
-            freelancer.especialidades.some(
-            (especialidade) =>
-                especialidade.descricao.toLowerCase().includes(searchTermLower)
-            )
+            freelancer.especialidade &&
+            freelancer.especialidade.some((especialidade) =>
+                especialidade.descricao.toLowerCase().startsWith(searchTermLower)
+            ) ||
+            freelancer.id.toString().includes(searchTermLower)
         );
     });
+    
+    
+
+    // const filteredDevs = freelancers.filter((freelancer) => {
+    //     const searchTermLower = searchDev.toLowerCase();
+
+    //     return (
+    //         freelancer.nome.toLowerCase().includes(searchTermLower) ||
+    //         freelancer.id.toString().includes(searchTermLower) ||
+    //         freelancer.especialidades.some(
+    //         (especialidade) =>
+    //             especialidade.descricao.toLowerCase().includes(searchTermLower)
+    //         )
+    //     );
+    // });
     
     const getSeniorityColor = (freelancer) => {
         switch (freelancer) {
@@ -145,12 +151,7 @@ function Home() {
         menuHome.style.display = 'none'; // Hide the menu
     }
 
-    function profile(event, freelancerId){
-        // const id = document.getElementById("freela")
-
-        // console.log(id.value)
-
-        event.stopPropagation(); // Evitar que o evento seja propagado para divs pais
+    function profile(freelancerId){
 
         console.log(freelancerId);
 
@@ -261,7 +262,10 @@ function Home() {
                         const decodedImage = atob(freelancer.imagem);
 
                         return (
-                            <div className="home-box-freelancer" value={freelancer.id} id='freela' onClick={profile} key={freelancer.id_freelancer}>
+                            <div className="home-box-freelancer" value={freelancer.id} id='freela' onClick={()=> profile(freelancer.id)}
+                            data-freelancer-id={freelancer.id}
+                             key={freelancer.id_freelancer}
+                             >
                                 <div className="home-image-freelancer" style={{backgroundImage: `url(${renderImageFromBytes(freelancer.imagem)})`}}>
     
                                     <div className="home-score-freelancer">
