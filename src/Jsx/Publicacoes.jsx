@@ -13,6 +13,7 @@ function Publicacoes() {
 
     const [diferenciar, setDiferenciar] = useState("");
     const [imagemUrl, setImagemUrl] = useState(null);
+    const [ comentarios, setComentarios ] = useState([])
 
     useEffect(() => {
         const role = sessionStorage.getItem("role");
@@ -22,6 +23,13 @@ function Publicacoes() {
             setDiferenciar("Voltar")
         }
     }, []);
+
+    useEffect(() => {
+        fetch('sua-api-endpoint/comentarios')
+          .then((response) => response.json())
+          .then((data) => setComentarios(data))
+          .catch((error) => console.error('Erro ao buscar comentários:', error));
+      }, []);
 
     useEffect(() => {
         const imagemEmByte = sessionStorage.getItem('imagem');
@@ -40,6 +48,8 @@ function Publicacoes() {
             setImagemUrl(url);
         }
     }, []);
+
+    
 
     function sairOuVoltar() {
         if (diferenciar == "Sair") {
@@ -63,7 +73,7 @@ function Publicacoes() {
     }
 
     function publicar(){
-
+        // implementar lógica
     }
 
 
@@ -98,7 +108,9 @@ function Publicacoes() {
 
                 <div className="feed-body">
 
-                    <Comentario />
+                    {comentarios.map((comentario) => (
+                        <Comentario key={comentario.id} {...comentario} />
+                    ))}
 
 
                 </div>
