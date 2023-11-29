@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { freelancers } from '../Data';
-import logoutIcon from '../html-css-template/imagens/icon-logout.png';
+import menuIcon1 from '../html-css-template/imagens/icon-menu.svg';
+import menuIcon from '../html-css-template/imagens/icon-menu (2).svg';
 import logoDevhub from '../html-css-template/imagens/logo-devhub-grey.png';
 import fotoPerfil from '../html-css-template/imagens/foto-perfil.svg';
 import warningSVG from '../html-css-template/imagens/Group 108.svg';
@@ -130,14 +131,28 @@ function Home() {
 
         window.location.href = `/profileContratante/${id}`
     }
-
+    const menuHome = document.querySelector('.menu-home');
+  
+    
+    function abrirMenu() {
+        menuHome.style.display = 'block'; // Unhide the menu
+    }
+    
+    function fecharMenu() {
+        menuHome.style.display = 'none'; // Hide the menu
+    }
     return (
         <>
             <div className="home-header">
                 <div className="home-navbar">
                     <div className="home-back">
-                        <div className="home-icon-menu" onClick={sair}>
-                            <img src={logoutIcon} alt="" width="30px" />
+                        <div className="home-icon-menu" >
+                            <img src={menuIcon1} alt="" width="40px" onClick={abrirMenu}/>
+                            <div className='menu-home' style={{display: "none"}}>
+                            <img src={menuIcon} alt="" width="40px" onClick={fecharMenu}/>
+                                <div className='textjk'  onClick={sair}> Sair</div>
+                                <div className='textjk'> Desativar Conta</div>
+                            </div>
                         </div>
 
                     </div>
@@ -174,7 +189,7 @@ function Home() {
                             <div className="home-color-level-dev1" ></div>
 
                             <div className="home-text-level-dev">
-                                <div className="home-name-level-dev">Dev Senior</div>
+                                <div className="home-name-level-dev"> Senior</div>
                                 <div className="home-yyyy"> 10 Anos</div>
                             </div>
                         </div>
@@ -183,7 +198,7 @@ function Home() {
                             <div className="home-color-level-dev2"></div>
 
                             <div className="home-text-level-dev">
-                                <div className="home-name-level-dev">Dev Pleno</div>
+                                <div className="home-name-level-dev">Pleno</div>
                                 <div className="home-yyyy"> 5-9 Anos</div>
                             </div>
                         </div>
@@ -192,7 +207,7 @@ function Home() {
                             <div className="home-color-level-dev3"></div>
 
                             <div className="home-text-level-dev">
-                                <div className="home-name-level-dev">Dev Junior</div>
+                                <div className="home-name-level-dev">Junior</div>
                                 <div className="home-yyyy"> 1-4 Ano(s)</div>
                             </div>
                         </div>
