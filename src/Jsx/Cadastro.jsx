@@ -16,8 +16,8 @@ function Cadastrar() {
     const [usuario, setUsuario] = useState("Contratante");
     const [botao, setCadastrar] = useState("Cadastrar");
     const [form, setForm] = useState([]);
-    const block3Div = document.querySelector('.block-3');
-    const block2Div = document.querySelector('.block-2');
+    const block3Div = document.querySelector('.cadastro-block-3');
+    const block2Div = document.querySelector('.cadastro-block-2');
 
     const mudarUsuario = () => {
         const radio = document.getElementById('usuario');
@@ -258,20 +258,20 @@ function Cadastrar() {
                             </select>
                             <input onChange={onChange} type="text" id="valorHora" placeholder="Valor por hora(R$)" />
                             Senerioridade
-                            <div class="check">
-                                <div class="check-input">
+                            <div class="cadastro-check">
+                                <div class="cadastro-check-input">
                                     <label>
                                         <input onChange={onChange} id="senerioridade" type="radio" name="experiencia" value="Senior" />
                                         Senior
                                     </label>
                                 </div>
-                                <div class="check-input">
+                                <div class="cadastro-check-input">
                                     <label>
                                         <input onChange={onChange} id="senerioridade" type="radio" name="experiencia" value="Pleno" />
                                         Pleno
                                     </label>
                                 </div>
-                                <div class="check-input">
+                                <div class="cadastro-check-input">
                                     <label>
                                         <input onChange={onChange} id="senerioridade" type="radio" name="experiencia" value="Junior" />
                                         Junior

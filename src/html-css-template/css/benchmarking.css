@@ -731,3 +731,13 @@ body {
   .junior-color {
     background-color: #741040; /* Cor para Junior */
   }
+
+  .pesquisar{
+    background-color: #10bac9;
+    outline: none;
+    border:none;
+    width: 25%;
+    height: 10%;
+    color: white;
+    border-radius: 15%;
+  }

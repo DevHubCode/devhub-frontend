@@ -267,7 +267,7 @@ function Benchmarking() {
 
                     <div className="bench-sub-menu-section">
                         <button className="bench-icon1">Limpar</button>
-                        <button className="bench-icon2">Comparar</button>
+                        <button className="bench-icon2">Publicações</button>
                     </div>
 
                 </div>
@@ -373,7 +373,7 @@ function Benchmarking() {
                                             </div>
 
                                         </div>
-                                        <button onClick={() => handleContactLink(foundDev)}>Contactar</button>
+                                        <button value={foundDev.id} id='botao' onClick={() => handleContactLink(foundDev)}>Contactar</button>
                                     </div>
                                 </div>
                             </div>
@@ -387,7 +387,7 @@ function Benchmarking() {
                                 value={searchId}
                                 onChange={(e) => setSearchId(e.target.value)}
                             />
-                            <button onClick={handleSearchClick}>Pesquisar</button>
+                            <button className='pesquisar' onClick={handleSearchClick}>Pesquisar</button>
                         </div>
                     )}
                 </div>
@@ -449,7 +449,7 @@ function Benchmarking() {
 
                                         </div>
 
-                                        <button value={foundDev2.id_freelancer} id='botao' onClick={() => handleContactLink(foundDev2)}>Contactar</button>
+                                        <button value={foundDev2.id} id='botao' onClick={() => handleContactLink(foundDev2)}>Contactar</button>
 
                                     </div>
                                 </div>
@@ -464,7 +464,7 @@ function Benchmarking() {
                                 value={searchId2}
                                 onChange={(e) => setSearchId2(e.target.value)}
                             />
-                            <button onClick={handleSearchClick2}>Pesquisar</button>
+                            <button className='pesquisar' onClick={handleSearchClick2}>Pesquisar</button>
                         </div>
                     )}
                 </div>
