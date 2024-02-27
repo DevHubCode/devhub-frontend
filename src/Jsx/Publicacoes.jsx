@@ -15,12 +15,8 @@ function Publicacoes() {
 
     const [diferenciar, setDiferenciar] = useState("");
     const [imagemUrl, setImagemUrl] = useState(null);
-<<<<<<< Updated upstream
-    const [ comentarios, setComentarios ] = useState([])
-=======
     const [ comentarios, setComentarios ] = useState([]);
     const descricao = document.getElementById("descricao");
->>>>>>> Stashed changes
 
     useEffect(() => {
         const role = sessionStorage.getItem("role");
@@ -32,13 +28,6 @@ function Publicacoes() {
     }, []);
 
     useEffect(() => {
-<<<<<<< Updated upstream
-        fetch('sua-api-endpoint/comentarios')
-          .then((response) => response.json())
-          .then((data) => setComentarios(data))
-          .catch((error) => console.error('Erro ao buscar comentários:', error));
-      }, []);
-=======
 
         const fetchPublicacoes = async () => {
             try {
@@ -67,7 +56,6 @@ function Publicacoes() {
 
             return url;
     }}
->>>>>>> Stashed changes
 
     useEffect(() => {
         const imagemEmByte = sessionStorage.getItem('imagem');
@@ -111,9 +99,6 @@ function Publicacoes() {
     }
 
     function publicar(){
-<<<<<<< Updated upstream
-        // implementar lógica
-=======
         const id = sessionStorage.getItem('id');
         const roleUser = sessionStorage.getItem('role');
         console.log(id)
@@ -145,7 +130,6 @@ function Publicacoes() {
               });
 
         });
->>>>>>> Stashed changes
     }
 
     return (
@@ -180,11 +164,6 @@ function Publicacoes() {
 
                 <div className="feed-body">
 
-<<<<<<< Updated upstream
-                    {comentarios.map((comentario) => (
-                        <Comentario key={comentario.id} {...comentario} />
-                    ))}
-=======
                 {comentarios.map((comentario, index) => (
                     <Comentario
                         key={index}
@@ -195,7 +174,6 @@ function Publicacoes() {
                         imagemPerfil={renderImageFromBytes(comentario.imagem)}
                     />
                 ))}
->>>>>>> Stashed changes
 
 
                 </div>
