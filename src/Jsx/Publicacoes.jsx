@@ -170,7 +170,7 @@ function Publicacoes() {
                         autor={comentario.nome}
                         role={comentario.role}
                         descricao={comentario.descricao}
-                        id={comentario.id}
+                        id={comentario.id_usuario}
                         imagemPerfil={renderImageFromBytes(comentario.imagem)}
                     />
                 ))}
