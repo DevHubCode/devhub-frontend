@@ -9,6 +9,7 @@ import star from '../html-css-template/imagens/icon-star.png';
 import ItemFooter from '../components/ItemFooter';
 import { Link } from 'react-router-dom'
 
+
 import api from '../api';
 
 import '../html-css-template/css/home.css'
@@ -61,14 +62,18 @@ function Home() {
 
     const filteredDevs = freelancers.filter((freelancer) => {
         const searchTermLower = searchDev.toLowerCase();
-        
-        return (
-            freelancer.especialidades &&
-            freelancer.especialidades.some((especialidade) =>
-                especialidade.descricao.toLowerCase().startsWith(searchTermLower)
-            ) ||
-            freelancer.id.toString().includes(searchTermLower)
-        );
+    
+        return Object.values(freelancer).some((value) => {
+            if (typeof value === 'string') {
+                return value.toLowerCase().includes(searchTermLower);
+            } else if (Array.isArray(value)) {
+                return value.some((item) =>
+                    typeof item === 'object' && item.descricao.toLowerCase().includes(searchTermLower)
+                );
+            } else {
+                return false;
+            }
+        });
     });
     
     
@@ -196,7 +201,7 @@ function Home() {
                     </div>
 
                     <div className="home-sub-menu-section">
-                        <div className="home-icon1" onClick={beanchinmark}>Beanchinmark</div>
+                        <div className="home-icon1" onClick={beanchinmark}>Benchmarking</div>
                         <div className="home-icon2">Todos</div>
                         <div className="home-icon2" onClick={publicacoes}>Publicações</div>
                     </div>
@@ -207,7 +212,7 @@ function Home() {
                             <div className="home-color-level-dev1" ></div>
 
                             <div className="home-text-level-dev">
-                                <div className="home-name-level-dev"> Senior</div>
+                                <div className="home-name-level-dev">Dev Senior</div>
                                 <div className="home-yyyy"> 10 Anos</div>
                             </div>
                         </div>
@@ -216,7 +221,7 @@ function Home() {
                             <div className="home-color-level-dev2"></div>
 
                             <div className="home-text-level-dev">
-                                <div className="home-name-level-dev">Pleno</div>
+                                <div className="home-name-level-dev">Dev Pleno</div>
                                 <div className="home-yyyy"> 5-9 Anos</div>
                             </div>
                         </div>
@@ -225,7 +230,7 @@ function Home() {
                             <div className="home-color-level-dev3"></div>
 
                             <div className="home-text-level-dev">
-                                <div className="home-name-level-dev">Junior</div>
+                                <div className="home-name-level-dev">Dev Junior</div>
                                 <div className="home-yyyy"> 1-4 Ano(s)</div>
                             </div>
                         </div>

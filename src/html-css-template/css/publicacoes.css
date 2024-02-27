@@ -233,6 +233,11 @@ body {
     border-radius: 5px;
 }
 
+.imagem-feed:hover{
+    cursor: pointer;
+    filter: brightness(70%);
+}
+
 .feed-name-function {
     display: flex;
     height: 100%;
@@ -256,10 +261,16 @@ body {
 }
 
 .text-feed {
-    justify-content: center;
+    justify-content: start;
+    margin-bottom: 100px;
     align-items: center;
     display: flex;
     height: 70%;
     width: 90%;
     font-size: 13px;
+}
+
+.feed-title{
+    font-size: 18px;
+    font-weight: 600;
 }

@@ -477,19 +477,22 @@ body {
   .paises{
     margin-left: 145%;
   }
-  
   .tecnologias {
     height: 80px;
     width: 100%;
     display: flex;
+    position: absolute;
+   
     justify-content: center;
     align-items: center;
-    background-color: #9fdde2;
+    background-color: #ffffff;
+    box-shadow: 3px 3px 3px 3px rgba(182, 182, 182, 0.5);
   }
   .carousel-box-tec{
+    
   padding-left: 3% ;
   padding-right: 3%;
-  background-color: #9fdde2;
+  background-color: #ffffff;
   }
   
   .carousel-box {
@@ -562,6 +565,7 @@ body {
   }
   
   .footer {
+    margin-top: 3%;
     height: 295px;
     width: 100%;
     display: flex;

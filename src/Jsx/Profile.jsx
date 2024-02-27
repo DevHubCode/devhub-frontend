@@ -110,7 +110,7 @@ function Profile() {
         if(role == "FREELANCER"){
             window.location.href = '/publicacoes'
         }else{
-            window.location.href = '/home'
+            window.location.href = '/publicacoes'
         } 
       }
 

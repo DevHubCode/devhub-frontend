@@ -31,7 +31,8 @@ import cinco from "../html-css-template/imagens/cinco.svg"
 import nove from "../html-css-template/imagens/9.svg"
 import dez from "../html-css-template/imagens/12.svg"
 import { useEffect, useState, useRef } from "react";
-import { Link, animateScroll as scroll } from 'react-scroll';
+import {animateScroll as scroll } from 'react-scroll';
+import VLibras from '@djpfs/react-vlibras';
 
 import "../html-css-template/css/inicial.css"
 
@@ -363,7 +364,11 @@ function Inicial() {
                 </div>
             </div>
 
+            {/* ... */}
 
+            <VLibras forceOnload={true}/>
+
+            {/* ... */}
 
         </>
     )

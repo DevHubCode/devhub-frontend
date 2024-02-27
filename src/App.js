@@ -15,6 +15,7 @@ import ProfileContratante from "./Jsx/ProfileContratante.jsx"
 import ProfileCrudContratante from "./Jsx/ProfileCrudContratante.jsx"
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
+
 function App() {
   return (
     <BrowserRouter>
