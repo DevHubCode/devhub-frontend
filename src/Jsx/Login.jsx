@@ -30,7 +30,7 @@ function Login() {
                     console.log(response.data);
                     Swal.fire({
                         title: "Logando!",
-                        text: "Usuário encontrado, clique em ok para proseguir",
+                        text: "Usuário encontrado, clique em ok para prosseguir",
                         icon: "success"
                       }).then((result) => {
                         if (result.isConfirmed) {

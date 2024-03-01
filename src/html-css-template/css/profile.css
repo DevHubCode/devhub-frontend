@@ -368,37 +368,69 @@
     color: #525252;
 }
 
-.freela-box-contact{
+.freela-box-contact {
     display: flex;
-    justify-content: center;
+    justify-content: space-between; /* Para espaçamento uniforme entre os botões */
     align-items: center;
     height: 100%;
-    width: 50%;
+    width: 100% !important;
 }
-.freela-box-contact button{
+
+/* Estilo dos botões */
+.freela-box-contact button {
+    /* Adicione estilos adicionais conforme necessário */
+    padding: 8px 16px; /* Exemplo de preenchimento */
+    font-size: 16px; /* Exemplo de tamanho de fonte */
+    flex: 1; /* Ocupa todo o espaço disponível */
+    margin: 0 5px; /* Adicione margens entre os botões */
+}
+
+.freela-box-contact div{
+    display: flex;
+    width: 100%;
+}
+
+/* Estilo específico dos botões */
+.freela-box-contact button {
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
-    height: 60%;
-    width: 90%;
+    height: 100%;
     color: white;
     font-family: "Poppins";
     font-weight: bolder;
     background-color: #448f29;
-    font-size: 30px;
+    font-size: 16px;
     border: 0px;
     cursor: pointer;
 }
 
-.freela-box-contact button:hover{
+.freela-box-contact button:hover {
     background-color: #397423;
-
 }
 
-.freela-box-contact button:active{
+.freela-box-contact button:active {
     background-color: rgb(35, 116, 39);
-    
+}
+
+.freela-button-cancel{
+    background-color: red !important;
+    font-size: 16px !important;
+}
+
+.freela-button-cancel:hover{
+    background-color: rgb(243, 29, 29) !important; 
+}
+
+.freela-button-cancel:active {
+    background-color: rgb(254, 63, 63);
+}
+
+.freela-button-start{
+    font-size: 16px !important;
+    display: inline-flex;
+    width: 100% !important;
 }
 
 .modal-overlay {

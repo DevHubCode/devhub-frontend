@@ -141,6 +141,15 @@ function Benchmarking() {
         }
     };
 
+    const handleContactLink2 = async () => {
+
+        const id = document.getElementById("botao2")
+
+        console.log(id.value)
+
+        navigate(`/profile/${id.value}`);
+    }
+
     const handleContactLink = async () => {
 
         const id = document.getElementById("botao")
@@ -449,7 +458,7 @@ function Benchmarking() {
 
                                         </div>
 
-                                        <button value={foundDev2.id} id='botao' onClick={() => handleContactLink(foundDev2)}>Contactar</button>
+                                        <button value={foundDev2.id} id='botao2' onClick={() => handleContactLink2(foundDev2)}>Contactar</button>
 
                                     </div>
                                 </div>

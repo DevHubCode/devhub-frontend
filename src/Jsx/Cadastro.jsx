@@ -158,7 +158,7 @@ function Cadastrar() {
                             console.log(response.data);
                             Swal.fire({
                                 title: "Cadastrado!",
-                                text: "Cadastro efetuado, redirecionando para tela de login",
+                                text: "Cadastro efetuado, redirecionando para imagens",
                                 icon: "success",
                                 showConfirmButton: false,
                                 timer: 2000
