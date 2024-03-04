@@ -58,38 +58,19 @@ function Home() {
         }
       }, []);
 
-    console.log(freelancers);
-
     const filteredDevs = freelancers.filter((freelancer) => {
         const searchTermLower = searchDev.toLowerCase();
     
-        return Object.values(freelancer).some((value) => {
-            if (typeof value === 'string') {
-                return value.toLowerCase().includes(searchTermLower);
-            } else if (Array.isArray(value)) {
-                return value.some((item) =>
-                    typeof item === 'object' && item.descricao.toLowerCase().includes(searchTermLower)
-                );
-            } else {
-                return false;
-            }
-        });
+        return (
+            freelancer.nome.toLowerCase().includes(searchTermLower) ||
+            freelancer.funcao.toLowerCase().includes(searchTermLower) ||
+            freelancer.senioridade.toLowerCase().includes(searchTermLower) ||
+            freelancer.especialidades.some(
+                (especialidade) =>
+                    especialidade.descricao.toLowerCase().includes(searchTermLower)
+            )
+        );
     });
-    
-    
-
-    // const filteredDevs = freelancers.filter((freelancer) => {
-    //     const searchTermLower = searchDev.toLowerCase();
-
-    //     return (
-    //         freelancer.nome.toLowerCase().includes(searchTermLower) ||
-    //         freelancer.id.toString().includes(searchTermLower) ||
-    //         freelancer.especialidades.some(
-    //         (especialidade) =>
-    //             especialidade.descricao.toLowerCase().includes(searchTermLower)
-    //         )
-    //     );
-    // });
     
     const getSeniorityColor = (freelancer) => {
         switch (freelancer) {
