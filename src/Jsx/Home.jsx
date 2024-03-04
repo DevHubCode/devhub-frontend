@@ -125,11 +125,13 @@ function Home() {
         sessionStorage.clear();
     }
 
-    function arrumarNota(nota){
-        if(nota == null){
-            return "5.00";
+    function arrumarNota(nota) {
+        if (nota == null) {
+            return 5.00;
+        } else {
+            const avaliacao = parseFloat(nota).toFixed(2);
+            return avaliacao;
         }
-        return nota;
     }
 
     function publicacoes(){

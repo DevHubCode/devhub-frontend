@@ -5,6 +5,7 @@ import { freelasComparacao } from '../Data';
 import foto from "../html-css-template/imagens/image-edficio=devhub.svg"
 import linkedinLogo from '../html-css-template/imagens/LInkdln-logo.svg';
 import ModalComponent from '../ModalJsx/ModalContactar';
+import ModalConcluir from '../ModalJsx/ModalConcluir'
 import githubLogo from '../html-css-template/imagens/github-logo.svg';
 import star from '../html-css-template/imagens/icon-star.png';
 import arrowLeft from '../html-css-template/imagens/arrow-left (2).svg';
@@ -32,6 +33,8 @@ function Profile() {
     const { id } = useParams();
 
     const [modalOpen, setModalOpen] = useState(false);
+
+    const [modalConcluirOpen, setModalConcluirOpen] = useState(false);
 
 
     useEffect(() => {
@@ -63,11 +66,15 @@ function Profile() {
                   setImagemUrl(url);
                 }
 
-                if(devSelecionado.nota == null){
-                    setAvaliacao("5.00")
-                }else{
-                    setAvaliacao(devSelecionado.nota)
+                if (devSelecionado.nota == null) {
+                    setAvaliacao(5.00); // Se a nota for null, defina como 5.00 diretamente como um número
+                } else {
+                    const avaliacao = devSelecionado.nota.toFixed(2); // Converta a nota para número de ponto flutuante
+                    setAvaliacao(avaliacao);
                 }
+
+
+                console.log(response.data)
 
             })
             .catch(error => {
@@ -91,13 +98,7 @@ function Profile() {
     const openModal = () => {
         api.post(`/servicos/criar?idContratante=${idContratantee}&idFreelancer=${idDev}`, {
         }).then(response => {
-            // Lida com a resposta do servidor após um login bem-sucedido
-            console.log(response.data);
-            Swal.fire({
-                title: "Entrando em contato com usuário",
-                text: "clique em ok para proseguir",
-                icon: "success"
-              })
+            
         }).catch(error => {
             Swal.fire({
                 title: "Contratante já entrou em contato",
@@ -113,12 +114,56 @@ function Profile() {
       setModalOpen(false);
     };
 
-    const handleStartService = () => {
-        // Lógica para iniciar o serviço
+    const openModalConcluir = () => {
+        setModalConcluirOpen(true);
+      };
+
+    const closeModalConcluir = () => {
+        setModalConcluirOpen(false);
+      };
+
+    const handleFinishService = () => {
+        api.patch(`/servicos/concluir?idContratante=${idContratantee}&idFreelancer=${idDev}`, {
+        }).then(response => {
+            // Lida com a resposta do servidor após um login bem-sucedido
+            console.log(response.data);
+            Swal.fire({
+                title: "Serviço concluido com sucesso",
+                text: "clique em ok para proseguir",
+                icon: "success"
+              })
+        }).catch(error => {
+            Swal.fire({
+                title: "Serviço já foi finalizado",
+                text: "Clique em ok para proseguir",
+                icon: "error"
+              });
+
+        });
     };
 
     const handleCancel = () => {
-        // Lógica para cancelar
+        api.patch(`/servicos/fechar?idContratante=${idContratantee}&idFreelancer=${idDev}`, {
+        }).then(response => {
+            // Lida com a resposta do servidor após um login bem-sucedido
+            console.log(response.data);
+            Swal.fire({
+                title: "Serviço cancelado",
+                text: "clique em ok para proseguir",
+                icon: "success"
+              }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = `/profile/${idDev}`;
+                }
+            });
+        }).catch(error => {
+            Swal.fire({
+                title: "Serviço já foi finalizado",
+                text: "Clique em ok para proseguir",
+                icon: "error"
+              });
+
+        });
     };
 
     useEffect(() => {
@@ -204,7 +249,7 @@ function Profile() {
                                 <div className="freela-box-contact">
                                     {contacted ? (
                                         <div>
-                                            <button className='freela-button-start' onClick={handleStartService}>Concluir Serviço</button>
+                                            <button className='freela-button-start' onClick={openModalConcluir}>Concluir Serviço</button>
                                             <button className='freela-button-cancel' onClick={handleCancel}>Cancelar</button>
                                         </div>
                                     ) : (
@@ -229,6 +274,7 @@ function Profile() {
                 </div>
             </div>
         <ModalComponent isOpen={modalOpen} onClose={closeModal} whatsappNumber={"55" + telefone} />
+        <ModalConcluir isOpen={modalConcluirOpen} onClose={closeModalConcluir} valorHora={preco} idContratante={idContratantee} idDev={idDev}/>
         </>
         
     )
