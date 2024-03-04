@@ -151,18 +151,17 @@ function Home() {
   
     
     function abrirMenu() {
-        menuHome.style.display = 'block'; // Unhide the menu
+        menuHome.style.display = 'block'; 
     }
     
     function fecharMenu() {
-        menuHome.style.display = 'none'; // Hide the menu
+        menuHome.style.display = 'none';
     }
 
     function profile(freelancerId){
 
         console.log(freelancerId);
 
-        // window.location.href = `/profile/${id.value}`
         window.location.href = `/profile/${freelancerId}`
     }
 

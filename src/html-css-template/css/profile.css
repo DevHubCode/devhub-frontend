@@ -448,11 +448,11 @@
   
   .modal-content-whats {
     background-color: white;
-    padding: 20px; /* Ajuste o padding conforme necessário */
+    padding: 20px;
     border-radius: 8px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Adicione uma sombra suave */
-    max-width: 300px; /* Defina a largura máxima */
-    text-align: center; /* Centralize o conteúdo horizontalmente */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    max-width: 300px; 
+    text-align: center;
   }
   
   .close-button {
@@ -476,16 +476,16 @@
   }
   
   .modal-content {
-    position: relative; /* adiciona posição relativa */
+    position: relative;
     background-color: white;
-    padding: 40px; /* aumenta o padding */
+    padding: 40px;
     border-radius: 8px;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5); /* aumenta o tamanho da sombra */
-    max-width: 600px; /* define a largura máxima */
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    max-width: 600px;
     width: 100%;
-    max-height: 400px; /* aumenta a altura máxima */
+    max-height: 400px;
     height: 100%;
-    text-align: center; /* centraliza o conteúdo horizontalmente */
+    text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -493,17 +493,17 @@
   }
   
   .close-button {
-    position: absolute; /* posição absoluta em relação ao modal-content */
-    top: 10px; /* distância do topo */
-    right: 10px; /* distância da direita */
+    position: absolute;
+    top: 10px;
+    right: 10px; 
     cursor: pointer;
   }
   
   input[type="number"] {
-    width: calc(100% - 16px); /* ajusta a largura do campo de entrada */
-    max-width: 150px; /* define a largura máxima */
+    width: calc(100% - 16px);
+    max-width: 150px;
     padding: 8px;
-    margin: 0 auto; /* centraliza horizontalmente */
+    margin: 0 auto;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -513,7 +513,7 @@
   .avancar-button,
   .back-button {
     padding: 10px 20px;
-    margin: 10px; /* adiciona espaçamento entre os botões */
+    margin: 10px;
     border: none;
     border-radius: 4px;
     background-color: #007bff;

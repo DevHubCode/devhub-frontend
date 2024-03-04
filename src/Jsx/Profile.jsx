@@ -67,9 +67,9 @@ function Profile() {
                 }
 
                 if (devSelecionado.nota == null) {
-                    setAvaliacao(5.00); // Se a nota for null, defina como 5.00 diretamente como um número
+                    setAvaliacao(5.00);
                 } else {
-                    const avaliacao = devSelecionado.nota.toFixed(2); // Converta a nota para número de ponto flutuante
+                    const avaliacao = devSelecionado.nota.toFixed(2);
                     setAvaliacao(avaliacao);
                 }
 
