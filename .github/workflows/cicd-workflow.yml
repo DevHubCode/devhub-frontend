@@ -16,7 +16,6 @@ jobs:
         run: docker build -t devhub3/devhub-frontend .
       - name: Publish image to docker hub
         run: docker push devhub3/devhub-frontend:latest
-        
   deploy:
     needs: build
     runs-on: self-hosted
