@@ -270,7 +270,7 @@ function Benchmarking() {
                 </div>
                 <div className="bench-box-menu">
                     <div className="bench-search">
-                        <div className="bench-search-tittle">Beanchinmark</div>
+                        <div className="bench-search-tittle">Benchmarking</div>
 
                     </div>
 
@@ -330,7 +330,7 @@ function Benchmarking() {
             <div className="bench-container-bench">
 
                 <div className="bench-box-cdev">
-
+                
                     {showDevCard ? (
                         <div className="bench-card-dev">
                             <div className="bench-box" key={foundDev.id}>
@@ -378,7 +378,7 @@ function Benchmarking() {
                                                 <img src={star} alt="" width="100%" />
                                             </div>
                                             <div className="bench-box-score-number">
-                                                5.00
+                                                {Number(foundDev.nota).toFixed(2)}
                                             </div>
 
                                         </div>
@@ -453,7 +453,7 @@ function Benchmarking() {
                                                 <img src={star} alt="" width="100%" />
                                             </div>
                                             <div className="bench-box-score-number">
-                                                    5.00
+                                                {Number(foundDev2.nota).toFixed(2)}
                                             </div>
 
                                         </div>
