@@ -1,7 +1,5 @@
 FROM node:20
 WORKDIR /app
-COPY package.json ./
-RUN npm install
-COPY . .
 EXPOSE 5000
-CMD ["npm", "run", "start"]
+COPY --from=builder package.json ./
+ENTRYPOINT npm run start
