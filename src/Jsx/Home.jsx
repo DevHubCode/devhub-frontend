@@ -108,7 +108,7 @@ function Home() {
 
     function arrumarNota(nota) {
         if (nota == null) {
-            return 5.00;
+            return "5.00";
         } else {
             const avaliacao = parseFloat(nota).toFixed(2);
             return avaliacao;
