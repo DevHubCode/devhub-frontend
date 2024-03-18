@@ -4,6 +4,10 @@ const api = axios.create({
   baseURL: '/api'
 });
 
+// const api = axios.create({
+//   baseURL: 'http://localhost:8080'
+// });
+
 api.interceptors.request.use(
   function (config) {
     config.headers['Access-Control-Allow-Origin'] = '*';

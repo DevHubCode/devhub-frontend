@@ -67,7 +67,7 @@ function Profile() {
                 }
 
                 if (devSelecionado.nota == null) {
-                    setAvaliacao(5.00);
+                    setAvaliacao("5.00");
                 } else {
                     const avaliacao = devSelecionado.nota.toFixed(2);
                     setAvaliacao(avaliacao);
@@ -98,7 +98,7 @@ function Profile() {
     const openModal = () => {
         api.post(`/servicos/criar?idContratante=${idContratantee}&idFreelancer=${idDev}`, {
         }).then(response => {
-            
+            setModalOpen(true);
         }).catch(error => {
             Swal.fire({
                 title: "Contratante já entrou em contato",
@@ -107,8 +107,7 @@ function Profile() {
               });
 
         });
-      setModalOpen(true);
-    };
+        };
   
     const closeModal = () => {
       setModalOpen(false);
