@@ -192,6 +192,12 @@ function Profile() {
         } 
       }
 
+      const customStyles = {
+        control: (provided, state) => ({
+          ...provided,
+          color: 'black' 
+        }),
+      };
     return (
         <>
             <div className="freela-header">
@@ -223,11 +229,14 @@ function Profile() {
                             <div className="freela-name">{nome}</div>
                             <div className="freela-function">{funcao}</div>
                             <div className="freela-tecno">
-                                    <Select options={especialidades.map(especialidade => ({
-                                        value: especialidade,
-                                        label: especialidade,
-                                        isDisabled: true,
-                                    }))}  placeholder=" Especialidades ">
+                                    <Select 
+                                        styles={customStyles}
+                                        options={especialidades.map(especialidade => ({
+                                            value: especialidade,
+                                            label: especialidade,
+                                            isDisabled: false,
+                                        }))} 
+                                        placeholder=" Especialidades ">
                                         Especialidades
                                     </Select>
 
