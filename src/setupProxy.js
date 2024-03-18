@@ -9,6 +9,9 @@ module.exports = function(app) {
             pathRewrite: (path, req) => {
                 return path.replace(/^\/api(?:\/|$)/, '/');
             },
+            onProxyRes: function(proxyRes, req, res) {
+                proxyRes.headers['Access-Control-Allow-Origin'] = '*'; // Habilitar CORS
+            }
         })
     );
 };
