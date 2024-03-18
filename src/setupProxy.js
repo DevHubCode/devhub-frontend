@@ -2,13 +2,13 @@ const { createProxyMiddleware } = require("http-proxy-middleware");
 
 module.exports = function(app) {
     app.use(
-        ':8080', 
+        '/api',
         createProxyMiddleware({
-            target: "http://10.0.0.206",
+            target: "http://10.0.0.206:8080",
             changeOrigin: true,
-            pathRewrite: {
-                '^:8080': ''
-            }
+            pathRewrite: (path, req) => {
+                return path.replace(/^\/api(?:\/|$)/, '/');
+            },
         })
     );
 };
