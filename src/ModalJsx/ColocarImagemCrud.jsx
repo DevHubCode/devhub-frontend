@@ -53,13 +53,13 @@ function Especialidades() {
             formData.append("image", selectedFile);
 
             console.log(formData)
-            let role = sessionStorage.getItem("role");
+            const role = sessionStorage.getItem("role");
             
-            role = role.toLocaleLowerCase().concat("s")
-            await api.patch(`/${role}/foto/${id}`, formData);
-            
-            const newImage = await api.get(`/${role}/${id}`)
-            sessionStorage.setItem("imagem", newImage)
+            if(role == "FREELANCER"){
+                const response = await api.patch(`/freelancers/foto/${id}`, formData);
+            }else{
+                const response = await api.patch(`/contratantes/foto/${id}`, formData); 
+            }
 
             Swal.fire({
                 title: "imagem registrada com sucesso!",
