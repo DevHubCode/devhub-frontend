@@ -44,11 +44,15 @@ function Profile() {
                 const devSelecionado = response.data;
                 setId(devSelecionado.id);
                 setNome(devSelecionado.nome);
-                setFuncao(devSelecionado.funcao);
                 setDescricao(devSelecionado.descricao);
                 setPreco(devSelecionado.valorHora);
                 setEspecialidades(devSelecionado.especialidades.map(especialidade => especialidade.descricao));
                 setTelefone(devSelecionado.telefone);
+
+                const cargo = devSelecionado.funcao;
+                const cargoFormatado = cargo.toLowerCase().split('_').map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(' ');
+
+                setFuncao(cargoFormatado);
 
                 const imagemEmByte = devSelecionado.imagem;
     
@@ -192,12 +196,17 @@ function Profile() {
         } 
       }
 
-      const customStyles = {
-        control: (provided, state) => ({
-          ...provided,
-          color: 'black' 
-        }),
+      const getOptionLabel = (option) => {
+        if (option.isDisabled) {
+          return (
+            <div style={{ opacity: 1, color: 'black', background: 'transparent'}}>
+              {option.label}
+            </div>
+          );
+        }
+        return option.label;
       };
+
     return (
         <>
             <div className="freela-header">
@@ -229,16 +238,17 @@ function Profile() {
                             <div className="freela-name">{nome}</div>
                             <div className="freela-function">{funcao}</div>
                             <div className="freela-tecno">
-                                    <Select 
-                                        styles={customStyles}
-                                        options={especialidades.map(especialidade => ({
-                                            value: especialidade,
-                                            label: especialidade,
-                                            isDisabled: false,
-                                        }))} 
-                                        placeholder=" Especialidades ">
-                                        Especialidades
-                                    </Select>
+                            <Select
+                                options={especialidades.map(especialidade => ({
+                                    value: especialidade,
+                                    label: especialidade,
+                                    isDisabled: true,
+                                }))}
+                                getOptionLabel={getOptionLabel}
+                                placeholder="Especialidades"
+                            >
+                                Especialidades
+                            </Select>
 
                             </div>
                             <div className="freela-about">

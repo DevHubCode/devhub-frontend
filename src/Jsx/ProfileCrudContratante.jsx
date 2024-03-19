@@ -166,8 +166,9 @@ function Profile() {
 
                 <div className="freela-items">
                     <div className="freela-img" style={{backgroundImage: `url(${imagemUrl})`}}>
-                    <div className="freela-edit-icon">
-                                </div>
+                        <div className="freela-score-contratante-crud">
+                            <div className="freela-num-score-contratante" onClick={atualizarImagem}><img src={lapisIcon} alt="Editar" width="20px" /></div>
+                        </div>
                        
                     </div>
 

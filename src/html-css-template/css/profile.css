@@ -559,3 +559,7 @@
   .star:hover {
     color: #ffc107;
   }
+
+  .custom-select .react-select__option--is-disabled {
+    color: black;
+}

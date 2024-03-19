@@ -245,6 +245,26 @@ function Benchmarking() {
                 return '';
         }
     };
+
+    function arrumarNota(nota) {
+        if (nota == null) {
+            return "5.00";
+        } else {
+            const avaliacao = parseFloat(nota).toFixed(2);
+            return avaliacao;
+        }
+    }
+
+    const getOptionLabel = (option) => {
+        if (option.isDisabled) {
+          return (
+            <div style={{ opacity: 1, color: 'black', background: 'transparent'}}>
+              {option.label}
+            </div>
+          );
+        }
+        return option.label;
+      };
     
 
     return (
@@ -352,6 +372,7 @@ function Benchmarking() {
                                                         label: especialidade.descricao,
                                                         isDisabled: true,
                                                     }))}
+                                                    getOptionLabel={getOptionLabel}
                                                     placeholder="Especialidades"
                                                 />
                                         </div>
@@ -378,7 +399,7 @@ function Benchmarking() {
                                                 <img src={star} alt="" width="100%" />
                                             </div>
                                             <div className="bench-box-score-number">
-                                                {Number(foundDev.nota).toFixed(2)}
+                                            {arrumarNota(foundDev.nota)}
                                             </div>
 
                                         </div>
@@ -427,6 +448,7 @@ function Benchmarking() {
                                                         label: especialidade.descricao,
                                                         isDisabled: true,
                                                     }))}
+                                                    getOptionLabel={getOptionLabel}
                                                     placeholder="Especialidades"
                                                 />
                                         </div>
@@ -453,7 +475,7 @@ function Benchmarking() {
                                                 <img src={star} alt="" width="100%" />
                                             </div>
                                             <div className="bench-box-score-number">
-                                                {Number(foundDev2.nota).toFixed(2)}
+                                            {arrumarNota(foundDev2.nota)}
                                             </div>
 
                                         </div>
