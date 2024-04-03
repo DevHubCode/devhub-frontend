@@ -8,6 +8,7 @@ import javaLogo from '../html-css-template/imagens/java-logo.svg'
 import springLogo from '../html-css-template/imagens/spring-logo.svg'
 import azureLogo from '../html-css-template/imagens/azure-logo.svg'
 import star from '../html-css-template/imagens/icon-star.png';
+import search from '../html-css-template/imagens/serch-bench.png'
 import arrowLeft from '../html-css-template/imagens/arrow-left (2).svg';
 import { Link, useNavigate } from 'react-router-dom';
 import '../html-css-template/css/benchmarking.css'
@@ -15,6 +16,7 @@ import api from '../api';
 import Select from 'react-select';
 
 import { freelasComparacao } from '../Data';
+import ModalHome from '../ModalJsx/ModalHome';
 
 function Benchmarking() {
 
@@ -22,7 +24,7 @@ function Benchmarking() {
     const [showDevCard, setShowDevCard] = useState(false);
     const [foundDev, setFoundDev] = useState(null);
     const [imagemUrl, setImagemUrl] = useState(null);
-    const [segundaPesquisa, setSegundaPesquisa] = useState(false);
+    const [segundaPesquisa, setSegundaPesquisa] = useState(true);
     const [seniorityColor, setSeniorityColor] = useState('');
     const [seniorityColor2, setSeniorityColor2] = useState('');
 
@@ -30,50 +32,41 @@ function Benchmarking() {
     const [showDevCard2, setShowDevCard2] = useState(false);
     const [foundDev2, setFoundDev2] = useState(null);
 
+    const [modalHomeOpen, setModalHomeOpen] = useState(false);
+
+    const openModalHome = () => {
+        setModalHomeOpen(true);
+    };
+
+    const closeModalHome = () => {
+        setModalHomeOpen(false);
+    };
+
     const navigate = useNavigate();
+
 
     const fetchDeveloperById = async (developerId) => {
         try {
-            if (segundaPesquisa == false) {
-                const response = await api.get(`/freelancers/${searchId}`);
-                return response.data;
-            } else {
-                const response = await api.get(`/freelancers/${searchId2}`);
-                return response.data;
-            }
-
+            const response = await api.get(`/freelancers/${developerId}`);
+            return response.data;
         } catch (error) {
-            console.error(`Erro ao buscar desenvolvedor:  ${searchId}`);
+            console.error(`Erro ao buscar desenvolvedor: ${developerId}`);
             return null;
         }
     }
 
-    const handleSearchClick = async () => {
 
-        // const devFound = freelasComparacao.find(freelancer => freelancer.id === parseInt(searchId));
-
-
-        // if (devFound) {
-        //     console.log('Desenvolvedor encontrado: ', devFound)
-        //     setFoundDev(devFound);
-        //     setShowDevCard(true);
-
-        // } else {
-        //     console.log('Desenvolvedor não encontrado')
-        //     setFoundDev(null);
-        //     setShowDevCard(false);
-        // }
-
+    const handleSearchClick = async (id) => {
         try {
-            const devFound = await fetchDeveloperById(searchId);
+            const devFound = await fetchDeveloperById(id);
 
             if (devFound) {
                 console.log('Desenvolvedor encontrado: ', devFound);
                 setFoundDev(devFound);
                 setShowDevCard(true);
-                setSegundaPesquisa(true)
+                setSegundaPesquisa(false);
 
-                setSeniorityColor(getSeniorityColor(devFound))
+                setSeniorityColor(getSeniorityColor(devFound));
             } else {
                 console.log('Desenvolvedor não encontrado');
                 setFoundDev(null);
@@ -83,54 +76,17 @@ function Benchmarking() {
             console.error('Erro ao buscar desenvolvedor:', error);
         }
     };
-    
 
-    // const handleSearchClick2 = async () => {
-    //     const devFound2 = freelasComparacao.find(freelancer => freelancer.id === parseInt(searchId2));
-
-    //     if (devFound2) {
-    //         console.log('2o Desenvolvedor encontrado : ', devFound2);
-    //         setFoundDev2(devFound2);
-    //         setShowDevCard2(true);
-    //     } else {
-    //         console.log('2o Desenvolvedor NÃO encontrado!!');
-    //         setFoundDev2(null);
-    //         setShowDevCard2(false);
-    //     }
-
-    //     try {
-    //         const devFound2 = await fetchDeveloperById(searchId2);
-
-    //         if (devFound2) {
-    //             console.log('2o Desenvolvedor encontrado : ', devFound2);
-    //             setFoundDev2(devFound2);
-    //             setShowDevCard2(true);
-    //         } else {
-    //             console.log('2o Desenvolvedor NÃO encontrado!!');
-    //             setFoundDev2(null);
-    //             setShowDevCard2(false);
-    //         }
-    //     } catch (error) {
-    //         console.error('Erro ao buscar desenvolvedor:', error);
-    //     }
-
-    // }
-
-    const handleSearchClick2 = async () => {
-        // Use o valor atualizado diretamente
+    const handleSearchClick2 = async (id) => {
         try {
-            const devFound2 = await fetchDeveloperById(searchId2);
+            const devFound2 = await fetchDeveloperById(id);
 
             if (devFound2) {
                 console.log('2o Desenvolvedor encontrado : ', devFound2);
                 setFoundDev2(devFound2);
                 setShowDevCard2(true);
 
-                setSeniorityColor2(getSeniorityColor(devFound2))
-
-                console.log(setSeniorityColor2(getSeniorityColor(devFound2))
-                )
-
+                setSeniorityColor2(getSeniorityColor(devFound2));
             } else {
                 console.log('2o Desenvolvedor NÃO encontrado!!');
                 setFoundDev2(null);
@@ -140,6 +96,7 @@ function Benchmarking() {
             console.error('Erro ao buscar desenvolvedor:', error);
         }
     };
+
 
     const handleContactLink2 = async () => {
 
@@ -158,16 +115,6 @@ function Benchmarking() {
 
         navigate(`/profile/${id.value}`);
 
-        // if (foundDev && foundDev.id) {
-        //     console.log('1o Dev foi escolhido: >>', foundDev);
-        //     navigate(`/profile/${foundDev.id}`);
-        // } else if (foundDev2 && foundDev2.id) {
-        //     console.log('2o Dev foi o escolhido: >>', foundDev2);
-        //     navigate(`/profile/${foundDev2.id}`);
-        // } else {
-        //     console.log('Nenhum desenvolvedor encontrado para contato.');
-        //     
-        // }
 
         try {
             const selectedDev = null
@@ -266,6 +213,15 @@ function Benchmarking() {
         return option.label;
       };
     
+    function limpar (){
+        setShowDevCard(false)
+        setShowDevCard2(false)
+        setSegundaPesquisa(true)
+    }
+
+    function publicacoes (){
+        navigate("/publicacoes")
+    }
 
     return (
         <>
@@ -295,8 +251,8 @@ function Benchmarking() {
                     </div>
 
                     <div className="bench-sub-menu-section">
-                        <button className="bench-icon1">Limpar</button>
-                        <button className="bench-icon2">Publicações</button>
+                        <button onClick={limpar} className="bench-icon1">Limpar</button>
+                        <button onClick={publicacoes} className="bench-icon2">Publicações</button>
                     </div>
 
                 </div>
@@ -410,14 +366,9 @@ function Benchmarking() {
                             <div className={`bench-color-level-dev ${seniorityColor}`}></div>
                         </div>
                     ) : (
-                        <div className="bench-card-dev-search">
-                            <div className="bench-input-tittle">Preencha o ID:</div>
-                            <input
-                                type="text"
-                                value={searchId}
-                                onChange={(e) => setSearchId(e.target.value)}
-                            />
-                            <button className='pesquisar' onClick={handleSearchClick}>Pesquisar</button>
+                        <div  onClick={openModalHome} className="bench-card-dev-search">
+                            <img src={search} alt="" />
+                            <div className="bench-input-tittle">Selecione um user</div>
                         </div>
                     )}
                 </div>
@@ -488,19 +439,15 @@ function Benchmarking() {
                             <div className={`bench-color-level-dev ${seniorityColor2}`}></div>
                         </div>
                     ) : (
-                        <div className="bench-card-dev-search">
-                            <div className="bench-input-tittle">Preencha o Segundo ID:</div>
-                            <input
-                                type="text"
-                                value={searchId2}
-                                onChange={(e) => setSearchId2(e.target.value)}
-                            />
-                            <button className='pesquisar' onClick={handleSearchClick2}>Pesquisar</button>
+                        <div onClick={openModalHome} className="bench-card-dev-search">
+                            <img src={search} alt="" />
+                            <div className="bench-input-tittle">Selecione um user</div>
                         </div>
                     )}
                 </div>
 
             </div>
+            {modalHomeOpen && <ModalHome isOpen={modalHomeOpen} onClose={closeModalHome} onSearchClick={segundaPesquisa ? handleSearchClick : handleSearchClick2}/>}
         </>
     )
 }
