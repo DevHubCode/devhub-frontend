@@ -87,7 +87,7 @@ function Login() {
             <div className="text-voltar">Inicio</div>
           </div>
           <div className="frase">
-            Proporcionando encontros entre <div >demanda </div> e <div>competência</div>.
+            Proporcionando encontros entre <div >demanda e competência.</div>
           </div>
           <div className="logo">
             <img src={logoDevhubBranco} alt="loogo DevHub" />
