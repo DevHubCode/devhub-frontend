@@ -21,6 +21,7 @@ function Profile() {
     const [avaliacao, setAvaliacao] = useState("");
     const [nome, setNome] = useState("");
     const [funcao, setFuncao] = useState("");
+    const [email, setEmail] = useState("");
     const [descricao, setDescricao] = useState("");
     const [preco, setPreco] = useState("");
     const [idDev, setId] = useState("");
@@ -28,6 +29,7 @@ function Profile() {
     const [imagemUrl, setImagemUrl] = useState(null);
     const [telefone, setTelefone] = useState("");
     const idContratantee = sessionStorage.getItem('id');
+    const nomeRemetente = sessionStorage.getItem("nome")
     const [contacted, setContacted] = useState(false);
 
     const { id } = useParams();
@@ -44,6 +46,7 @@ function Profile() {
                 const devSelecionado = response.data;
                 setId(devSelecionado.id);
                 setNome(devSelecionado.nome);
+                setEmail(devSelecionado.email);
                 setDescricao(devSelecionado.descricao);
                 setPreco(devSelecionado.valorHora);
                 setEspecialidades(devSelecionado.especialidades.map(especialidade => especialidade.descricao));
@@ -100,16 +103,15 @@ function Profile() {
     }, [idDev]);
 
     const openModal = () => {
-        api.post(`/servicos/criar?idContratante=${idContratantee}&idFreelancer=${idDev}`, {
-        }).then(response => {
+        api.post(`/servicos/criar?idContratante=${idContratantee}&idFreelancer=${idDev}&destinatario=${email}&nomeRemetente=${sessionStorage.getItem("nome")}&nomeDestinatario=${nome}`,
+        ).then(response => {
             setModalOpen(true);
         }).catch(error => {
             Swal.fire({
                 title: "Contratante já entrou em contato",
                 text: "Clique em ok para proseguir",
                 icon: "error"
-              });
-
+            });
         });
         };
   
@@ -146,7 +148,7 @@ function Profile() {
     };
 
     const handleCancel = () => {
-        api.patch(`/servicos/fechar?idContratante=${idContratantee}&idFreelancer=${idDev}`, {
+        api.patch(`/servicos/fechar?idContratante=${idContratantee}&idFreelancer=${idDev}&destinatario=${email}&nomeRemetente=${sessionStorage.getItem("nome")}&nomeDestinatario=${nome}`, {
         }).then(response => {
             // Lida com a resposta do servidor após um login bem-sucedido
             console.log(response.data);
@@ -292,7 +294,7 @@ function Profile() {
                 </div>
             </div>
         <ModalComponent isOpen={modalOpen} onClose={closeModal} whatsappNumber={"55" + telefone} />
-        <ModalConcluir isOpen={modalConcluirOpen} onClose={closeModalConcluir} valorHora={preco} idContratante={idContratantee} idDev={idDev}/>
+        <ModalConcluir isOpen={modalConcluirOpen} onClose={closeModalConcluir} valorHora={preco} idContratante={idContratantee} idDev={idDev} nomeRemetente={nomeRemetente} destinatario={email} nomeDestinatario={nome}/>
         </>
         
     )

@@ -621,19 +621,6 @@ border-radius: 30px;
    overflow-y: auto; /* Adicione uma barra de rolagem vertical se o conteúdo do modal for muito longo */
 }
 
-.home-header-icons-modal{
-   height: auto;
-   width: 10%;
-   background-color: #E5F1F2;
-   display: grid;
-   justify-content: center;
-   align-items: center;
-   grid-template-columns: repeat(auto-fill, minmax(31%, 1fr)); 
-   grid-template-rows: auto;
-   grid-gap: 0px;
-   padding-top: 34px;
-}
-
 .home-image-freelancer-modal{
    background-size: cover;
    margin-top: 2%;
@@ -691,7 +678,7 @@ border-radius: 30px;
    grid-template-rows: auto;
    grid-gap: 0px;
    padding-top: 10px;
-   padding-bottom: 20px;
+   padding-bottom: 50px;
 }
 
 .close-button-modal {
@@ -700,3 +687,8 @@ border-radius: 30px;
    right: 200px; 
    cursor: pointer;
  }
+
+.home-box-freelancer-modal{
+   height: 90%;
+   width: 90%;
+}

@@ -370,26 +370,14 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    cursor: pointer;
 
 }
-
-
-.bench-card-dev-search input {
-    margin: 2%;
-    display: flex;
-    justify-content: center;
-    height: 14%;
-    width: 50%;
-    color: #6E6F72;
-    background-color: #dddddd8a;
-    border-radius: 3px;
-    box-shadow: 0px 5px 5px 0px #dadada;
-    border: 0px solid;
-    padding-left: 2%;
-    font-size: 20px;
-    margin-bottom: 10%;
+.bench-card-dev-search:hover{
+    transition: 500ms;
+    height: 76%;
+    width: 925;
 }
-
 .bench-card-dev-search input:focus {
     outline: none;
     /* Remove a borda de foco */
@@ -403,7 +391,7 @@ body {
     width: 100%;
     height: 30%;
     /* border: 4px solid rgb(29, 29, 31); */
-    color: black;
+    color: rgba(90, 90, 90, 0.948);
     font-weight: bolder;
 }
 
