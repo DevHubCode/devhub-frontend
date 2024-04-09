@@ -23,7 +23,7 @@ const ModalComponent = ({ isOpen, onClose, valorHora, idContratante, idDev, nome
     api.patch(`/servicos/concluir`, {
         "idFreelancer": idDev,
         "idContratante": idContratante,
-        "valorHora": valorHora,
+        "valorHora": totalAPagar,
         "nomeRemetente": nomeRemetente,
         "destinatario": destinatario,
         "nomeDestinatario": nomeDestinatario
