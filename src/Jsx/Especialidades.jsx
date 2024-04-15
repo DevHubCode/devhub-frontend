@@ -6,6 +6,8 @@ import Swal from "sweetalert2";
 import { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import Select from 'react-select';
+import BackgroundCover from "../html-css-template/imagens/2.png";
+
 
 import '../html-css-template/css/especialidades.css'
 
@@ -70,12 +72,22 @@ function Especialidades() {
         pesquisa[index] = data
         setTermoPesquisa(pesquisa)
     }
-
+    const myStyle = {
+        backgroundImage: `url(${BackgroundCover})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        height: "100vh",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      
+      };
     return (
         <>
-            <div className="body-login">
+            <div className="body-login"style={myStyle}>
                 <div className="block-1">
-                    <div className="frase">Proporcionando encontros entre demanda e competência.</div>
+                    <div className="frase-e">Proporcionando encontros entre <div >demanda e competência.</div></div>
                     <div className="logo">
                         <img src={logoDevhubBranco} alt="loogo DevHub" />
                     </div>
@@ -130,7 +142,7 @@ function Especialidades() {
 
                             </div>
                         </div>
-                        <div className="button-especialidades">
+                        <div className="button-especialidades-1">
                             <button onClick={Cadastrar}>Cadastrar</button>
                         </div>
                     </div>
