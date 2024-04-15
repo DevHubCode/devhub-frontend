@@ -82,9 +82,9 @@ function Login() {
     <>
       <div className="body-login" style={myStyle}>
         <div className="block-1">
-          <div className="voltar" onClick={inicio}>
-            <img src={setaEsquerda} alt="seta" />
-            <div className="text-voltar">Inicio</div>
+          <div className="voltar">
+            <img src={setaEsquerda} onClick={inicio} alt="seta" />
+            <div onClick={inicio} className="text-voltar">Inicio</div>
           </div>
           <div className="frase">
             Proporcionando encontros entre <div >demanda e competência.</div>
