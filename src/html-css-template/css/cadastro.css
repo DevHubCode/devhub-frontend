@@ -120,19 +120,7 @@ padding-left: 7%;
  margin-top: 65%;
 
 }
-.cadastro-block-2 {
-  background-color: #f4f4f4;
-  /* border: 3px pink solid; */
-  display: flex;
-  width: 74%;
-  height: 98.3%;
-  border-top-left-radius: 28px;
-  margin-top: 0.8%;
-  display: flex;
-  justify-content: center;
 
-  
-}
 
 .cadastro-block-inputs {
   /* border: 3px rgb(255, 0, 43) solid; */
@@ -184,14 +172,7 @@ padding-left: 7%;
   background-color: #f2f1f1;
 }
 
-.cadastro-button-login {  
-  display: flex;
-  height: 5%;
-  width: 100%;
-  /* background-color: rgb(38, 88, 35); */
-  justify-content: center;
-  align-items: center ;
-}
+
 
 .cadastro-button-login button {
   border-radius: 2px;
@@ -207,6 +188,7 @@ padding-left: 7%;
 
 .cadastro-button-login button:hover {
   background-color: #1299c6;
+
 }
 
 
@@ -293,8 +275,9 @@ padding-left: 7%;
     width: 100%;
     /* background-color: rgb(38, 88, 35); */
     justify-content: center;
-    align-items: center ;
-    padding-top: 5%;
+    margin-bottom: 20%;
+ 
+    flex-direction: column;
   }
 
   .cadastro-button-cadastro button {
@@ -306,6 +289,12 @@ padding-left: 7%;
     font-family: "Poppins";
     font-size: x-large;
     border: 0px solid;
+   
+  }
+
+  .espacamento{
+    width: 100%;
+    height: 15%;
   }
 
   .cadastro-button-cadastro button:hover {
@@ -324,6 +313,7 @@ padding-left: 7%;
   display: inline-block;
   width: 60px;
   height: 34px;
+  margin-bottom: 15%;
 }
 
 /* Estilize o input radio (oculte-o) */
@@ -346,8 +336,14 @@ padding-left: 7%;
   transition: 0..4s;
   border-radius: 30px;
   width: 98px;
+  box-shadow: 2px 2px 2px 2px#e6e6e6;
 }
-
+.contratante-freela-slider-text{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #0780a8;
+}
 /* Estilize a alavanca do switch quando o input radio estiver marcado */
 .cadastro-slider:before {
   position: absolute;
@@ -360,11 +356,13 @@ padding-left: 7%;
   -webkit-transition: 0.4s;
   transition: 0.4s;
   border-radius: 30px;
+  box-shadow: 1px 1px 0px 0px#00000022;
+  
 }
 
 /* Estilize o input radio quando estiver marcado */
 input:checked + .cadastro-slider {
-  background-color: #2196F3;
+  background-color: #0780a8;
 }
 
 /* Estilize a alavanca do switch quando o input radio estiver marcado */
@@ -387,18 +385,6 @@ input:checked + .cadastro-slider:before {
   border-radius: 30px;
 }
 
-.cadastro-block-3{
-  display: none;
-  background-color: #f4f4f4;
-  /* border: 3px pink solid; */
-  width: 74%;
-  height: 98.3%;
-  border-top-left-radius: 28px;
-  margin-top: 0.8%;
-
-  justify-content: center;
-  align-items: center;
-}
 
 .cadastro-block-inputs {
   /* border: 3px rgb(255, 0, 43) solid; */
@@ -476,3 +462,254 @@ input:checked + .cadastro-slider:before {
   outline: none;
   background-color: #f2f1f1;
 }
+
+.cadastro-body-login {
+
+  display: flex;
+  width: 100%;
+  height: 585px;
+  justify-content: center;
+  align-items: center;
+}
+
+.cadastro-block-1 {
+  background-color: #0780a8;
+  /* border: 3px pink solid; */
+  display: flex;
+  width: 28%;
+  height: 80%;
+  border-top-left-radius: 8px; 
+  border-bottom-left-radius: 8px; 
+  flex-direction: column;
+  box-shadow: 0px 5px 10px 2px #9a9a9a;
+}
+
+.cadastro-voltar{
+  width: 100%;
+  height: 10%;
+  /* border: 5px solid rgb(255, 0, 43); */
+  font-weight: 700;
+  font-size: 21px;
+  color: #ffffff;
+  display: flex;
+  font-family: "Poppins" ;
+  align-items: center;
+  padding-left: 5%;
+  cursor: pointer;
+  
+}
+
+.cadastro-text-voltar{
+  margin-top: 2%;
+  width: 100%;
+  height: 10%;
+}
+.cadastro-voltar img{
+  margin-top: 4%;
+padding-right:2%;
+padding-top: 3%;
+}
+
+.cadastro-frase{
+  /* border: 5px solid rgb(48, 132, 56); */
+  width: 90%;
+  height: 60%;
+  font-weight: lighter;
+  font-size: 30px;
+  color: #ffffff;
+  font-family: "Poppins" ;
+  margin-top: 10%;
+  margin-left: 5%;
+display: flex;
+justify-content: center;
+align-items: center;
+padding-left: 7%;
+flex-direction: column;
+}
+
+.cadastro-frase div{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+}
+
+.cadastro-sloganX{
+  /* border: 5px solid rgb(255, 0, 43); */
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 5%;
+  font-weight: 1px;
+  font-size: 9px;
+  color: #bbbbbb;
+  font-family: "Poppins" ;
+  margin-bottom: 5%;
+ padding-left: 11%;
+}
+
+.cadastro-logo{
+  /* border: 5px solid rgb(255, 0, 43); */
+  width: 100%;
+  height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0px;
+  margin-left: 1%;
+  padding: 0px;
+ 
+}
+.cadastro-logo-logout{
+  /* border: 5px solid rgb(255, 0, 43); */
+  width: 100%;
+  height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0px;
+  padding: 0px;
+ margin-top: 65%;
+  
+}
+
+.cadastro-block-2 {
+  background-color: #f4f4f496;
+  /* border: 3px pink solid; */
+  display: flex;
+  width: 54%;
+  height: 80%;
+  border-top-right-radius: 8px; 
+  border-bottom-right-radius: 8px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 6px 6px 0px #dbdbdb;
+}
+
+
+.cadastro-block-3{
+   background-color: #f4f4f496;
+  /* border: 3px pink solid; */
+  display: flex;
+  width: 54%;
+  height: 80%;
+  border-top-right-radius: 8px; 
+  border-bottom-right-radius: 8px; 
+  display: none;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 3px 3px 0px #868686;
+}
+
+.cadastro-block-inputs {
+  /* border: 3px rgb(255, 0, 43) solid; */
+  height: 80%;
+  width: 60%;
+
+}
+
+.cadastro-text-cadastro-tittle {
+  height: 25%;
+  width: 100%;
+
+  color: #0780a8;
+  font-weight: 400;
+  font-size: 35px;
+  margin-left: 2%;
+
+  justify-content: center;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  
+}
+
+.cadastro-inputs-cadastro {
+  display: flex;
+  justify-content: center;
+  height: 50%;
+  width: 100%;
+  /* background-color: rgb(0, 0, 0); */
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.cadastro-inputs-cadastro input {
+  margin: 2%;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 60%;
+  background-color: rgba(237, 233, 233, 0.807);
+  border-radius: 2px;
+  box-shadow: 0px 5px 5px 2px #ebebeb;
+  border: 0px solid;
+  padding-left: 14px;
+  font-size: larger;
+  color: #0780a8;
+  border-bottom: #0780a8 3px solid;
+ 
+}
+.cadastro-inputs-cadastro input:focus {
+  outline: none;
+  background-color: #f0f0f0;
+  border-bottom: #0cabe1 3px solid;
+}
+
+.cadastro-button-cadastro {
+  display: flex;
+  height: 35%;
+  width: 100%;
+  /* background-color: rgb(38, 88, 35); */
+ 
+  align-items: center ;
+  
+}
+
+.cadastro-button-cadastro button {
+  
+  width: 39%;
+  height: 35%;
+  background-color: #0780a8;
+  color: #ffffff;
+  font-family: "Poppins";
+  font-size: x-large;
+  border: 0px solid;
+}
+
+
+.cadastro-button-cadastro button:hover {
+  background-color: #09698a;
+  width: 40%;
+  height: 36%;
+}
+
+
+.cadastro-button-cadastro button:active {
+  background-color: #0c4e64;
+  width: 39%;
+  height: 35%;
+}
+
+.cadastro-not_cadastro{
+  display: flex;
+  height: 5%;
+  width: 100%;
+  justify-content: center;
+  align-items: center ;
+  border: none;
+}
+
+.cadastro-not_cadastro a{
+ 
+ 
+  border: none;
+}
+
+
+
+
+
+
+
+

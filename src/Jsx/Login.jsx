@@ -90,7 +90,7 @@ function Login() {
             Proporcionando encontros entre <div >demanda e competência.</div>
           </div>
           <div className="logo">
-            <img src={logoDevhubBranco} alt="loogo DevHub" />
+            <img src={logoDevhubBranco} alt="logo DevHub" />
           </div>
           <div className="sloganX">
             &copy; 2023 ; todos os direitos reservados By DevHub Enterprise

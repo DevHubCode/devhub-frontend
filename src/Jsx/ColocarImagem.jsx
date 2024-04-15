@@ -3,10 +3,24 @@ import React, { useState, useEffect } from "react";
 import logoDevhubBranco from "../html-css-template/imagens/Group 85.svg";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
-
+import BackgroundCover from "../html-css-template/imagens/2.png";
+import iconFile from "../html-css-template/imagens/Group 120.png"
 import "../html-css-template/css/especialidades.css";
 import "../html-css-template/css/novaimagem.css";
 import api from "../api";
+
+
+const myStyle = {
+    backgroundImage: `url(${BackgroundCover})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+    height: "100vh",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  
+  };
 
 function Especialidades() {
     const [selectedFileName, setSelectedFileName] = useState("");
@@ -82,7 +96,7 @@ function Especialidades() {
 
     return (
         <>
-            <div className="body-login">
+            <div className="body-login" style={myStyle}>
                 <div className="block-1">
                     <div className="frase">Proporcionando encontros entre demanda e competência.</div>
                     <div className="logo">
@@ -96,7 +110,10 @@ function Especialidades() {
                 <div className="block-2">
                     <div className="block-inputs">
                         <div className="text-especialidades-tittle">Selecione uma imagem para o seu perfil</div>
-                        <div className="inputs-especialidades">
+                        <div className="inputs-especialidades-img">
+                            <div className="img-file"> 
+                            <img src={iconFile} alt="Imagem selecionada" style={{ width: '100px', height: '100px' }} />
+                            </div>
                             <div className="file-input">
                                 <label htmlFor="file">Escolher arquivo</label>
                                 <input type="file" id="file" />
@@ -110,7 +127,7 @@ function Especialidades() {
                                 </div>
                             )}
                         </div>
-                        <div className="button-especialidades">
+                        <div className="button-especialidades-img">
                             <button onClick={cadastrar}>Cadastrar</button>
                         </div>
                     </div>

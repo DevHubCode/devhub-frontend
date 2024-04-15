@@ -7,7 +7,7 @@ import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import '../html-css-template/css/cadastro.css'
 import "../html-css-template/css/reset.css"
-
+import BackgroundCover from "../html-css-template/imagens/2.png";
 
 function Cadastrar() {
 
@@ -54,7 +54,17 @@ function Cadastrar() {
             [event.target.id]: event.target.value,
         });
     }
-
+    const myStyle = {
+        backgroundImage: `url(${BackgroundCover})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        height: "100vh",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      
+      };
 
     function cadastrar() {
         const inome = document.getElementById("nome");
@@ -195,13 +205,13 @@ function Cadastrar() {
 
     return (
         <>
-            <div className="cadastro-body-cadastro">
+            <div className="cadastro-body-cadastro" style={myStyle}>
                 <div className="cadastro-block-1">
                 <div className="cadastro-voltar" onClick={inicio}>
                         <img src={setaEsquerda} alt="seta"/>
                         <div className="cadastro-text-voltar">Inicio</div>
                     </div>
-                    <div className="cadastro-frase">Proporcionando encontros entre demanda e competência.</div>
+                    <div className="cadastro-frase">Proporcionando encontros entre <div >demanda e competência.</div></div>
                     <div className="cadastro-logo">
                         <img src={logoDevhubBranco} alt="loogo DevHub" />
                     </div>
@@ -212,16 +222,17 @@ function Cadastrar() {
 
                 <div className="cadastro-block-2">
                     <div className="cadastro-block-inputs">
-                        <div className="cadastro-text-cadastro-tittle">Preencha seus dados pessoais</div>
+                        <div className="cadastro-text-cadastro-tittle">Preencha seus dados</div>
                         <div className="cadastro-inputs-cadastro">
                             <input onChange={onChange} type="name" useState="email" id="nome" placeholder="Nome Completo" />
-                            <input onChange={onChange} type="email" useState="senha" id="email" placeholder="Email" />
-                            <input onChange={onChange} useState="senha" id="telefone" placeholder="Telefone" />
+                            {/* <input onChange={onChange} type="email" useState="senha" id="email" placeholder="Email" />
+                            <input onChange={onChange} useState="senha" id="telefone" placeholder="Telefone" /> */}
                             <input onChange={onChange} type="password" useState="senha" id="senha" placeholder="Senha" />
                             <input onChange={onChange} useState="senha" id="identificador" placeholder="CPF / CNPJ" />
                         </div>
                         <div className="cadastro-button-cadastro">
                             <button onClick={cadastrar}>{botao}</button>
+                            <div class="espacamento"></div>
                         </div>
                     </div>
                     <div className="cadastro-alter_user">
@@ -229,7 +240,7 @@ function Cadastrar() {
                             <input type="radio" name="toggle" id="usuario" checked />
                             <span onClick={mudarUsuario} class="cadastro-slider"></span>
                         </label>
-                        <div>
+                        <div class="contratante-freela-slider-text">
                             {usuario}
                         </div>
                     </div>

@@ -86,10 +86,10 @@ function Especialidades() {
 
                 <div className="block-2">
                     <div className="block-inputs">
-                        <div className="text-especialidades-tittle">Escolha suas principais especialidades</div>
+                        <div className="text-especialidades-tittle-1">Escolha suas especialidades</div>
                         <div className="inputs-especialidades">
                             <div className="selects-especialidades">
-                                <label for="cargos">Especialidades</label>
+                                <label for="cargos"></label>
 
                                 <Select
                                     className="select-especialidades"

@@ -15,7 +15,7 @@
 .file-input label {
     display: inline-block;
     padding: 10px 15px;
-    background-color: #3498db;
+    background-color: #bcde0e;
     color: #fff;
     border-radius: 5px;
     cursor: pointer;
@@ -32,3 +32,39 @@
     height: 50px;
   }
   
+
+  .text-especialidades-tittle {
+    height: 25%;
+    width: 110%;
+    
+    color: #0780a8;
+    font-weight: 400;
+    font-size: 32px;
+    margin-left: 2%;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    flex-direction: column;
+    
+  }
+
+  .button-especialidades-img {
+    display: flex;
+    height: 35%;
+    width: 100%;
+    /* background-color: rgb(38, 88, 35); */
+    justify-content: center;
+    align-items: center ;
+  }
+
+  .button-especialidades-img button {
+    border-radius: 2px;
+    width: 39%;
+    height: 35%;
+    background-color: #10A3D2;
+    color: #ffffff;
+    font-family: "Poppins";
+    font-size: x-large;
+    border: 0px solid;
+  }

@@ -186,18 +186,18 @@ flex-direction: column;
   width: 60%;
   background-color: rgba(233, 232, 232, 0.807);
   border-radius: 2px;
-  box-shadow: 0px 5px 5px 2px #ebebeb;
+  box-shadow: 0px 5px 5px 2px #d6d6d6;
   border: 0px solid;
   padding-left: 14px;
   font-size: larger;
   color: #0780a8;
-  border-bottom: rgba(233, 232, 232, 0.807) 3px solid;
+  border-bottom: #0780a8 3px solid;
  
 }
 .inputs-login input:focus {
   outline: none;
   background-color: #f0f0f0;
-  border-bottom: #0780a8 3px solid;
+  border-bottom: #0cabe1 3px solid;
 }
 
 .button-login {
@@ -210,7 +210,7 @@ flex-direction: column;
 }
 
 .button-login button {
-  border-radius: 2px;
+  border-radius: px;
   width: 30%;
   height: 35%;
   background-color: #0780a8;
