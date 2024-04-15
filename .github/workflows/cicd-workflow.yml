@@ -27,4 +27,4 @@ jobs:
       - name: Run docker container
         run: sudo docker run -d -p 3000:3000 --name devhub-frontend-container devhub3/devhub-frontend
       - name: Copy files to server
-        run: sudo docker exec -i devhub-frontend-container sh -c 'scp -r /path/to/files/* ubuntu@54.145.14.222:/var/www/54.165.158.129/'
+        run: sudo docker exec -i devhub-frontend-container sh -c 'scp -r /app/* ubuntu@54.145.14.222:/var/www/54.165.158.129/'
