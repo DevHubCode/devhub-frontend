@@ -27,4 +27,4 @@ jobs:
       - name: Run docker container
         run: sudo docker run -d -p 3000:3000 --name devhub-frontend-container devhub3/devhub-frontend
       - name: Deploying files to server
-        run: scp -r build/* root@54.165.158.129/var/www/54.165.158.129/
+        run: scp -r build/* ubuntu@54.165.158.129/var/www/54.165.158.129/
