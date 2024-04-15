@@ -53,8 +53,9 @@ function Cadastrar() {
         block21Div.style.display = 'flex';
         block2Div.style.display = 'none';
         block3Div.style.display = 'none';
-        setCadastrar("Cadastrar");
+        setCadastrar("Avançar");
     }
+
     function onChange(event) {
         setForm({
             ...form,
@@ -273,7 +274,6 @@ function Cadastrar() {
                     <div className="cadastro-block-inputs">
                         <div className="cadastro-text-cadastro-tittle-block3">Preencha seus dados profissionais</div>
                         <div className="cadastro-inputs-cadastro-block3">
-                            <label for="cargos">Cargo</label>
                             <select placeholder="Escolha um cargo" onChange={onChange} id="cargos">
                                 <option value="" disabled selected>Escolha um cargo</option>
                                 <option value="DESENVOLVEDOR_BACKEND">Desenvolvedor Backend</option>
@@ -285,7 +285,7 @@ function Cadastrar() {
                                 <option value="WEB_DESIGNER">Web Designer</option>
                             </select>
                             <input onChange={onChange} type="text" id="valorHora" placeholder="Valor por hora(R$)" />
-                            Senerioridade
+                            Sênioridade
                             <div class="cadastro-check">
                                 <div class="cadastro-check-input">
                                     <label>

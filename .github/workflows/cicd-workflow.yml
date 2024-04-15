@@ -9,7 +9,7 @@ jobs:
     runs-on: [ubuntu-latest]
     steps:
       - name: Checkout source
-        uses: actions/checkout@v4  
+        uses: actions/checkout@v4
       - name: Login to docker hub
         run: docker login -u ${{secrets.DOCKER_USERNAME}} -p ${{secrets.DOCKER_PASSWORD}}
       - name: Build docker image
@@ -28,3 +28,7 @@ jobs:
         run: sudo docker run -d -p 3000:3000 --name devhub-frontend-container devhub3/devhub-frontend
       - name: Clone github nginx
         run: git clone https://github.com/DevHubCode/devhub-frontend /var/www/54.165.158.129/
+      - name: Build project
+        run: |
+          cd /var/www/54.165.158.129/
+          npm run build
