@@ -598,3 +598,97 @@ border-radius: 30px;
  .junior-color {
    background-color: #741040; /* Cor para Junior */
  }
+
+ .modal-container-modal {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 0.5);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+      
+}
+
+.modal-content-modal {
+   background-color: #fff;
+   border-radius: 8px;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+   max-width: 90%; /* Defina a largura máxima do modal para 90% da largura da tela */
+   max-height: 90%; /* Defina a altura máxima do modal para 90% da altura da tela */
+   overflow-y: auto; /* Adicione uma barra de rolagem vertical se o conteúdo do modal for muito longo */
+}
+
+.home-image-freelancer-modal{
+   background-size: cover;
+   margin-top: 2%;
+   margin-left: 16%;
+   display: flex;
+   height: 200px;
+   width: 85%; 
+   border-radius: 4%;
+  justify-content: right;
+  box-shadow: 0px 2px 2px 2px #c3bebe;
+}
+
+.home-infos-home-modal {
+   height: 40%;
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin-top: 0.8%;
+
+}
+
+.home-level-dev-modal {
+   height: 100%;
+   width: 60%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-color: #F9F9F9;
+}
+
+.home-header-modal {
+   padding-top: 15px;
+
+  height: 210px;
+
+  width: 100%;
+
+  background-color:  #E5F1F2;
+  
+  display: flex;
+
+  flex-direction: column;
+
+}
+
+.home-header-icons-modal{
+   height: auto;
+   width: 100%;
+   background-color: #E5F1F2;
+   display: grid;
+   justify-content: center;
+   align-items: center;
+   grid-template-columns: repeat(auto-fill, minmax(31%, 1fr)); 
+   grid-template-rows: auto;
+   grid-gap: 0px;
+   padding-top: 10px;
+   padding-bottom: 50px;
+}
+
+.close-button-modal {
+   position: absolute;
+   top: 35px;
+   right: 200px; 
+   cursor: pointer;
+ }
+
+.home-box-freelancer-modal{
+   height: 90%;
+   width: 90%;
+}

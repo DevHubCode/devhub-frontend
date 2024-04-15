@@ -4,7 +4,7 @@ import logoDevhub from '../html-css-template/imagens/logo-devhub-white.svg';
 import Swal from 'sweetalert2';
 import api from '../api';
 
-const ModalComponent = ({ isOpen, onClose, valorHora, idContratante, idDev }) => {
+const ModalComponent = ({ isOpen, onClose, valorHora, idContratante, idDev, nomeRemetente, destinatario, nomeDestinatario }) => {
   const [totalHoras, setTotalHoras] = useState(0);
   const [totalAPagar, setTotalAPagar] = useState(0);
   const [avancarParaPagamento, setAvancarParaPagamento] = useState(false);
@@ -21,9 +21,13 @@ const ModalComponent = ({ isOpen, onClose, valorHora, idContratante, idDev }) =>
   const handleAvaliacaoButtonClick = () => {
     console.log(totalAPagar)
     api.patch(`/servicos/concluir`, {
-            idContratante: idContratante,
-            idFreelancer: idDev,
-            valorHora: totalAPagar
+        "idFreelancer": idDev,
+        "idContratante": idContratante,
+        "valorHora": totalAPagar,
+        "nomeRemetente": nomeRemetente,
+        "destinatario": destinatario,
+        "nomeDestinatario": nomeDestinatario
+      
     }).then(response => {
        
     }).catch(error => {
