@@ -98,7 +98,7 @@ function Especialidades() {
         <>
             <div className="body-login" style={myStyle}>
                 <div className="block-1">
-                    <div className="frase">Proporcionando encontros entre demanda e competência.</div>
+                    <div className="frase-e">Proporcionando encontros entre <div >demanda e competência.</div></div>
                     <div className="logo">
                         <img src={logoDevhubBranco} alt="loogo DevHub" />
                     </div>

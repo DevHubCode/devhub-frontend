@@ -18,7 +18,7 @@ function Cadastrar() {
     const [form, setForm] = useState([]);
     const block3Div = document.querySelector('.cadastro-block-3');
     const block2Div = document.querySelector('.cadastro-block-2');
-
+    const block21Div = document.querySelector('.cadastro-block-21');
     const mudarUsuario = () => {
         const radio = document.getElementById('usuario');
 
@@ -43,11 +43,18 @@ function Cadastrar() {
 
     function avancar() {
         block2Div.style.display = 'none';
+        block21Div.style.display = 'none';
         block3Div.style.display = 'flex';
         setCadastrar("Cadastrar");
     }
 
 
+    function block21() {
+        block21Div.style.display = 'flex';
+        block2Div.style.display = 'none';
+        block3Div.style.display = 'none';
+        setCadastrar("Cadastrar");
+    }
     function onChange(event) {
         setForm({
             ...form,
@@ -225,13 +232,13 @@ function Cadastrar() {
                         <div className="cadastro-text-cadastro-tittle">Preencha seus dados</div>
                         <div className="cadastro-inputs-cadastro">
                             <input onChange={onChange} type="name" useState="email" id="nome" placeholder="Nome Completo" />
-                            {/* <input onChange={onChange} type="email" useState="senha" id="email" placeholder="Email" />
-                            <input onChange={onChange} useState="senha" id="telefone" placeholder="Telefone" /> */}
-                            <input onChange={onChange} type="password" useState="senha" id="senha" placeholder="Senha" />
+                        
+                            <input onChange={onChange} useState="senha" id="telefone" placeholder="Telefone" /> 
+                          
                             <input onChange={onChange} useState="senha" id="identificador" placeholder="CPF / CNPJ" />
                         </div>
                         <div className="cadastro-button-cadastro">
-                            <button onClick={cadastrar}>{botao}</button>
+                            <button onClick={block21}>{botao}</button>
                             <div class="espacamento"></div>
                         </div>
                     </div>
@@ -244,6 +251,23 @@ function Cadastrar() {
                             {usuario}
                         </div>
                     </div>
+                </div>
+                <div className="cadastro-block-21">
+                    <div className="cadastro-block-inputs">
+                        <div className="cadastro-text-cadastro-tittle">Preencha seus Dados</div>
+                        <div className="cadastro-inputs-cadastro-1">
+                           
+                            <input onChange={onChange} type="email" useState="senha" id="email" placeholder="Email" />
+                            
+                            <input onChange={onChange} type="password" useState="senha" id="senha" placeholder="Senha" />
+                         
+                        </div>
+                        <div className="cadastro-button-cadastro">
+                            <button onClick={cadastrar}>{botao}</button>
+                            <div class="espacamento"></div>
+                        </div>
+                    </div>
+                   
                 </div>
                 <div className="cadastro-block-3">
                     <div className="cadastro-block-inputs">
