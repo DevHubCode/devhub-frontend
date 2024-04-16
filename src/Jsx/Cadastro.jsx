@@ -50,10 +50,18 @@ function Cadastrar() {
 
 
     function block21() {
-        block21Div.style.display = 'flex';
-        block2Div.style.display = 'none';
-        block3Div.style.display = 'none';
-        setCadastrar("Avançar");
+        if (usuario == "Freelancer"){
+            block21Div.style.display = 'flex';
+            block2Div.style.display = 'none';
+            block3Div.style.display = 'none';
+            setCadastrar("Avançar");
+        } else {
+            block21Div.style.display = 'flex';
+            block2Div.style.display = 'none';
+            block3Div.style.display = 'none';
+            setCadastrar("Cadastrar")
+        }
+        
     }
 
     function onChange(event) {
