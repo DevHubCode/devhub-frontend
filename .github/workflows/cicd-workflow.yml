@@ -27,7 +27,7 @@ jobs:
       - name: Run docker container
         run: sudo docker run -d -p 3000:3000 --name devhub-frontend-container devhub3/devhub-frontend
       - name: Remove directory
-        run: rm -r /var/www/54.165.158.129
+        run: sudo rm -r /var/www/54.165.158.129
       - name: Create directory
         run: sudo mkdir /var/www/54.165.158.129
       - name: Permision chmod
