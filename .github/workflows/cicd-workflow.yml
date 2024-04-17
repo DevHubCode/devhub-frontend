@@ -37,9 +37,6 @@ jobs:
       - name: Npm install
         run: npm i
         working-directory: /var/www/54.165.158.129
-      - name: Build Project
-        run: npm run build
-        working-directory: /var/www/54.165.158.129
 
     
           
