@@ -34,17 +34,8 @@ jobs:
         run: sudo chmod 777 -R /var/www/54.165.158.129
       - name: Clone project
         run: git clone https://github.com/DevHubCode/devhub-frontend.git /var/www/54.165.158.129/
-      - name: Install node
-        run: |
-          if ! command -v node &> /dev/null; then
-            echo "Node.js is not installed."
-            # Add commands here to install Node.js
-            # For example, if you're using Ubuntu:
-            # sudo apt-get update
-            # sudo apt-get install nodejs
-          else
-            echo "Node.js is installed."
-          fi
+      - name: Npm install
+        run: npm i
         working-directory: /var/www/54.165.158.129
       - name: Build Project
         run: npm run build
