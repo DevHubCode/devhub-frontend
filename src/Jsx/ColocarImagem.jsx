@@ -68,7 +68,7 @@ function Especialidades() {
             console.log(formData)
             const role = sessionStorage.getItem("role");
             
-            if(role == "FREELANCER"){
+            if(role === "FREELANCER"){
                 const response = await api.patch(`/freelancers/foto/${id}`, formData);
             }else{
                 const response = await api.patch(`/contratantes/foto/${id}`, formData);

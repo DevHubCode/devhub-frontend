@@ -1,26 +1,20 @@
 import React, { useState, useEffect } from 'react'
 import logoDevhub from '../html-css-template/imagens/logo-devhub-grey.png';
-import fotoPerfil from '../html-css-template/imagens/foto-perfil.svg';
 import warningSVG from '../html-css-template/imagens/Group 108.svg';
 import linkedinLogo from '../html-css-template/imagens/LInkdln-logo.svg'
 import githubLogo from '../html-css-template/imagens/github-logo.svg'
-import javaLogo from '../html-css-template/imagens/java-logo.svg'
-import springLogo from '../html-css-template/imagens/spring-logo.svg'
-import azureLogo from '../html-css-template/imagens/azure-logo.svg'
 import star from '../html-css-template/imagens/icon-star.png';
 import search from '../html-css-template/imagens/serch-bench.png'
 import arrowLeft from '../html-css-template/imagens/arrow-left (2).svg';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import '../html-css-template/css/benchmarking.css'
 import api from '../api';
 import Select from 'react-select';
 
-import { freelasComparacao } from '../Data';
 import ModalHome from '../ModalJsx/ModalHome';
 
 function Benchmarking() {
 
-    const [searchId, setSearchId] = useState('');
     const [showDevCard, setShowDevCard] = useState(false);
     const [foundDev, setFoundDev] = useState(null);
     const [imagemUrl, setImagemUrl] = useState(null);
@@ -28,7 +22,6 @@ function Benchmarking() {
     const [seniorityColor, setSeniorityColor] = useState('');
     const [seniorityColor2, setSeniorityColor2] = useState('');
 
-    const [searchId2, setSearchId2] = useState('');
     const [showDevCard2, setShowDevCard2] = useState(false);
     const [foundDev2, setFoundDev2] = useState(null);
 

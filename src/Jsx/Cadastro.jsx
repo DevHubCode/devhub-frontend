@@ -50,7 +50,7 @@ function Cadastrar() {
 
 
     function block21() {
-        if (usuario == "Freelancer"){
+        if (usuario === "Freelancer"){
             block21Div.style.display = 'flex';
             block2Div.style.display = 'none';
             block3Div.style.display = 'none';

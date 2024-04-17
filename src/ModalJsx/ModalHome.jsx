@@ -1,13 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { freelancers } from '../Data';
-import menuIcon1 from '../html-css-template/imagens/icon-menu.svg';
-import menuIcon from '../html-css-template/imagens/icon-menu (2).svg';
-import logoDevhub from '../html-css-template/imagens/logo-devhub-grey.png';
-import fotoPerfil from '../html-css-template/imagens/foto-perfil.svg';
 import warningSVG from '../html-css-template/imagens/Group 108.svg';
 import star from '../html-css-template/imagens/icon-star.png';
-import ItemFooter from '../components/ItemFooter';
-import { Link } from 'react-router-dom'
+
 
 
 import api from '../api';

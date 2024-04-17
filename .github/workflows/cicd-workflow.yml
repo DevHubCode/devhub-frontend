@@ -35,7 +35,7 @@ jobs:
       - name: Build project
         run: |
           cd /var/www/54.165.158.129/
-          git clone https://github.com/DevHubCode/devhub-frontend /var/www/54.165.158.129/
+          git clone https://github.com/DevHubCode/devhub-frontend.git /var/www/54.165.158.129/
           npm i
           npm run build
           
